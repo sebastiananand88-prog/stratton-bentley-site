@@ -75,14 +75,26 @@ export default function Eyewear() {
               Curated eyewear from around the world
             </h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-6">
-            {["Tom Ford", "Ray-Ban", "Oakley", "Silhouette", "Ralph Lauren", "GANT"].map(
-              (brand, i) => (
-                <div key={i} className="p-6 bg-[#1A2E45]/5 rounded-lg border border-[#1A2E45]/10 text-center">
-                  <p className="font-medium text-[#1A2E45]">{brand}</p>
-                </div>
-              )
-            )}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              { name: "Tom Ford", logo: "/images/brands/tom-ford.png" },
+              { name: "Ray-Ban", logo: "/images/brands/ray-ban.png" },
+              { name: "Oakley", logo: "/images/brands/oakley.png" },
+              { name: "Silhouette", logo: "/images/brands/silhouette.png" },
+              { name: "Ralph Lauren", logo: "/images/brands/ralph-lauren.svg" },
+              { name: "GANT", logo: "/images/brands/gant.svg" },
+            ].map((brand, i) => (
+              <div
+                key={i}
+                className="p-8 h-28 bg-[#1A2E45]/5 rounded-lg border border-[#1A2E45]/10 flex items-center justify-center"
+              >
+                <img
+                  src={brand.logo}
+                  alt={`${brand.name} logo`}
+                  className="max-h-10 max-w-full object-contain"
+                />
+              </div>
+            ))}
           </div>
           <p className="text-[#1A2E45]/70 leading-relaxed font-light">
             Each brand brings its own philosophy and craftsmanship. Whether you're drawn to Italian luxury, Scandinavian minimalism, American heritage, or cutting-edge contemporary design, we've selected partners who share our commitment to quality and attention to detail.

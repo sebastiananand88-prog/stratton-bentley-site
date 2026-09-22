@@ -158,7 +158,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
+      {/* Map */}
       <section className="py-20 max-w-7xl mx-auto px-6 lg:px-10">
         <div className="space-y-8">
           <h2
@@ -167,6 +167,15 @@ export default function Contact() {
           >
             Find us
           </h2>
+          <div className="rounded-lg overflow-hidden border border-[#1A2E45]/10">
+            <iframe
+              title="Map showing Stratton Opticians at 14 The Pantiles, Queens Park Avenue, Billericay CM12 0UA"
+              src="https://www.google.com/maps?q=Stratton+Opticians,14+The+Pantiles,Queens+Park+Avenue,Billericay,CM12+0UA&output=embed"
+              className="w-full aspect-video border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
           <div className="rounded-lg overflow-hidden">
             <img
               src={IMAGES.storefront}

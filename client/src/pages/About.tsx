@@ -184,14 +184,18 @@ export default function About() {
             </div>
             <div className="grid md:grid-cols-4 gap-8">
               {[
-                { name: "NHS", desc: "Registered NHS provider" },
-                { name: "GOC", desc: "General Optical Council" },
-                { name: "College of Optometrists", desc: "UK professional body" },
-                { name: "Association of Optometrists", desc: "Professional membership" },
+                { name: "NHS", desc: "Registered NHS provider", logo: "/images/credentials/nhs.jpg" },
+                { name: "GOC", desc: "General Optical Council", logo: "/images/credentials/goc.jpg" },
+                { name: "College of Optometrists", desc: "UK professional body", logo: "/images/credentials/college-of-optometrists.jpg" },
+                { name: "Association of Optometrists", desc: "Professional membership", logo: "/images/credentials/association-of-optometrists.jpg" },
               ].map((badge, i) => (
                 <div key={i} className="text-center space-y-2">
-                  <div className="aspect-square bg-[#1A2E45]/10 rounded-lg flex items-center justify-center">
-                    <span className="text-sm font-semibold text-[#1A2E45]/40">[Logo]</span>
+                  <div className="aspect-square bg-white border border-[#1A2E45]/10 rounded-lg flex items-center justify-center p-5">
+                    <img
+                      src={badge.logo}
+                      alt={`${badge.name} accreditation logo`}
+                      className="max-h-full max-w-full object-contain"
+                    />
                   </div>
                   <p className="font-semibold text-[#1A2E45] text-sm">{badge.name}</p>
                   <p className="text-xs text-[#1A2E45]/60">{badge.desc}</p>

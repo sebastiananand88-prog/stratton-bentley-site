@@ -397,15 +397,15 @@ export default function StrattonHome() {
           </div>
 
           <div className="lg:col-span-6">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <img
                 src={IMAGES.frames}
                 alt="Designer eyewear collection"
-                className="w-full aspect-square object-cover rounded-2xl col-span-2"
+                className="w-full aspect-square object-cover rounded-2xl sm:col-span-2"
               />
-              <div className="bg-[#1A2E45] rounded-2xl p-6 flex flex-col justify-between aspect-square">
+              <div className="bg-[#1A2E45] rounded-2xl p-6 flex flex-col justify-between gap-6 min-h-[180px] sm:aspect-square">
                 <p
-                  className="text-3xl font-light text-[#F8F4EF] leading-tight"
+                  className="text-xl sm:text-2xl lg:text-3xl font-light text-[#F8F4EF] leading-tight"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   "Glasses are not a medical device. They are an expression of who you are."
@@ -414,7 +414,7 @@ export default function StrattonHome() {
                   Stratton Opticians
                 </p>
               </div>
-              <div className="bg-[#C9A96E]/15 border border-[#C9A96E]/30 rounded-2xl p-6 flex flex-col justify-center aspect-square">
+              <div className="bg-[#C9A96E]/15 border border-[#C9A96E]/30 rounded-2xl p-6 flex flex-col justify-center min-h-[120px] sm:aspect-square">
                 <p
                   className="text-4xl font-light text-[#1A2E45] leading-none mb-2"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}

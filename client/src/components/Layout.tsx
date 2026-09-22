@@ -1,4 +1,4 @@
-import { useState, ReactNode } from "react";
+import { useEffect, useState, ReactNode } from "react";
 import BookingModal from "@/components/BookingModal";
 import { Phone, Mail, Instagram, Facebook, Menu, X } from "lucide-react";
 
@@ -12,12 +12,12 @@ export default function Layout({ children }: LayoutProps) {
   const [scrolled, setScrolled] = useState(false);
 
   // Track scroll for header background
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY > 40;
-      if (scrollY !== scrolled) setScrolled(scrollY);
-    }, { passive: true });
-  }
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div
