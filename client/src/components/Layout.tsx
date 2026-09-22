@@ -67,6 +67,7 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
               { label: "Contact Lenses", href: "/contact-lenses" },
               { label: "Children's Eye Care", href: "/childrens-eye-care" },
               { label: "Visual Stress", href: "/visual-stress-assessments" },
+              { label: "FAQ", href: "/faq" },
               { label: "Contact", href: "/contact" },
             ].map((item) => (
               <a
@@ -91,6 +92,7 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
               { label: "Contacts", href: "/contact-lenses" },
               { label: "Children", href: "/childrens-eye-care" },
               { label: "Visual Stress", href: "/visual-stress-assessments" },
+              { label: "FAQ", href: "/faq" },
               { label: "Contact", href: "/contact" },
             ].map((item) => (
               <a
@@ -145,6 +147,7 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
               { label: "Contact Lenses", href: "/contact-lenses" },
               { label: "Children's Eye Care", href: "/childrens-eye-care" },
               { label: "Visual Stress", href: "/visual-stress-assessments" },
+              { label: "FAQ", href: "/faq" },
               { label: "Contact", href: "/contact" },
             ].map((item) => (
               <a
@@ -182,7 +185,7 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
       {/* ── FOOTER ── */}
       <footer className="bg-[#0F1B2D] py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid md:grid-cols-4 gap-10 pb-12 border-b border-[#F8F4EF]/10">
+          <div className="grid md:grid-cols-5 gap-10 pb-12 border-b border-[#F8F4EF]/10">
             <div className="md:col-span-2 space-y-4">
               <p
                 className="text-xl font-semibold text-[#F8F4EF] tracking-wide"
@@ -212,6 +215,29 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
                 >
                   <Facebook className="w-4 h-4" />
                 </a>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <p className="text-xs uppercase tracking-[0.2em] text-[#C9A96E] font-semibold">Explore</p>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-[#F8F4EF]/50 font-light">
+                {[
+                  { label: "Home", href: "/" },
+                  { label: "About", href: "/about" },
+                  { label: "Eye Examinations", href: "/eye-examinations" },
+                  { label: "OCT Scans", href: "/oct-scans" },
+                  { label: "Eyewear", href: "/eyewear" },
+                  { label: "Contact Lenses", href: "/contact-lenses" },
+                  { label: "Children's Eye Care", href: "/childrens-eye-care" },
+                  { label: "Visual Stress", href: "/visual-stress-assessments" },
+                  { label: "FAQ", href: "/faq" },
+                  { label: "Book", href: "/book" },
+                  { label: "Contact", href: "/contact" },
+                ].map((item) => (
+                  <a key={item.href} href={item.href} className="hover:text-[#C9A96E] transition-colors">
+                    {item.label}
+                  </a>
+                ))}
               </div>
             </div>
 
