@@ -109,7 +109,7 @@ export default function StrattonHome() {
 
 
   return (
-    <Layout>
+    <Layout transparentHero>
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative h-screen min-h-[700px] flex flex-col justify-start lg:justify-center overflow-hidden pt-28 lg:pt-20 pb-10">
         {/* Background image */}

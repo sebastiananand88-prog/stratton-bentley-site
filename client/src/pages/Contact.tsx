@@ -3,10 +3,6 @@ import { MapPin, Phone, Mail, Clock, Facebook } from "lucide-react";
 import { useState } from "react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
-const IMAGES = {
-  storefront: "/images/storefront-exterior.jpeg",
-};
-
 export default function Contact() {
   useMetaTags({
     title: "Contact Stratton Opticians Billericay — Address & Opening Hours",
@@ -174,13 +170,6 @@ export default function Contact() {
               className="w-full aspect-video border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-          <div className="rounded-lg overflow-hidden">
-            <img
-              src={IMAGES.storefront}
-              alt="Stratton Opticians storefront on The Pantiles in Billericay, Essex"
-              className="w-full aspect-video object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
         </div>

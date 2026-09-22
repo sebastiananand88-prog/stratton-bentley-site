@@ -4,20 +4,29 @@ import { Phone, Mail, Instagram, Facebook, Menu, X } from "lucide-react";
 
 interface LayoutProps {
   children: ReactNode;
+  /** Set on pages with a full-bleed dark hero image behind the header (e.g. the homepage),
+   * so the header starts transparent with light text and only turns solid on scroll.
+   * Every other page has a plain light background at the top, so the header should
+   * always be solid/dark -- otherwise light header text is invisible on a light page. */
+  transparentHero?: boolean;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children, transparentHero = false }: LayoutProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   // Track scroll for header background
   useEffect(() => {
+    if (!transparentHero) return;
     const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [transparentHero]);
+
+  // Header is only ever transparent on pages that opt in AND haven't scrolled past their hero.
+  const solid = !transparentHero || scrolled;
 
   return (
     <div
@@ -27,7 +36,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* ── NAVIGATION ── */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-[#F8F4EF]/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+          solid ? "bg-[#F8F4EF]/95 backdrop-blur-md shadow-sm" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-24 lg:h-20 flex items-center justify-between gap-4">
@@ -35,7 +44,7 @@ export default function Layout({ children }: LayoutProps) {
           <a href="/" className="flex flex-col leading-none group shrink-0">
             <span
               className={`text-2xl lg:text-2.5xl font-semibold tracking-tight transition-colors group-hover:opacity-80 ${
-                scrolled || menuOpen ? "text-[#1A2E45]" : "text-[#F8F4EF]"
+                solid || menuOpen ? "text-[#1A2E45]" : "text-[#F8F4EF]"
               }`}
               style={{ fontFamily: "'Cormorant Garamond', serif", letterSpacing: "0.04em" }}
             >
@@ -65,7 +74,7 @@ export default function Layout({ children }: LayoutProps) {
                 key={item.href}
                 href={item.href}
                 className={`text-xs font-medium transition-colors tracking-wide whitespace-nowrap ${
-                  scrolled ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
+                  solid ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
                 }`}
               >
                 {item.label}
@@ -89,7 +98,7 @@ export default function Layout({ children }: LayoutProps) {
                 key={item.href}
                 href={item.href}
                 className={`text-xs font-medium transition-colors tracking-wide whitespace-nowrap ${
-                  scrolled ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
+                  solid ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
                 }`}
               >
                 {item.label}
@@ -102,7 +111,7 @@ export default function Layout({ children }: LayoutProps) {
             <a
               href="tel:01277650584"
               className={`text-xs transition-colors flex items-center gap-1 ${
-                scrolled ? "text-[#1A2E45]/60 hover:text-[#1A2E45]" : "text-[#F8F4EF]/70 hover:text-[#F8F4EF]"
+                solid ? "text-[#1A2E45]/60 hover:text-[#1A2E45]" : "text-[#F8F4EF]/70 hover:text-[#F8F4EF]"
               }`}
             >
               <Phone className="w-3.5 h-3.5" />
@@ -118,7 +127,7 @@ export default function Layout({ children }: LayoutProps) {
 
           {/* Mobile menu button */}
           <button
-            className={`lg:hidden p-2 transition-colors ${scrolled || menuOpen ? "text-[#1A2E45]" : "text-[#F8F4EF]"}`}
+            className={`lg:hidden p-2 transition-colors ${solid || menuOpen ? "text-[#1A2E45]" : "text-[#F8F4EF]"}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
