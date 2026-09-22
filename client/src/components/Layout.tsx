@@ -194,10 +194,22 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
                 Independent opticians serving Essex since 1984. Two locations: Stratton in Billericay and Bentley in Leigh-on-Sea. Advanced clinical care and curated designer eyewear.
               </p>
               <div className="flex gap-4 pt-2">
-                <a href="#" className="w-9 h-9 rounded-full border border-[#F8F4EF]/15 flex items-center justify-center text-[#F8F4EF]/50 hover:text-[#C9A96E] hover:border-[#C9A96E]/40 transition-all">
+                <a
+                  href="https://www.instagram.com/strattonopticians.billericay/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Stratton Opticians on Instagram"
+                  className="w-9 h-9 rounded-full border border-[#F8F4EF]/15 flex items-center justify-center text-[#F8F4EF]/50 hover:text-[#C9A96E] hover:border-[#C9A96E]/40 transition-all"
+                >
                   <Instagram className="w-4 h-4" />
                 </a>
-                <a href="#" className="w-9 h-9 rounded-full border border-[#F8F4EF]/15 flex items-center justify-center text-[#F8F4EF]/50 hover:text-[#C9A96E] hover:border-[#C9A96E]/40 transition-all">
+                <a
+                  href="https://www.facebook.com/strattonopticians/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Stratton Opticians on Facebook"
+                  className="w-9 h-9 rounded-full border border-[#F8F4EF]/15 flex items-center justify-center text-[#F8F4EF]/50 hover:text-[#C9A96E] hover:border-[#C9A96E]/40 transition-all"
+                >
                   <Facebook className="w-4 h-4" />
                 </a>
               </div>

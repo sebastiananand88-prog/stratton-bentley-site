@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { MapPin, Phone, Mail, Clock, Facebook } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
 import { useState } from "react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
@@ -246,13 +246,26 @@ export default function Contact() {
           >
             Follow us
           </h2>
-          <a
-            href="https://facebook.com"
-            className="inline-flex items-center gap-2 text-[#C9A96E] hover:text-[#C9A96E]/80 transition-colors"
-          >
-            <Facebook className="w-5 h-5" />
-            <span>Find us on Facebook</span>
-          </a>
+          <div className="flex flex-wrap gap-8">
+            <a
+              href="https://www.facebook.com/strattonopticians/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[#C9A96E] hover:text-[#C9A96E]/80 transition-colors"
+            >
+              <Facebook className="w-5 h-5" />
+              <span>Find us on Facebook</span>
+            </a>
+            <a
+              href="https://www.instagram.com/strattonopticians.billericay/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[#C9A96E] hover:text-[#C9A96E]/80 transition-colors"
+            >
+              <Instagram className="w-5 h-5" />
+              <span>Find us on Instagram</span>
+            </a>
+          </div>
         </div>
       </section>
     </Layout>
