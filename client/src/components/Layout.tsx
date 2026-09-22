@@ -220,7 +220,7 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
 
             <div className="space-y-4">
               <p className="text-xs uppercase tracking-[0.2em] text-[#C9A96E] font-semibold">Explore</p>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-[#F8F4EF]/50 font-light">
+              <div className="flex flex-col gap-2 text-sm text-[#F8F4EF]/50 font-light">
                 {[
                   { label: "Home", href: "/" },
                   { label: "About", href: "/about" },
