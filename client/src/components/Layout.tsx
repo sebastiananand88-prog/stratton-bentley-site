@@ -34,7 +34,9 @@ export default function Layout({ children }: LayoutProps) {
           {/* Logo */}
           <a href="/" className="flex flex-col leading-none group shrink-0">
             <span
-              className="text-2xl lg:text-2.5xl font-semibold tracking-tight text-[#1A2E45] transition-opacity group-hover:opacity-80"
+              className={`text-2xl lg:text-2.5xl font-semibold tracking-tight transition-colors group-hover:opacity-80 ${
+                scrolled || menuOpen ? "text-[#1A2E45]" : "text-[#F8F4EF]"
+              }`}
               style={{ fontFamily: "'Cormorant Garamond', serif", letterSpacing: "0.04em" }}
             >
               STRATTON
@@ -62,7 +64,9 @@ export default function Layout({ children }: LayoutProps) {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-xs font-medium text-[#1A2E45]/70 hover:text-[#1A2E45] transition-colors tracking-wide whitespace-nowrap"
+                className={`text-xs font-medium transition-colors tracking-wide whitespace-nowrap ${
+                  scrolled ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
+                }`}
               >
                 {item.label}
               </a>
@@ -84,7 +88,9 @@ export default function Layout({ children }: LayoutProps) {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-xs font-medium text-[#1A2E45]/70 hover:text-[#1A2E45] transition-colors tracking-wide whitespace-nowrap"
+                className={`text-xs font-medium transition-colors tracking-wide whitespace-nowrap ${
+                  scrolled ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
+                }`}
               >
                 {item.label}
               </a>
@@ -95,7 +101,9 @@ export default function Layout({ children }: LayoutProps) {
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <a
               href="tel:01277650584"
-              className="text-xs text-[#1A2E45]/60 hover:text-[#1A2E45] transition-colors flex items-center gap-1"
+              className={`text-xs transition-colors flex items-center gap-1 ${
+                scrolled ? "text-[#1A2E45]/60 hover:text-[#1A2E45]" : "text-[#F8F4EF]/70 hover:text-[#F8F4EF]"
+              }`}
             >
               <Phone className="w-3.5 h-3.5" />
               <span className="hidden xl:inline">01277 650584</span>
@@ -110,7 +118,7 @@ export default function Layout({ children }: LayoutProps) {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 text-[#1A2E45]"
+            className={`lg:hidden p-2 transition-colors ${scrolled || menuOpen ? "text-[#1A2E45]" : "text-[#F8F4EF]"}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
