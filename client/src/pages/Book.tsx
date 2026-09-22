@@ -39,9 +39,9 @@ export default function Book() {
               {
                 icon: MessageCircle,
                 title: "WhatsApp",
-                contact: "Message us",
-                desc: "Send a message and we'll get back to you at our earliest convenience.",
-                link: "#",
+                contact: "Coming soon",
+                desc: "WhatsApp messaging isn't set up yet -- please call or email for now.",
+                link: null,
               },
               {
                 icon: Mail,
@@ -50,23 +50,35 @@ export default function Book() {
                 desc: "Drop us a line and let us know what you're looking for.",
                 link: "mailto:info@strattonopticians.co.uk",
               },
-            ].map((option, i) => (
-              <a
-                key={i}
-                href={option.link}
-                className="p-8 bg-white rounded-lg border border-[#1A2E45]/10 hover:border-[#C9A96E]/50 hover:shadow-lg transition-all duration-300 space-y-4 group"
-              >
-                <option.icon className="w-8 h-8 text-[#C9A96E] group-hover:text-[#C9A96E]" />
-                <h3
-                  className="text-2xl font-light text-[#1A2E45]"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                >
-                  {option.title}
-                </h3>
-                <p className="font-semibold text-[#C9A96E] text-sm">{option.contact}</p>
-                <p className="text-[#1A2E45]/70 leading-relaxed font-light text-sm">{option.desc}</p>
-              </a>
-            ))}
+            ].map((option, i) => {
+              const cardClasses =
+                "p-8 rounded-lg border space-y-4 group transition-all duration-300" +
+                (option.link
+                  ? " bg-white border-[#1A2E45]/10 hover:border-[#C9A96E]/50 hover:shadow-lg"
+                  : " bg-[#1A2E45]/5 border-[#1A2E45]/10 opacity-60 cursor-not-allowed");
+              const content = (
+                <>
+                  <option.icon className="w-8 h-8 text-[#C9A96E] group-hover:text-[#C9A96E]" />
+                  <h3
+                    className="text-2xl font-light text-[#1A2E45]"
+                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  >
+                    {option.title}
+                  </h3>
+                  <p className="font-semibold text-[#C9A96E] text-sm">{option.contact}</p>
+                  <p className="text-[#1A2E45]/70 leading-relaxed font-light text-sm">{option.desc}</p>
+                </>
+              );
+              return option.link ? (
+                <a key={i} href={option.link} className={cardClasses}>
+                  {content}
+                </a>
+              ) : (
+                <div key={i} className={cardClasses} aria-disabled="true">
+                  {content}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

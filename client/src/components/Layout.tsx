@@ -1,6 +1,6 @@
 import { useEffect, useState, ReactNode } from "react";
-import BookingModal from "@/components/BookingModal";
 import { Phone, Mail, Instagram, Facebook, Menu, X } from "lucide-react";
+import CookieConsent from "@/components/CookieConsent";
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,7 +13,6 @@ interface LayoutProps {
 
 export default function Layout({ children, transparentHero = false }: LayoutProps) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [bookingOpen, setBookingOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   // Track scroll for header background
@@ -117,12 +116,12 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
               <Phone className="w-3.5 h-3.5" />
               <span className="hidden xl:inline">01277 650584</span>
             </a>
-            <button
-              onClick={() => setBookingOpen(true)}
+            <a
+              href="/book"
               className="px-5 py-2.5 bg-[#1A2E45] text-[#F8F4EF] text-xs font-medium tracking-wide rounded-full hover:bg-[#1A2E45]/90 active:scale-[0.97] transition-all duration-150 shrink-0"
             >
               Book
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -165,12 +164,13 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
                 <Phone className="w-4 h-4" />
                 01277 650584
               </a>
-              <button
-                onClick={() => { setBookingOpen(true); setMenuOpen(false); }}
-                className="w-full mt-4 px-5 py-3 bg-[#1A2E45] text-[#F8F4EF] text-sm font-medium tracking-wide rounded-full"
+              <a
+                href="/book"
+                onClick={() => setMenuOpen(false)}
+                className="block w-full mt-4 px-5 py-3 bg-[#1A2E45] text-[#F8F4EF] text-sm font-medium tracking-wide rounded-full text-center"
               >
                 Book Appointment
-              </button>
+              </a>
             </div>
           </div>
         )}
@@ -252,19 +252,18 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
           <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#F8F4EF]/25">
             <div className="space-y-1 text-center sm:text-left">
               <p>© 2026 Stratton Opticians. All rights reserved.</p>
-              <p className="text-[#F8F4EF]/20">Our sister practice: <a href="#" className="hover:text-[#C9A96E] transition-colors text-[#F8F4EF]/40">Bentley Opticians, Leigh-on-Sea</a></p>
+              <p className="text-[#F8F4EF]/20">Our sister practice: <a href="https://www.bentleyopticians.co.uk/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors text-[#F8F4EF]/40">Bentley Opticians, Leigh-on-Sea</a></p>
             </div>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-[#F8F4EF]/50 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-[#F8F4EF]/50 transition-colors">Cookie Policy</a>
-              <a href="#" className="hover:text-[#F8F4EF]/50 transition-colors">GOC Registered</a>
+              <a href="/privacy-policy" className="hover:text-[#F8F4EF]/50 transition-colors">Privacy Policy</a>
+              <a href="/cookie-policy" className="hover:text-[#F8F4EF]/50 transition-colors">Cookie Policy</a>
+              <a href="https://www.optical.org/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F8F4EF]/50 transition-colors">GOC Registered</a>
             </div>
           </div>
         </div>
       </footer>
 
-      {/* Booking Modal */}
-      <BookingModal open={bookingOpen} onOpenChange={setBookingOpen} />
+      <CookieConsent />
     </div>
   );
 }

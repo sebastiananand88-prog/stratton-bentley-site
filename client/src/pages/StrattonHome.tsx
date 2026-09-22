@@ -566,7 +566,11 @@ export default function StrattonHome() {
               <div className="space-y-3">
                 <p className="text-[#F8F4EF]/70 text-sm flex items-center gap-2">
                   <MapPin className="w-3.5 h-3.5 shrink-0 text-[#C9A96E]" />
-                  Leigh-on-Sea, Essex
+                  276 Eastwood Road North, Leigh-on-Sea SS9 4LS
+                </p>
+                <p className="text-[#F8F4EF]/70 text-sm flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 shrink-0 text-[#C9A96E]" />
+                  01702 520763
                 </p>
                 <button
                   onClick={() => window.location.href = '/book'}
