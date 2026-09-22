@@ -17,6 +17,8 @@ import VisualStress from "./pages/VisualStress";
 import Faq from "./pages/Faq";
 import Book from "./pages/Book";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiePolicy from "./pages/CookiePolicy";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -33,6 +35,8 @@ function Router() {
       <Route path={"/faq"} component={Faq} />
       <Route path={"/book"} component={Book} />
       <Route path={"/contact"} component={Contact} />
+      <Route path={"/privacy-policy"} component={PrivacyPolicy} />
+      <Route path={"/cookie-policy"} component={CookiePolicy} />
       <Route path={"/audit"} component={Home} />
       <Route path={"/test"} component={TestPage} />
       <Route path={"/404"} component={NotFound} />

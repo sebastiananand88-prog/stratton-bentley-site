@@ -1,7 +1,10 @@
 import Layout from "@/components/Layout";
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
-import { useState } from "react";
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, ExternalLink } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useMetaTags } from "@/hooks/useMetaTags";
+import { getConsent, onConsentChange, setConsent } from "@/lib/cookieConsent";
+
+const MAP_QUERY = "Stratton+Opticians,14+The+Pantiles,Queens+Park+Avenue,Billericay,CM12+0UA";
 
 export default function Contact() {
   useMetaTags({
@@ -11,6 +14,9 @@ export default function Contact() {
   });
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [mapConsented, setMapConsented] = useState(() => getConsent() === "accepted");
+
+  useEffect(() => onConsentChange((status) => setMapConsented(status === "accepted")), []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -163,15 +169,40 @@ export default function Contact() {
           >
             Find us
           </h2>
-          <div className="rounded-lg overflow-hidden border border-[#1A2E45]/10">
-            <iframe
-              title="Map showing Stratton Opticians at 14 The Pantiles, Queens Park Avenue, Billericay CM12 0UA"
-              src="https://www.google.com/maps?q=Stratton+Opticians,14+The+Pantiles,Queens+Park+Avenue,Billericay,CM12+0UA&output=embed"
-              className="w-full aspect-video border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
+          {mapConsented ? (
+            <div className="rounded-lg overflow-hidden border border-[#1A2E45]/10">
+              <iframe
+                title="Map showing Stratton Opticians at 14 The Pantiles, Queens Park Avenue, Billericay CM12 0UA"
+                src={`https://www.google.com/maps?q=${MAP_QUERY}&output=embed`}
+                className="w-full aspect-video border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          ) : (
+            <div className="rounded-lg border border-[#1A2E45]/10 bg-[#1A2E45]/5 aspect-video flex flex-col items-center justify-center gap-4 p-8 text-center">
+              <MapPin className="w-8 h-8 text-[#C9A96E]" />
+              <p className="text-[#1A2E45]/70 font-light max-w-sm">
+                The embedded map needs cookies you haven't accepted yet. You can enable it below, or open the location directly in Google Maps.
+              </p>
+              <div className="flex flex-wrap gap-3 justify-center">
+                <button
+                  onClick={() => setConsent("accepted")}
+                  className="px-5 py-2.5 bg-[#1A2E45] text-[#F8F4EF] text-xs font-medium tracking-wide rounded-full hover:bg-[#1A2E45]/90 transition-all"
+                >
+                  Enable map
+                </button>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${MAP_QUERY}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-5 py-2.5 border border-[#1A2E45]/20 text-[#1A2E45] text-xs font-medium tracking-wide rounded-full hover:bg-[#1A2E45]/5 transition-all"
+                >
+                  Open in Google Maps <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
