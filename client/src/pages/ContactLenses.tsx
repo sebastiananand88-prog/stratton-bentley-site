@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import FaqSection from "@/components/FaqSection";
+import { getFaqItems } from "@/lib/faqData";
 import { Eye, Shield, Heart } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
@@ -131,6 +133,7 @@ export default function ContactLenses() {
           </a>
         </div>
       </section>
+      <FaqSection items={getFaqItems("contact-lenses")} />
     </Layout>
   );
 }

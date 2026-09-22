@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import FaqSection from "@/components/FaqSection";
+import { getFaqItems } from "@/lib/faqData";
 import { Zap, Eye, Shield, ArrowRight } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
@@ -180,6 +182,7 @@ export default function OctScans() {
           </a>
         </div>
       </section>
+      <FaqSection items={getFaqItems("oct-scans")} />
     </Layout>
   );
 }

@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import FaqSection from "@/components/FaqSection";
+import { getFaqItems } from "@/lib/faqData";
 import { Eye, Zap, Heart, AlertCircle } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
@@ -162,6 +164,7 @@ export default function VisualStress() {
           </a>
         </div>
       </section>
+      <FaqSection items={getFaqItems("visual-stress-assessments")} />
     </Layout>
   );
 }

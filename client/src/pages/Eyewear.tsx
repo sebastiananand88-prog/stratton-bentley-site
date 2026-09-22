@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import FaqSection from "@/components/FaqSection";
+import { getFaqItems } from "@/lib/faqData";
 import { Glasses, Palette, Sun } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
@@ -205,6 +207,7 @@ export default function Eyewear() {
           </a>
         </div>
       </section>
+      <FaqSection items={getFaqItems("varifocals", "essilor-lenses")} />
     </Layout>
   );
 }

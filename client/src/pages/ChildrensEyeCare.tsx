@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import FaqSection from "@/components/FaqSection";
+import { getFaqItems } from "@/lib/faqData";
 import { Heart, Eye, Shield, CheckCircle2 } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
@@ -139,6 +141,7 @@ export default function ChildrensEyeCare() {
           </a>
         </div>
       </section>
+      <FaqSection items={getFaqItems("childrens-eye-care")} />
     </Layout>
   );
 }
