@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Sparkles, Loader2 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Sparkles, Loader2, X } from "lucide-react";
+import { getConsent, onConsentChange } from "@/lib/cookieConsent";
 
 const EXAMPLE_QUESTIONS = [
   "How much does an eye examination cost?",
@@ -9,10 +10,28 @@ const EXAMPLE_QUESTIONS = [
 ];
 
 export default function AskAI() {
+  const [open, setOpen] = useState(false);
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  // Nudge the widget up while the cookie banner is still showing, so they don't overlap.
+  const [cookieBannerVisible, setCookieBannerVisible] = useState(() => getConsent() === null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const launcherRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => onConsentChange(() => setCookieBannerVisible(false)), []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onClickOutside = (e: MouseEvent) => {
+      const target = e.target as Node;
+      if (panelRef.current?.contains(target) || launcherRef.current?.contains(target)) return;
+      setOpen(false);
+    };
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
+  }, [open]);
 
   const ask = async (q: string) => {
     const trimmed = q.trim();
@@ -45,76 +64,89 @@ export default function AskAI() {
   };
 
   return (
-    <section className="py-16 max-w-4xl mx-auto px-6 lg:px-10">
-      <div className="bg-[#1A2E45] rounded-2xl p-8 sm:p-10 space-y-6">
-        <div className="flex items-center gap-2.5">
-          <Sparkles className="w-5 h-5 text-[#C9A96E]" />
-          <h2
-            className="text-2xl sm:text-3xl font-light text-[#F8F4EF]"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
-          >
-            Ask us a question
-          </h2>
+    <>
+      <button
+        ref={launcherRef}
+        onClick={() => setOpen((o) => !o)}
+        aria-label={open ? "Close question box" : "Ask us a question"}
+        aria-expanded={open}
+        className={`fixed right-5 sm:right-6 z-40 w-14 h-14 rounded-full bg-[#1A2E45] text-[#F8F4EF] shadow-lg flex items-center justify-center hover:bg-[#1A2E45]/90 active:scale-95 transition-all duration-200 ${
+          cookieBannerVisible ? "bottom-24" : "bottom-5 sm:bottom-6"
+        }`}
+      >
+        {open ? <X className="w-5 h-5" /> : <Sparkles className="w-5 h-5" />}
+      </button>
+
+      {open && (
+        <div
+          ref={panelRef}
+          className={`fixed right-5 sm:right-6 z-40 w-[calc(100vw-2.5rem)] sm:w-96 max-h-[70vh] overflow-y-auto bg-[#1A2E45] rounded-2xl shadow-2xl p-6 space-y-5 ${
+            cookieBannerVisible ? "bottom-[10.5rem]" : "bottom-24"
+          }`}
+        >
+          <div className="flex items-center gap-2.5">
+            <Sparkles className="w-5 h-5 text-[#C9A96E]" />
+            <h2
+              className="text-xl font-light text-[#F8F4EF]"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              Ask us a question
+            </h2>
+          </div>
+          <p className="text-[#F8F4EF]/60 text-xs font-light leading-relaxed">
+            For anything specific to your own eyes or prescription, please book an appointment or contact us
+            directly.
+          </p>
+
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+            <input
+              type="text"
+              autoFocus
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              placeholder="e.g. How much does an eye test cost?"
+              className="w-full px-4 py-3 rounded-full bg-[#F8F4EF]/10 text-[#F8F4EF] placeholder:text-[#F8F4EF]/40 border border-[#F8F4EF]/15 focus:outline-none focus:border-[#C9A96E] transition-colors text-sm"
+            />
+            <button
+              type="submit"
+              disabled={loading || !question.trim()}
+              className="px-6 py-3 bg-[#C9A96E] text-[#1A2E45] text-sm font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 active:scale-[0.97] transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            >
+              {loading && <Loader2 className="w-4 h-4 animate-spin" />}
+              {loading ? "Thinking..." : "Ask"}
+            </button>
+          </form>
+
+          {!answer && !loading && !error && (
+            <div className="flex flex-wrap gap-2">
+              {EXAMPLE_QUESTIONS.map((q) => (
+                <button
+                  key={q}
+                  onClick={() => {
+                    setQuestion(q);
+                    ask(q);
+                  }}
+                  className="px-3 py-1.5 rounded-full border border-[#F8F4EF]/15 text-[#F8F4EF]/70 text-xs hover:border-[#C9A96E]/50 hover:text-[#F8F4EF] transition-colors"
+                >
+                  {q}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {error && (
+            <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-[#F8F4EF]/80 text-sm">
+              {error}
+            </div>
+          )}
+
+          {answer && (
+            <div className="p-4 rounded-lg bg-[#F8F4EF]/5 border border-[#F8F4EF]/10 text-[#F8F4EF]/90 text-sm leading-relaxed">
+              {answer}
+            </div>
+          )}
         </div>
-        <p className="text-[#F8F4EF]/60 text-sm font-light leading-relaxed">
-          Can't find what you're looking for below? Ask in your own words. For anything specific to your own eyes or
-          prescription, please book an appointment or contact us directly.
-        </p>
-
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-          <input
-            type="text"
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-            placeholder="e.g. How much does an eye test cost?"
-            className="flex-1 px-4 py-3 rounded-full bg-[#F8F4EF]/10 text-[#F8F4EF] placeholder:text-[#F8F4EF]/40 border border-[#F8F4EF]/15 focus:outline-none focus:border-[#C9A96E] transition-colors text-sm"
-          />
-          <button
-            type="submit"
-            disabled={loading || !question.trim()}
-            className="px-6 py-3 bg-[#C9A96E] text-[#1A2E45] text-sm font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 active:scale-[0.97] transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shrink-0"
-          >
-            {loading && <Loader2 className="w-4 h-4 animate-spin" />}
-            {loading ? "Thinking..." : "Ask"}
-          </button>
-        </form>
-
-        {!answer && !loading && !error && (
-          <div className="flex flex-wrap gap-2 pt-1">
-            {EXAMPLE_QUESTIONS.map((q) => (
-              <button
-                key={q}
-                onClick={() => {
-                  setQuestion(q);
-                  ask(q);
-                }}
-                className="px-3 py-1.5 rounded-full border border-[#F8F4EF]/15 text-[#F8F4EF]/70 text-xs hover:border-[#C9A96E]/50 hover:text-[#F8F4EF] transition-colors"
-              >
-                {q}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {loading && (
-          <div className="flex items-center gap-2 text-[#F8F4EF]/60 text-sm">
-            <Loader2 className="w-4 h-4 animate-spin" />
-            Finding the best answer...
-          </div>
-        )}
-
-        {error && (
-          <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-[#F8F4EF]/80 text-sm">
-            {error}
-          </div>
-        )}
-
-        {answer && (
-          <div className="p-5 rounded-lg bg-[#F8F4EF]/5 border border-[#F8F4EF]/10 text-[#F8F4EF]/90 text-sm leading-relaxed">
-            {answer}
-          </div>
-        )}
-      </div>
-    </section>
+      )}
+    </>
   );
 }
