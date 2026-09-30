@@ -1,13 +1,28 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import Anthropic from "@anthropic-ai/sdk";
+import { buildKnowledgeBase } from "./lib/knowledge";
 
 const MAX_QUESTION_LENGTH = 400;
 
 const DEBUG = true; // TEMP: include real error details in the response while diagnosing production crashes.
 
+const SYSTEM_PROMPT = `You are an AI assistant answering questions on the Stratton Opticians website, an independent optician in Billericay, Essex (sister practice: Bentley Opticians, Leigh-on-Sea).
+
+Answer patient questions using ONLY the information below. Do not use outside knowledge, and do not guess.
+
+Rules:
+- Keep answers short: 2-4 sentences.
+- Friendly, clear, professional tone -- no jargon.
+- Never give a diagnosis, personal clinical advice, or comment on someone's specific prescription or eye condition. For anything specific to the person asking, tell them to book an eye examination or contact the practice directly (phone 01277 650584, or the Contact page).
+- If the question isn't covered by the information below, say you don't have that information and suggest they contact the practice directly -- don't make something up.
+- If asked whether you're an AI, a bot, or a real person: be straightforward and confirm you're an AI assistant, trained to answer from this practice's website content.
+- For questions about privacy, cookies, or data handling, don't try to answer from memory -- point them to the Privacy Policy (/privacy-policy) or Cookie Policy (/cookie-policy) pages instead, since you don't have their exact wording.
+
+Practice information:
+
+${buildKnowledgeBase()}`;
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Everything -- including module-level work like the SDK import and building the
-  // system prompt -- happens inside this try/catch. Nothing should be able to crash
-  // the function without us at least returning a JSON error we can read.
   try {
     if (req.method !== "POST") {
       res.status(405).json({ error: "Method not allowed" });
@@ -31,30 +46,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return;
     }
 
-    const { buildKnowledgeBase } = await import("./lib/knowledge");
-    const { default: Anthropic } = await import("@anthropic-ai/sdk");
-
-    const systemPrompt = `You are an AI assistant answering questions on the Stratton Opticians website, an independent optician in Billericay, Essex (sister practice: Bentley Opticians, Leigh-on-Sea).
-
-Answer patient questions using ONLY the information below. Do not use outside knowledge, and do not guess.
-
-Rules:
-- Keep answers short: 2-4 sentences.
-- Friendly, clear, professional tone -- no jargon.
-- Never give a diagnosis, personal clinical advice, or comment on someone's specific prescription or eye condition. For anything specific to the person asking, tell them to book an eye examination or contact the practice directly (phone 01277 650584, or the Contact page).
-- If the question isn't covered by the information below, say you don't have that information and suggest they contact the practice directly -- don't make something up.
-- If asked whether you're an AI, a bot, or a real person: be straightforward and confirm you're an AI assistant, trained to answer from this practice's website content.
-- For questions about privacy, cookies, or data handling, don't try to answer from memory -- point them to the Privacy Policy (/privacy-policy) or Cookie Policy (/cookie-policy) pages instead, since you don't have their exact wording.
-
-Practice information:
-
-${buildKnowledgeBase()}`;
-
     const client = new Anthropic();
     const response = await client.messages.create({
       model: "claude-opus-5",
       max_tokens: 500,
-      system: systemPrompt,
+      system: SYSTEM_PROMPT,
       messages: [{ role: "user", content: question }],
     });
 
