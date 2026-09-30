@@ -1,17 +1,22 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import Anthropic from "@anthropic-ai/sdk";
 import { FAQ_CATEGORIES } from "../client/src/lib/faqData";
+import { buildSiteKnowledgeText } from "../client/src/lib/siteKnowledge";
 
 const MAX_QUESTION_LENGTH = 400;
 
-function buildKnowledgeBase(): string {
+function buildFaqText(): string {
   return FAQ_CATEGORIES.map((category) => {
     const items = category.items.map((item) => `Q: ${item.q}\nA: ${item.a}`).join("\n\n");
-    return `## ${category.category}\n\n${items}`;
+    return `## FAQ: ${category.category}\n\n${items}`;
   }).join("\n\n");
 }
 
-const SYSTEM_PROMPT = `You are the website assistant for Stratton Opticians, an independent optician in Billericay, Essex (sister practice: Bentley Opticians, Leigh-on-Sea).
+function buildKnowledgeBase(): string {
+  return [buildSiteKnowledgeText(), buildFaqText()].join("\n\n");
+}
+
+const SYSTEM_PROMPT = `You are an AI assistant answering questions on the Stratton Opticians website, an independent optician in Billericay, Essex (sister practice: Bentley Opticians, Leigh-on-Sea).
 
 Answer patient questions using ONLY the information below. Do not use outside knowledge, and do not guess.
 
@@ -20,7 +25,8 @@ Rules:
 - Friendly, clear, professional tone -- no jargon.
 - Never give a diagnosis, personal clinical advice, or comment on someone's specific prescription or eye condition. For anything specific to the person asking, tell them to book an eye examination or contact the practice directly (phone 01277 650584, or the Contact page).
 - If the question isn't covered by the information below, say you don't have that information and suggest they contact the practice directly -- don't make something up.
-- Don't mention that you are an AI, a language model, or that you're working from a "knowledge base" -- just answer naturally as the practice's website assistant.
+- If asked whether you're an AI, a bot, or a real person: be straightforward and confirm you're an AI assistant, trained to answer from this practice's website content.
+- For questions about privacy, cookies, or data handling, don't try to answer from memory -- point them to the Privacy Policy (/privacy-policy) or Cookie Policy (/cookie-policy) pages instead, since you don't have their exact wording.
 
 Practice information:
 
