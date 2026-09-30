@@ -1,6 +1,7 @@
 import { useEffect, useState, ReactNode } from "react";
 import { Phone, Mail, Instagram, Facebook, Menu, X, ChevronDown } from "lucide-react";
 import CookieConsent from "@/components/CookieConsent";
+import AskAI from "@/components/AskAI";
 
 const SERVICES = [
   { label: "Eye Examinations", href: "/eye-examinations" },
@@ -234,6 +235,8 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
 
       {/* ── MAIN CONTENT ── */}
       <main className="min-h-screen">{children}</main>
+
+      <AskAI />
 
       {/* ── FOOTER ── */}
       <footer className="bg-[#0F1B2D] py-16">

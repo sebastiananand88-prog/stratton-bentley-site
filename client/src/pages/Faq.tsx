@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import AskAI from "@/components/AskAI";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useMetaTags } from "@/hooks/useMetaTags";
@@ -76,8 +75,6 @@ export default function Faq() {
           </p>
         </div>
       </section>
-
-      <AskAI />
 
       {/* FAQs */}
       <section className="py-20 max-w-4xl mx-auto px-6 lg:px-10">
