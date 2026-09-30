@@ -39,9 +39,9 @@ export default function Book() {
               {
                 icon: MessageCircle,
                 title: "WhatsApp",
-                contact: "Coming soon",
-                desc: "WhatsApp messaging isn't set up yet -- please call or email for now.",
-                link: null,
+                contact: "Message us",
+                desc: "Send a message and we'll get back to you at our earliest convenience.",
+                link: "https://wa.me/447929049999",
               },
               {
                 icon: Mail,
@@ -69,8 +69,14 @@ export default function Book() {
                   <p className="text-[#1A2E45]/70 leading-relaxed font-light text-sm">{option.desc}</p>
                 </>
               );
+              const isExternal = option.link?.startsWith("http");
               return option.link ? (
-                <a key={i} href={option.link} className={cardClasses}>
+                <a
+                  key={i}
+                  href={option.link}
+                  {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className={cardClasses}
+                >
                   {content}
                 </a>
               ) : (
