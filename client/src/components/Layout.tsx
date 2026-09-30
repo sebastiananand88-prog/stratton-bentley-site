@@ -1,6 +1,15 @@
 import { useEffect, useState, ReactNode } from "react";
-import { Phone, Mail, Instagram, Facebook, Menu, X } from "lucide-react";
+import { Phone, Mail, Instagram, Facebook, Menu, X, ChevronDown } from "lucide-react";
 import CookieConsent from "@/components/CookieConsent";
+
+const SERVICES = [
+  { label: "Eye Examinations", href: "/eye-examinations" },
+  { label: "OCT Scans", href: "/oct-scans" },
+  { label: "Eyewear", href: "/eyewear" },
+  { label: "Contact Lenses", href: "/contact-lenses" },
+  { label: "Children's Eye Care", href: "/childrens-eye-care" },
+  { label: "Visual Stress", href: "/visual-stress-assessments" },
+];
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,6 +22,8 @@ interface LayoutProps {
 
 export default function Layout({ children, transparentHero = false }: LayoutProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   // Track scroll for header background
@@ -26,6 +37,11 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
 
   // Header is only ever transparent on pages that opt in AND haven't scrolled past their hero.
   const solid = !transparentHero || scrolled;
+
+  // Collapse the mobile services submenu whenever the mobile menu itself closes.
+  useEffect(() => {
+    if (!menuOpen) setMobileServicesOpen(false);
+  }, [menuOpen]);
 
   return (
     <div
@@ -50,61 +66,72 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
               STRATTON
             </span>
             <span
-              className="text-[8px] uppercase tracking-[0.25em] text-[#C9A96E] font-medium mt-0.5"
+              className="text-[8px] uppercase tracking-[0.2em] text-[#C9A96E] font-medium mt-1"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              Independent Opticians · Est. 1984
+              Independent Opticians &middot; Est. 1984
             </span>
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden 2xl:flex items-center gap-8">
-            {[
-              { label: "About", href: "/about" },
-              { label: "Eye Examinations", href: "/eye-examinations" },
-              { label: "OCT Scans", href: "/oct-scans" },
-              { label: "Eyewear", href: "/eyewear" },
-              { label: "Contact Lenses", href: "/contact-lenses" },
-              { label: "Children's Eye Care", href: "/childrens-eye-care" },
-              { label: "Visual Stress", href: "/visual-stress-assessments" },
-              { label: "FAQ", href: "/faq" },
-              { label: "Contact", href: "/contact" },
-            ].map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className={`text-xs font-medium transition-colors tracking-wide whitespace-nowrap ${
-                  solid ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
-                }`}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
+          <nav className="hidden lg:flex items-center gap-8">
+            <a
+              href="/about"
+              className={`text-xs font-medium transition-colors tracking-wide whitespace-nowrap ${
+                solid ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
+              }`}
+            >
+              About
+            </a>
 
-          {/* Desktop Nav (Compact for lg/xl) */}
-          <nav className="hidden lg:flex 2xl:hidden items-center gap-5">
-            {[
-              { label: "About", href: "/about" },
-              { label: "Eye Exams", href: "/eye-examinations" },
-              { label: "OCT Scans", href: "/oct-scans" },
-              { label: "Eyewear", href: "/eyewear" },
-              { label: "Contacts", href: "/contact-lenses" },
-              { label: "Children", href: "/childrens-eye-care" },
-              { label: "Visual Stress", href: "/visual-stress-assessments" },
-              { label: "FAQ", href: "/faq" },
-              { label: "Contact", href: "/contact" },
-            ].map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className={`text-xs font-medium transition-colors tracking-wide whitespace-nowrap ${
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                onClick={() => setServicesOpen((o) => !o)}
+                aria-expanded={servicesOpen}
+                className={`flex items-center gap-1 text-xs font-medium transition-colors tracking-wide whitespace-nowrap ${
                   solid ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
                 }`}
               >
-                {item.label}
-              </a>
-            ))}
+                Services
+                <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
+              </button>
+              {servicesOpen && (
+                <div className="absolute top-full left-0 pt-3">
+                  <div className="w-56 bg-[#F8F4EF] rounded-lg shadow-lg border border-[#1A2E45]/10 py-2">
+                    {SERVICES.map((item) => (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        className="block px-4 py-2.5 text-sm text-[#1A2E45]/70 hover:text-[#1A2E45] hover:bg-[#1A2E45]/5 transition-colors"
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <a
+              href="/faq"
+              className={`text-xs font-medium transition-colors tracking-wide whitespace-nowrap ${
+                solid ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
+              }`}
+            >
+              FAQ
+            </a>
+            <a
+              href="/contact"
+              className={`text-xs font-medium transition-colors tracking-wide whitespace-nowrap ${
+                solid ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
+              }`}
+            >
+              Contact
+            </a>
           </nav>
 
           {/* CTA */}
@@ -139,26 +166,52 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
         {/* Mobile menu */}
         {menuOpen && (
           <div className="lg:hidden bg-[#F8F4EF] border-t border-[#1A2E45]/10 px-6 py-6 space-y-2">
-            {[
-              { label: "About", href: "/about" },
-              { label: "Eye Examinations", href: "/eye-examinations" },
-              { label: "OCT Scans", href: "/oct-scans" },
-              { label: "Eyewear", href: "/eyewear" },
-              { label: "Contact Lenses", href: "/contact-lenses" },
-              { label: "Children's Eye Care", href: "/childrens-eye-care" },
-              { label: "Visual Stress", href: "/visual-stress-assessments" },
-              { label: "FAQ", href: "/faq" },
-              { label: "Contact", href: "/contact" },
-            ].map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="block text-base font-medium text-[#1A2E45]/80 hover:text-[#1A2E45] py-2"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
+            <a
+              href="/about"
+              className="block text-base font-medium text-[#1A2E45]/80 hover:text-[#1A2E45] py-2"
+              onClick={() => setMenuOpen(false)}
+            >
+              About
+            </a>
+
+            <button
+              onClick={() => setMobileServicesOpen((o) => !o)}
+              aria-expanded={mobileServicesOpen}
+              className="w-full flex items-center justify-between text-base font-medium text-[#1A2E45]/80 hover:text-[#1A2E45] py-2"
+            >
+              Services
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} />
+            </button>
+            {mobileServicesOpen && (
+              <div className="pl-4 space-y-1 border-l border-[#1A2E45]/10">
+                {SERVICES.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="block text-sm text-[#1A2E45]/70 hover:text-[#1A2E45] py-2"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            )}
+
+            <a
+              href="/faq"
+              className="block text-base font-medium text-[#1A2E45]/80 hover:text-[#1A2E45] py-2"
+              onClick={() => setMenuOpen(false)}
+            >
+              FAQ
+            </a>
+            <a
+              href="/contact"
+              className="block text-base font-medium text-[#1A2E45]/80 hover:text-[#1A2E45] py-2"
+              onClick={() => setMenuOpen(false)}
+            >
+              Contact
+            </a>
+
             <div className="pt-4 border-t border-[#1A2E45]/10">
               <a
                 href="tel:01277650584"
