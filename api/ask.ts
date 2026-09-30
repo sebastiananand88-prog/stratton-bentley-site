@@ -31,7 +31,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return;
     }
 
-    const { buildKnowledgeBase } = await import("./_lib/knowledge");
+    const { buildKnowledgeBase } = await import("./lib/knowledge");
     const { default: Anthropic } = await import("@anthropic-ai/sdk");
 
     const systemPrompt = `You are an AI assistant answering questions on the Stratton Opticians website, an independent optician in Billericay, Essex (sister practice: Bentley Opticians, Leigh-on-Sea).
