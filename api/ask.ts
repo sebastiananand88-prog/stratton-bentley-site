@@ -1,10 +1,40 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import Anthropic from "@anthropic-ai/sdk";
-import { buildKnowledgeBase } from "./_lib/knowledge";
 
 const MAX_QUESTION_LENGTH = 400;
 
-const SYSTEM_PROMPT = `You are an AI assistant answering questions on the Stratton Opticians website, an independent optician in Billericay, Essex (sister practice: Bentley Opticians, Leigh-on-Sea).
+const DEBUG = true; // TEMP: include real error details in the response while diagnosing production crashes.
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  // Everything -- including module-level work like the SDK import and building the
+  // system prompt -- happens inside this try/catch. Nothing should be able to crash
+  // the function without us at least returning a JSON error we can read.
+  try {
+    if (req.method !== "POST") {
+      res.status(405).json({ error: "Method not allowed" });
+      return;
+    }
+
+    const question = typeof req.body?.question === "string" ? req.body.question.trim() : "";
+
+    if (!question) {
+      res.status(400).json({ error: "Please enter a question." });
+      return;
+    }
+
+    if (question.length > MAX_QUESTION_LENGTH) {
+      res.status(400).json({ error: "That question is a bit long -- could you shorten it?" });
+      return;
+    }
+
+    if (!process.env.ANTHROPIC_API_KEY) {
+      res.status(500).json({ error: "The AI assistant isn't configured yet. Please contact us directly." });
+      return;
+    }
+
+    const { buildKnowledgeBase } = await import("./_lib/knowledge");
+    const { default: Anthropic } = await import("@anthropic-ai/sdk");
+
+    const systemPrompt = `You are an AI assistant answering questions on the Stratton Opticians website, an independent optician in Billericay, Essex (sister practice: Bentley Opticians, Leigh-on-Sea).
 
 Answer patient questions using ONLY the information below. Do not use outside knowledge, and do not guess.
 
@@ -20,35 +50,11 @@ Practice information:
 
 ${buildKnowledgeBase()}`;
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== "POST") {
-    res.status(405).json({ error: "Method not allowed" });
-    return;
-  }
-
-  const question = typeof req.body?.question === "string" ? req.body.question.trim() : "";
-
-  if (!question) {
-    res.status(400).json({ error: "Please enter a question." });
-    return;
-  }
-
-  if (question.length > MAX_QUESTION_LENGTH) {
-    res.status(400).json({ error: "That question is a bit long -- could you shorten it?" });
-    return;
-  }
-
-  if (!process.env.ANTHROPIC_API_KEY) {
-    res.status(500).json({ error: "The AI assistant isn't configured yet. Please contact us directly." });
-    return;
-  }
-
-  try {
     const client = new Anthropic();
     const response = await client.messages.create({
       model: "claude-opus-5",
       max_tokens: 500,
-      system: SYSTEM_PROMPT,
+      system: systemPrompt,
       messages: [{ role: "user", content: question }],
     });
 
@@ -68,6 +74,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(200).json({ answer });
   } catch (error) {
     console.error("AI ask error:", error);
-    res.status(502).json({ error: "Sorry, something went wrong. Please try again or contact us directly." });
+    const message = error instanceof Error ? error.message : String(error);
+    res.status(502).json({
+      error: "Sorry, something went wrong. Please try again or contact us directly.",
+      ...(DEBUG ? { debug: message } : {}),
+    });
   }
 }
