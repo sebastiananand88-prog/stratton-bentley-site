@@ -1,20 +1,8 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import Anthropic from "@anthropic-ai/sdk";
-import { FAQ_CATEGORIES } from "../client/src/lib/faqData";
-import { buildSiteKnowledgeText } from "../client/src/lib/siteKnowledge";
+import { buildKnowledgeBase } from "./_lib/knowledge";
 
 const MAX_QUESTION_LENGTH = 400;
-
-function buildFaqText(): string {
-  return FAQ_CATEGORIES.map((category) => {
-    const items = category.items.map((item) => `Q: ${item.q}\nA: ${item.a}`).join("\n\n");
-    return `## FAQ: ${category.category}\n\n${items}`;
-  }).join("\n\n");
-}
-
-function buildKnowledgeBase(): string {
-  return [buildSiteKnowledgeText(), buildFaqText()].join("\n\n");
-}
 
 const SYSTEM_PROMPT = `You are an AI assistant answering questions on the Stratton Opticians website, an independent optician in Billericay, Essex (sister practice: Bentley Opticians, Leigh-on-Sea).
 
