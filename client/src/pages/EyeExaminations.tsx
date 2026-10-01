@@ -169,11 +169,11 @@ export default function EyeExaminations() {
               className="text-4xl font-light text-[#1A2E45]"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              Both our optometrists have 15+ years of clinical experience
+              Our optometrist has 15+ years of clinical experience
             </h2>
           </div>
           <p className="text-[#1A2E45]/70 leading-relaxed font-light max-w-2xl">
-            Jas and Tan bring decades of combined expertise to every examination. They stay current with the latest techniques and technologies, and genuinely enjoy spending time with patients to understand their needs. You're not a time slot—you're someone they're invested in helping.
+            Jas brings over 15 years of clinical expertise to every examination. He stays current with the latest techniques and technologies, and genuinely enjoys spending time with patients to understand their needs. You're not a time slot—you're someone he's invested in helping.
           </p>
         </div>
       </section>
