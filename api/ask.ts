@@ -207,13 +207,6 @@ const LOCATIONS = [
     email: "info@strattonopticians.co.uk",
     parking: "Off-street parking available outside the practice; car park opposite.",
   },
-  {
-    name: "Bentley Opticians",
-    area: "Leigh-on-Sea",
-    address: "276 Eastwood Road North, Leigh-on-Sea, Essex, SS9 4LS",
-    phone: "01702 520763",
-    note: "Sister practice to Stratton Opticians, same ownership and philosophy, but run as a separate business. Has its own website at bentleyopticians.co.uk.",
-  },
 ];
 
 const OPENING_HOURS = [
@@ -316,7 +309,6 @@ function buildKnowledgeBase(): string {
       l.whatsapp ? `WhatsApp: ${l.whatsapp}` : null,
       l.email ? `Email: ${l.email}` : null,
       l.parking ?? null,
-      l.note ?? null,
     ]
       .filter(Boolean)
       .join("\n")
@@ -358,7 +350,7 @@ function buildKnowledgeBase(): string {
   ].join("\n\n");
 }
 
-const SYSTEM_PROMPT = `You are an AI assistant answering questions on the Stratton Opticians website, an independent optician in Billericay, Essex (sister practice: Bentley Opticians, Leigh-on-Sea).
+const SYSTEM_PROMPT = `You are an AI assistant answering questions on the Stratton Opticians website, an independent optician in Billericay, Essex.
 
 Answer patient questions using ONLY the information below. Do not use outside knowledge, and do not guess.
 

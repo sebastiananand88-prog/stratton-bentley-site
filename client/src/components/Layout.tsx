@@ -247,10 +247,10 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
                 className="text-xl font-semibold text-[#F8F4EF] tracking-wide"
                 style={{ fontFamily: "'Cormorant Garamond', serif", letterSpacing: "0.05em" }}
               >
-                STRATTON & BENTLEY OPTICIANS
+                STRATTON OPTICIANS
               </p>
               <p className="text-[#F8F4EF]/40 text-sm leading-relaxed font-light max-w-xs">
-                Independent opticians serving Essex since 1984. Two locations: Stratton in Billericay and Bentley in Leigh-on-Sea. Advanced clinical care and curated designer eyewear.
+                Independent opticians serving Billericay since 1984. Advanced clinical care and curated designer eyewear.
               </p>
               <div className="flex gap-4 pt-2">
                 <a

@@ -8,8 +8,8 @@ const IMAGES = {
 
 export default function About() {
   useMetaTags({
-    title: "Independent Opticians Essex — Stratton & Bentley Since 1984",
-    description: "Two independent optician locations in Essex serving Billericay & Leigh-on-Sea. Experienced optometrist Jas Chaggar, curated eyewear, advanced diagnostics.",
+    title: "Independent Opticians Billericay — Stratton Opticians Since 1976",
+    description: "Independent optician in Billericay, Essex, since 1976. Experienced optometrist Jas Chaggar, curated eyewear, advanced diagnostics.",
     canonical: "http://localhost:3001/about",
   });
 
@@ -26,7 +26,7 @@ export default function About() {
             Independent Opticians Serving Essex Since 1976
           </h1>
           <p className="text-lg text-[#1A2E45]/70 leading-relaxed font-light">
-            Since 1976, Stratton Opticians has been part of the Billericay community. We've built our practice on a simple belief: that eye care needn't be rushed, and that exceptional service sets us apart from every high-street chain. Today, we operate two locations—Stratton in Billericay and Bentley in Leigh-on-Sea—under the same ownership, philosophy, and commitment to excellence.
+            Since 1976, Stratton Opticians has been part of the Billericay community. We've built our practice on a simple belief: that eye care needn't be rushed, and that exceptional service sets us apart from every high-street chain.
           </p>
         </div>
       </section>

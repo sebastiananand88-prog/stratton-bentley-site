@@ -82,8 +82,8 @@ function StarRating({ count = 5 }: { count?: number }) {
 export default function StrattonHome() {
   // SEO Meta Tags
   useMetaTags({
-    title: "Opticians Billericay | Stratton & Bentley Opticians",
-    description: "Independent opticians in Billericay & Leigh-on-Sea since 1984. Advanced eye exams, OCT scans & designer eyewear. Book your appointment today.",
+    title: "Opticians Billericay | Stratton Opticians",
+    description: "Independent opticians in Billericay since 1984. Advanced eye exams, OCT scans & designer eyewear. Book your appointment today.",
     canonical: "http://localhost:3001/",
   });
 
@@ -133,7 +133,7 @@ export default function StrattonHome() {
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#C9A96E] animate-pulse" />
-              Billericay & Leigh-on-Sea, Essex
+              Billericay, Essex
             </div>
 
             <h1
@@ -193,8 +193,8 @@ export default function StrattonHome() {
             </div>
             <div className="h-8 w-px bg-[#F8F4EF]/15 hidden sm:block" />
             <div>
-              <p className="text-[#F8F4EF] text-sm font-semibold">2 Locations</p>
-              <p className="text-[#F8F4EF]/50 text-xs">Billericay & Leigh-on-Sea</p>
+              <p className="text-[#F8F4EF] text-sm font-semibold">NHS Provider</p>
+              <p className="text-[#F8F4EF]/50 text-xs">Registered & regulated</p>
             </div>
           </div>
         </div>
@@ -492,18 +492,17 @@ export default function StrattonHome() {
       >
         <div className="text-center mb-16">
           <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold mb-4">
-            Two Locations
+            Visit Us
           </p>
           <h2
             className="text-4xl lg:text-5xl font-light text-[#1A2E45]"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            Find us in Essex.
+            Find us in Billericay.
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Billericay */}
+        <div className="max-w-xl mx-auto">
           <div className="group relative rounded-2xl overflow-hidden">
             <img
               src={IMAGES.store}
@@ -536,49 +535,6 @@ export default function StrattonHome() {
               >
                 Book Here <ArrowRight className="w-3.5 h-3.5" />
               </button>
-            </div>
-          </div>
-
-          {/* Leigh-on-Sea */}
-          <div className="group relative rounded-2xl overflow-hidden bg-[#1A2E45]">
-            <div className="absolute inset-0 opacity-20">
-              <img
-                src={IMAGES.boutique}
-                alt="Bentley Opticians Leigh-on-Sea"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div className="relative p-8 h-full flex flex-col justify-between min-h-[320px]">
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#C9A96E] font-semibold mb-2">
-                  Leigh-on-Sea
-                </p>
-                <h3
-                  className="text-2xl font-light text-[#F8F4EF] mb-3"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                >
-                  Bentley Opticians
-                </h3>
-                <p className="text-[#F8F4EF]/60 text-sm leading-relaxed font-light max-w-xs">
-                  Our sister practice serving the Leigh-on-Sea community with the same level of independent, personal eye care.
-                </p>
-              </div>
-              <div className="space-y-3">
-                <p className="text-[#F8F4EF]/70 text-sm flex items-center gap-2">
-                  <MapPin className="w-3.5 h-3.5 shrink-0 text-[#C9A96E]" />
-                  276 Eastwood Road North, Leigh-on-Sea SS9 4LS
-                </p>
-                <p className="text-[#F8F4EF]/70 text-sm flex items-center gap-2">
-                  <Phone className="w-3.5 h-3.5 shrink-0 text-[#C9A96E]" />
-                  01702 520763
-                </p>
-                <button
-                  onClick={() => window.location.href = '/book'}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#C9A96E]/50 text-[#C9A96E] text-xs font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/10 transition-all"
-                >
-                  Book Here <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
             </div>
           </div>
         </div>
