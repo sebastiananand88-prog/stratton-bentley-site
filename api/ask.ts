@@ -222,6 +222,33 @@ const OPENING_HOURS = [
   { days: "Sunday", hours: "Closed" },
 ];
 
+const FOUNDED = "Stratton Opticians has been part of the Billericay community since 1976.";
+
+const TEAM = [
+  {
+    name: "Jas Chaggar",
+    role: "Principal Optometrist & Owner",
+    bio: "Combines advanced clinical technology with a genuinely personal approach. Particular interest in soft contact lenses, post-cataract care, glaucoma refinement, diabetic eye assessments, and visual stress assessments for both adults and children.",
+  },
+  {
+    name: "Sheila",
+    role: "Lead Dispenser",
+    bio: "Has a real passion for helping patients find the perfect eyewear, taking the time to understand each person's needs and choosing frames and lenses that suit their style, personality and lifestyle.",
+  },
+  {
+    name: "Jen",
+    role: "Receptionist & Frame Advisor",
+    bio: "One of the friendly faces at the practice, welcoming patients, managing appointments, and helping people choose frames that suit their lifestyle and personal style.",
+  },
+];
+
+const SOCIAL_MEDIA = {
+  instagram: "https://www.instagram.com/strattonopticians.billericay/",
+  facebook: "https://www.facebook.com/strattonopticians/",
+};
+
+const REVIEWS = "5.0 Google rating from 119 Google reviews.";
+
 const SERVICES = [
   {
     name: "Eye Examinations",
@@ -297,16 +324,22 @@ function buildKnowledgeBase(): string {
 
   const hours = OPENING_HOURS.map((h) => `${h.days}: ${h.hours}`).join("\n");
   const services = SERVICES.map((s) => `${s.name} (${s.path}): ${s.summary}`).join("\n\n");
+  const team = TEAM.map((t) => `${t.name} -- ${t.role}. ${t.bio}`).join("\n\n");
+  const social = `Instagram: ${SOCIAL_MEDIA.instagram}\nFacebook: ${SOCIAL_MEDIA.facebook}`;
   const faqs = FAQ_CATEGORIES.map((category) => {
     const items = category.items.map((item) => `Q: ${item.q}\nA: ${item.a}`).join("\n\n");
     return `## FAQ: ${category.category}\n\n${items}`;
   }).join("\n\n");
 
   return [
+    "## About / History",
+    FOUNDED,
     "## Locations & Contact",
     locations,
     "## Opening Hours (Stratton Opticians, Billericay)",
     hours,
+    "## Team (Stratton Opticians, Billericay)",
+    team,
     "## Services",
     services,
     "## Designer Brands Stocked",
@@ -317,6 +350,10 @@ function buildKnowledgeBase(): string {
     ACCREDITATIONS.join(", "),
     "## Pricing",
     PRICING_NOTE,
+    "## Social Media",
+    social,
+    "## Reviews",
+    REVIEWS,
     faqs,
   ].join("\n\n");
 }
