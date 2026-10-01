@@ -15,8 +15,6 @@ import Anthropic from "@anthropic-ai/sdk";
 
 const MAX_QUESTION_LENGTH = 400;
 
-const DEBUG = true; // TEMP: include real error details in the response while diagnosing production crashes.
-
 interface FaqItem {
   q: string;
   a: string;
@@ -387,10 +385,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(200).json({ answer });
   } catch (error) {
     console.error("AI ask error:", error);
-    const message = error instanceof Error ? error.message : String(error);
-    res.status(502).json({
-      error: "Sorry, something went wrong. Please try again or contact us directly.",
-      ...(DEBUG ? { debug: message } : {}),
-    });
+    res.status(502).json({ error: "Sorry, something went wrong. Please try again or contact us directly." });
   }
 }

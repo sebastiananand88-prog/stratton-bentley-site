@@ -45,25 +45,14 @@ export default function AskAI() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: trimmed }),
       });
-
-      let data: { error?: string; debug?: string; answer?: string } | null = null;
-      let rawText: string | null = null;
-      try {
-        data = await res.json();
-      } catch {
-        rawText = await res.text().catch(() => null);
-      }
-
+      const data = await res.json();
       if (!res.ok) {
-        // TEMP while debugging production: surface the real error/status so we can see what's failing.
-        const detail = data?.debug ? ` [debug: ${data.debug}]` : rawText ? ` [status ${res.status}: ${rawText.slice(0, 200)}]` : ` [status ${res.status}]`;
-        setError((data?.error || "Something went wrong. Please try again.") + detail);
+        setError(data.error || "Something went wrong. Please try again.");
         return;
       }
-
-      setAnswer(data?.answer ?? "");
-    } catch (err) {
-      setError(`Something went wrong. Please check your connection and try again. [${err instanceof Error ? err.message : String(err)}]`);
+      setAnswer(data.answer);
+    } catch {
+      setError("Something went wrong. Please check your connection and try again.");
     } finally {
       setLoading(false);
     }
