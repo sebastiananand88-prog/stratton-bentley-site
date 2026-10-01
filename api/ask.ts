@@ -337,6 +337,13 @@ Practice information:
 
 ${buildKnowledgeBase()}`;
 
+const MAX_MESSAGES = 20;
+
+interface IncomingMessage {
+  role: "user" | "assistant";
+  content: string;
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     if (req.method !== "POST") {
@@ -344,15 +351,31 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return;
     }
 
-    const question = typeof req.body?.question === "string" ? req.body.question.trim() : "";
+    const incoming = Array.isArray(req.body?.messages) ? (req.body.messages as unknown[]) : null;
 
-    if (!question) {
+    if (!incoming || incoming.length === 0) {
       res.status(400).json({ error: "Please enter a question." });
       return;
     }
 
-    if (question.length > MAX_QUESTION_LENGTH) {
-      res.status(400).json({ error: "That question is a bit long -- could you shorten it?" });
+    if (incoming.length > MAX_MESSAGES) {
+      res.status(400).json({ error: "This conversation has gotten a bit long -- please start a new one." });
+      return;
+    }
+
+    const messages: IncomingMessage[] = [];
+    for (const raw of incoming) {
+      const m = raw as { role?: unknown; content?: unknown };
+      if ((m.role !== "user" && m.role !== "assistant") || typeof m.content !== "string") {
+        res.status(400).json({ error: "Please enter a question." });
+        return;
+      }
+      const content = m.content.trim().slice(0, MAX_QUESTION_LENGTH);
+      if (content) messages.push({ role: m.role, content });
+    }
+
+    if (messages.length === 0 || messages[messages.length - 1].role !== "user") {
+      res.status(400).json({ error: "Please enter a question." });
       return;
     }
 
@@ -366,7 +389,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       model: "claude-opus-5",
       max_tokens: 500,
       system: SYSTEM_PROMPT,
-      messages: [{ role: "user", content: question }],
+      messages,
     });
 
     let answer = "";
