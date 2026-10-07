@@ -149,7 +149,7 @@ const FAQ_CATEGORIES: FaqCategory[] = [
     items: [
       {
         q: "What is visual stress?",
-        a: "Visual stress is discomfort or difficulty processing visual information, often causing symptoms like words appearing to move or shimmer, eye strain, headaches, and fatigue when reading—despite having normal vision and prescription. It's distinct from dyslexia but can coexist.",
+        a: "Visual stress is discomfort or difficulty processing visual information, often causing symptoms like words appearing to move or shimmer, eye strain, headaches, and fatigue when reading—despite having normal vision and prescription. This can be linked to dyslexia, but a visual stress assessment is not an assessment or diagnosis of dyslexia.",
       },
       {
         q: "How can ChromaGen lenses help with reading difficulties?",
@@ -187,7 +187,7 @@ const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "How do I book an appointment?",
-        a: "You can book online via our website, call us on 01277 650584, or email info@strattonopticians.co.uk. We typically have availability within 1-2 weeks and always aim to accommodate urgent needs quickly.",
+        a: "You can book online via our website, call us on 01277 650584, or email info@strattonopticians.co.uk. We typically have availability within 1-2 weeks, and do our best to accommodate urgent needs as quickly as we can.",
       },
       {
         q: "What if I'm new to the practice?",
@@ -215,7 +215,7 @@ const OPENING_HOURS = [
   { days: "Sunday", hours: "Closed" },
 ];
 
-const FOUNDED = "Stratton Opticians has been part of the Billericay community since 1976.";
+const FOUNDED = "Stratton Opticians has been part of the Billericay community since 1984.";
 
 const TEAM = [
   {
@@ -277,7 +277,7 @@ const SERVICES = [
     name: "Visual Stress & Colourimetry Assessments",
     path: "/visual-stress-assessments",
     summary:
-      "Assessments for visual stress and reading difficulties using ChromaGen tinted lenses, for both children and adults. Distinct from dyslexia, though the two can coexist.",
+      "ChromaGen tinted lens assessments for people experiencing visual discomfort when reading, for both children and adults. This can be linked to dyslexia, but it is not an assessment or diagnosis of dyslexia.",
   },
 ];
 
@@ -359,6 +359,8 @@ Rules:
 - Plain text only -- no markdown (no **bold**, no headers, no bullet points). This is rendered as plain text, so markdown syntax would show up as literal asterisks and hashes.
 - Friendly, clear, professional tone -- no jargon.
 - Never give a diagnosis, personal clinical advice, or comment on someone's specific prescription or eye condition. For anything specific to the person asking, tell them to book an eye examination or contact the practice directly (phone 01277 650584, or the Contact page).
+- If a question is urgent or sounds like a clinical emergency (sudden vision loss, eye injury, severe pain, flashes/floaters, etc.), don't attempt to triage it yourself -- tell them to call the practice directly on 01277 650584 straight away, or seek urgent medical care if the practice is closed.
+- Never say the practice assesses, diagnoses, or treats dyslexia. Visual stress assessments can be linked to dyslexia, but always make clear they are not an assessment or diagnosis of dyslexia itself.
 - If the question isn't covered by the information below, say you don't have that information and suggest they contact the practice directly -- don't make something up.
 - If asked whether you're an AI, a bot, or a real person: be straightforward and confirm you're an AI assistant, trained to answer from this practice's website content.
 - For questions about privacy, cookies, or data handling, don't try to answer from memory -- point them to the Privacy Policy (/privacy-policy) or Cookie Policy (/cookie-policy) pages instead, since you don't have their exact wording.

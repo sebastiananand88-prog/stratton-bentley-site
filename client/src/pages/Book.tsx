@@ -1,16 +1,18 @@
 import Layout from "@/components/Layout";
-import { Phone, Mail, MessageCircle, Calendar } from "lucide-react";
+import { Phone, Mail, MessageCircle, Calendar, ArrowRight } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
+
+const BOOKING_URL = "https://patientbookings.co.uk/StrattonOpticians";
 
 export default function Book() {
   useMetaTags({
     title: "Book Eye Appointment Billericay — Stratton Opticians",
-    description: "Book your eye appointment in Billericay. Online booking, phone, email & WhatsApp. Same-day or next-day available. Emergency appointments welcome.",
+    description: "Book your eye appointment in Billericay online, by phone, email or WhatsApp. Same-day or next-day appointments where available.",
     canonical: "http://localhost:3001/book",
   });
   return (
     <Layout>
-      <section className="pt-32 pb-20 max-w-7xl mx-auto px-6 lg:px-10">
+      <section className="pt-32 pb-12 max-w-7xl mx-auto px-6 lg:px-10">
         <div className="space-y-6 max-w-3xl">
           <p className="text-[#C9A96E] text-sm uppercase tracking-[0.2em] font-semibold">Book Your Visit</p>
           <h1
@@ -20,9 +22,39 @@ export default function Book() {
             Book Your Eye Appointment in Billericay
           </h1>
           <p className="text-lg text-[#1A2E45]/70 leading-relaxed font-light">
-            Choose whichever works best for you. All three options lead to the same exceptional service—we just want to make it easy.
+            Choose whichever works best for you. All options lead to the same exceptional service—we just want to make it easy.
           </p>
         </div>
+      </section>
+
+      {/* Primary booking CTA */}
+      <section className="pb-20 max-w-7xl mx-auto px-6 lg:px-10">
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex flex-col sm:flex-row items-center justify-between gap-6 p-8 sm:p-10 bg-[#1A2E45] rounded-2xl"
+        >
+          <div className="flex items-center gap-5">
+            <div className="w-14 h-14 rounded-full bg-[#C9A96E]/15 flex items-center justify-center shrink-0">
+              <Calendar className="w-6 h-6 text-[#C9A96E]" />
+            </div>
+            <div>
+              <h2
+                className="text-2xl font-light text-[#F8F4EF] mb-1"
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                Book online now
+              </h2>
+              <p className="text-[#F8F4EF]/60 text-sm font-light">
+                Choose your appointment type and a time that works for you, instantly.
+              </p>
+            </div>
+          </div>
+          <span className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#C9A96E] text-[#1A2E45] text-sm font-semibold tracking-wide rounded-full group-hover:bg-[#C9A96E]/90 transition-all shrink-0">
+            Book Online <ArrowRight className="w-4 h-4" />
+          </span>
+        </a>
       </section>
 
       <section className="py-20 bg-[#1A2E45]/5">
@@ -33,7 +65,7 @@ export default function Book() {
                 icon: Phone,
                 title: "Call Us",
                 contact: "01277 650584",
-                desc: "Speak directly with Sheila. She'll find the perfect time for you.",
+                desc: "Speak with our friendly reception team -- they'll help you find a suitable appointment.",
                 link: "tel:01277650584",
               },
               {
@@ -111,7 +143,7 @@ export default function Book() {
               { title: "Visual Stress & Colourimetry Assessment", desc: "Explore tinted lenses for reading comfort" },
               { title: "Dispensing Appointment", desc: "Frame selection and bespoke fitting" },
               { title: "Glasses Collection", desc: "Pick up your completed prescription" },
-              { title: "Emergency or Urgent Eye Concern", desc: "Same-day or next-day appointment" },
+              { title: "Urgent Eye Concern", desc: "Call us directly and we'll do our best to fit you in as soon as possible" },
             ].map((service, i) => (
               <div key={i} className="p-6 border border-[#1A2E45]/10 rounded-lg hover:bg-[#1A2E45]/5 transition-colors">
                 <h3 className="font-semibold text-[#1A2E45] mb-2">{service.title}</h3>
@@ -205,18 +237,6 @@ export default function Book() {
         </div>
       </section>
 
-      {/* PLACEHOLDER: Booking embed would go here */}
-      <section className="py-20 bg-[#1A2E45]/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="p-8 bg-white rounded-lg border-2 border-dashed border-[#1A2E45]/30 text-center space-y-4">
-            <Calendar className="w-8 h-8 text-[#C9A96E]/40 mx-auto" />
-            <p className="text-[#1A2E45]/60 font-light">
-              {/* PLACEHOLDER: Flex/Optinet booking system embed goes here. Currently using phone/email/WhatsApp as primary booking methods. Update with live embed once Flex/Optinet integration is configured. */}
-              Online booking integration coming soon. For now, please call, email, or message us.
-            </p>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 }

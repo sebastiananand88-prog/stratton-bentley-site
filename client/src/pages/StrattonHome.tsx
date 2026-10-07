@@ -29,7 +29,7 @@ const SERVICES = [
   {
     icon: Eye,
     title: "Visual Stress Assessments",
-    description: "ChromaGen tinted lens assessments for dyslexia, reading difficulty and visual stress. Life-changing for children and adults alike.",
+    description: "ChromaGen tinted lens assessments for visual discomfort when reading, which can be linked to dyslexia. Not an assessment or diagnosis of dyslexia.",
     tag: "Specialist Care",
   },
   {

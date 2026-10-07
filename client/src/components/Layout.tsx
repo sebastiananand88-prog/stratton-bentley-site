@@ -154,14 +154,31 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
             </a>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className={`lg:hidden p-2 transition-colors ${solid || menuOpen ? "text-[#1A2E45]" : "text-[#F8F4EF]"}`}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          {/* Mobile CTA -- Book and Call stay reachable without opening the menu */}
+          <div className="flex lg:hidden items-center gap-2 shrink-0">
+            <a
+              href="tel:01277650584"
+              aria-label="Call us"
+              className={`p-2 rounded-full transition-colors ${
+                solid || menuOpen ? "text-[#1A2E45]" : "text-[#F8F4EF]"
+              }`}
+            >
+              <Phone className="w-5 h-5" />
+            </a>
+            <a
+              href="/book"
+              className="px-4 py-2 bg-[#1A2E45] text-[#F8F4EF] text-xs font-medium tracking-wide rounded-full hover:bg-[#1A2E45]/90 active:scale-[0.97] transition-all duration-150"
+            >
+              Book
+            </a>
+            <button
+              className={`p-2 transition-colors ${solid || menuOpen ? "text-[#1A2E45]" : "text-[#F8F4EF]"}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}

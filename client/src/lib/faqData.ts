@@ -141,7 +141,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
     items: [
       {
         q: "What is visual stress?",
-        a: "Visual stress is discomfort or difficulty processing visual information, often causing symptoms like words appearing to move or shimmer, eye strain, headaches, and fatigue when reading—despite having normal vision and prescription. It's distinct from dyslexia but can coexist.",
+        a: "Visual stress is discomfort or difficulty processing visual information, often causing symptoms like words appearing to move or shimmer, eye strain, headaches, and fatigue when reading—despite having normal vision and prescription. This can be linked to dyslexia, but a visual stress assessment is not an assessment or diagnosis of dyslexia.",
       },
       {
         q: "How can ChromaGen lenses help with reading difficulties?",
@@ -181,7 +181,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "How do I book an appointment?",
-        a: "You can book online via our website, call us on 01277 650584, or email info@strattonopticians.co.uk. We typically have availability within 1-2 weeks and always aim to accommodate urgent needs quickly.",
+        a: "You can book online via our website, call us on 01277 650584, or email info@strattonopticians.co.uk. We typically have availability within 1-2 weeks, and do our best to accommodate urgent needs as quickly as we can.",
       },
       {
         q: "What if I'm new to the practice?",

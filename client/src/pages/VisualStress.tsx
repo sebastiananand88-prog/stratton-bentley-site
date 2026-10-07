@@ -26,7 +26,10 @@ export default function VisualStress() {
             Visual Stress & Colourimetry Assessment in Essex
           </h1>
           <p className="text-lg text-[#1A2E45]/70 leading-relaxed font-light">
-            If reading feels uncomfortable, text appears to shimmer or blur, or you struggle with visual processing despite having a normal eye prescription, a visual stress assessment might help. We use the ChromaGen system to find a colour tint that may improve clarity and comfort.
+            ChromaGen tinted lens assessments for people experiencing visual discomfort when reading. This can be linked to dyslexia. We use the ChromaGen system to find a colour tint that may improve clarity and comfort.
+          </p>
+          <p className="text-sm text-[#1A2E45]/60 font-medium">
+            This is a visual stress assessment, not an assessment or diagnosis of dyslexia.
           </p>
         </div>
       </section>
