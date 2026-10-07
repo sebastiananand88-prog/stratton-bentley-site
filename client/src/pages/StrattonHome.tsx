@@ -353,9 +353,10 @@ export default function StrattonHome() {
                 Jas Chaggar, Principal Optometrist &amp; Owner
               </p>
               <p className="text-[#1A2E45]/60 text-sm leading-relaxed font-light max-w-xl">
-                And beyond the examination room, our frame-styling consultations are just as personal. Sheila, our
-                lead dispenser, takes real time to understand your face, your lifestyle and your style—so the frames
-                you leave with are chosen for you, not just fitted to you.
+                It's just as personal beyond the examination room. Sheila, our lead dispenser, takes the time to
+                really understand your face, your lifestyle and your style, so you leave with frames chosen for
+                you—not just fitted to you. And from the moment you arrive, Jen makes sure you feel welcome, looked
+                after, and never rushed.
               </p>
             </div>
           </div>
