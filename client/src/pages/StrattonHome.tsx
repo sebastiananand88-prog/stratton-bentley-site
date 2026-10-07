@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
-import { ArrowRight, MapPin, Star, Eye, Scan, Droplets, Glasses, ChevronDown, Phone } from "lucide-react";
+import { ArrowRight, MapPin, Star, Eye, Scan, Droplets, Glasses, ChevronDown, Phone, ShieldCheck, Baby, Layers, Flag } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
 // ─────────────────────────────────────────────
@@ -25,24 +25,56 @@ const SERVICES = [
     title: "3D OCT Eye Scans",
     description: "The most advanced retinal imaging available. Detect glaucoma, macular degeneration and diabetic retinopathy years before standard tests.",
     tag: "Clinical Excellence",
+    href: "/oct-scans",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Advanced Glaucoma Assessments",
+    description: "OCT-led glaucoma screening and monitoring, picking up changes to the optic nerve long before they'd affect your vision.",
+    tag: "Clinical Excellence",
+    href: "/oct-scans",
+  },
+  {
+    icon: Baby,
+    title: "Myopia Management & Stellest",
+    description: "Essilor Stellest lenses to help slow myopia (shortsightedness) progression in children, protecting long-term eye health.",
+    tag: "Children's Eye Care",
+    href: "/childrens-eye-care",
+  },
+  {
+    icon: Layers,
+    title: "Premium Varifocals",
+    description: "Essilor Varilux varifocals with a personalised fitting, for seamless vision at every distance -- no visible lines, no compromises.",
+    tag: "Boutique Experience",
+    href: "/eyewear",
+  },
+  {
+    icon: Droplets,
+    title: "Dry Eye Assessments",
+    description: "Thorough assessment of dry, gritty or watery eyes, with advice tailored to what's causing your symptoms.",
+    tag: "Specialist Care",
+    href: "/eye-examinations",
   },
   {
     icon: Eye,
     title: "Visual Stress Assessments",
     description: "ChromaGen tinted lens assessments for visual discomfort when reading, which can be linked to dyslexia. Not an assessment or diagnosis of dyslexia.",
     tag: "Specialist Care",
+    href: "/visual-stress-assessments",
   },
   {
-    icon: Droplets,
-    title: "Dry Eye Clinic",
-    description: "Comprehensive meibomian gland assessment and personalised treatment plans. Relief from chronic dry, gritty or watery eyes.",
+    icon: Flag,
+    title: "Golf & Sports Vision",
+    description: "Performance visual screening for golf and sport. Get in touch to find out more about this service.",
     tag: "Specialist Care",
+    href: "/contact",
   },
   {
     icon: Glasses,
     title: "Eyewear Styling",
-    description: "A private 45-minute consultation with our dispensing expert. Frames matched to your face shape, colouring and lifestyle.",
+    description: "A private consultation with our dispensing expert. Frames matched to your face shape, colouring and lifestyle.",
     tag: "Boutique Experience",
+    href: "/eyewear",
   },
 ];
 
@@ -394,9 +426,10 @@ export default function StrattonHome() {
             {SERVICES.map((service, i) => {
               const Icon = service.icon;
               return (
-                <div
+                <a
                   key={service.title}
-                  className="group p-7 rounded-2xl border border-[#F8F4EF]/10 hover:border-[#C9A96E]/40 hover:bg-[#F8F4EF]/5 transition-all duration-300 cursor-pointer"
+                  href={service.href}
+                  className="group p-7 rounded-2xl border border-[#F8F4EF]/10 hover:border-[#C9A96E]/40 hover:bg-[#F8F4EF]/5 transition-all duration-300 block"
                   style={{ transitionDelay: `${i * 60}ms` }}
                 >
                   <div className="w-10 h-10 rounded-full bg-[#C9A96E]/15 flex items-center justify-center mb-6 group-hover:bg-[#C9A96E]/25 transition-colors">
@@ -417,7 +450,7 @@ export default function StrattonHome() {
                   <div className="mt-6 flex items-center gap-1.5 text-[#C9A96E] text-xs font-medium group-hover:gap-3 transition-all duration-200">
                     Learn more <ArrowRight className="w-3.5 h-3.5" />
                   </div>
-                </div>
+                </a>
               );
             })}
           </div>

@@ -279,6 +279,12 @@ const SERVICES = [
     summary:
       "ChromaGen tinted lens assessments for people experiencing visual discomfort when reading, for both children and adults. This can be linked to dyslexia, but it is not an assessment or diagnosis of dyslexia.",
   },
+  {
+    name: "Golf & Sports Vision",
+    path: "/contact",
+    summary:
+      "Performance visual screening for golf and sport. This is a newer service -- full details aren't published yet, so direct anyone asking to contact the practice directly for more information.",
+  },
 ];
 
 const BRANDS = ["Tom Ford", "Ray-Ban", "Oakley", "Silhouette", "Ralph Lauren / Polo Ralph Lauren", "GANT"];
