@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import FaqSection from "@/components/FaqSection";
+import { getFaqItems } from "@/lib/faqData";
 import { Droplets, Sun, Wind } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
@@ -113,6 +115,7 @@ export default function DryEyeAssessments() {
           </a>
         </div>
       </section>
+      <FaqSection items={getFaqItems("dry-eye-assessments")} />
     </Layout>
   );
 }

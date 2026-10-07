@@ -162,6 +162,23 @@ const FAQ_CATEGORIES: FaqCategory[] = [
     ],
   },
   {
+    category: "Dry Eye",
+    items: [
+      {
+        q: "What causes dry eyes?",
+        a: "Dry eye can come from several different causes -- reduced tear production, poor tear quality, eyelid conditions (like meibomian gland dysfunction), medications, screen use, and environmental factors can all play a part, often together rather than individually.",
+      },
+      {
+        q: "How is dry eye treated?",
+        a: "Treatment depends on what's actually causing your symptoms, which is why a proper assessment matters. Options can include artificial tears, eyelid hygiene routines, warm compresses, or other approaches -- we'll talk through what's realistic for you rather than offering a one-size-fits-all fix.",
+      },
+      {
+        q: "Is dry eye a long-term condition?",
+        a: "For many people it's an ongoing, manageable condition rather than something that's cured outright. The goal of assessment and treatment is usually to reduce symptoms and improve comfort day to day.",
+      },
+    ],
+  },
+  {
     category: "Pricing & Payment",
     items: [
       {
