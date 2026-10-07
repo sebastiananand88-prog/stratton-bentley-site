@@ -44,7 +44,7 @@ export default function OctScans() {
                 What is OCT scanning?
               </h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="space-y-6">
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
                   OCT works like an ultrasound for your eye. It uses light waves to create cross-sectional images of the retina and optic nerve with incredible precision. In seconds, it reveals structures that would otherwise be invisible—layer by layer, cell by cell.

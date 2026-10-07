@@ -44,7 +44,7 @@ export default function GlaucomaAssessments() {
                 What a glaucoma assessment involves
               </h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="space-y-6">
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
                   A thorough glaucoma assessment looks at several things together: the pressure inside your eye, the

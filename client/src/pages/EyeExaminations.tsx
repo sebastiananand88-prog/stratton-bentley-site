@@ -87,7 +87,7 @@ export default function EyeExaminations() {
 
       {/* Why Early Detection Matters */}
       <section className="py-20 max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <h2
               className="text-4xl md:text-5xl font-light text-[#1A2E45]"

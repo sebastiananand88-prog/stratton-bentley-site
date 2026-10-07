@@ -46,7 +46,7 @@ export default function Varifocals() {
                 How varifocals work
               </h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="space-y-6">
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
                   A varifocal lens blends your distance, intermediate, and reading prescriptions into one lens, with

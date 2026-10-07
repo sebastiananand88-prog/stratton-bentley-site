@@ -81,7 +81,7 @@ export default function ChildrensEyeCare() {
       </section>
 
       <section className="py-20 max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <div>
               <p className="text-[#C9A96E] text-sm uppercase tracking-[0.2em] font-semibold mb-4">Modern Care</p>

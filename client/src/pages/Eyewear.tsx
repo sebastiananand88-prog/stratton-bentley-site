@@ -44,7 +44,7 @@ export default function Eyewear() {
                 Styling, not selling
               </h2>
             </div>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
               <div className="space-y-6">
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
                   We don't view eyewear as a commodity. Our team—particularly Sheila, our dispensing expert—brings a stylist's eye and a genuine passion for finding frames that work for your face, your colouring, your lifestyle, and your personality.
@@ -150,7 +150,7 @@ export default function Eyewear() {
 
       {/* Sunglasses */}
       <section className="py-20 max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <h2
               className="text-4xl md:text-5xl font-light text-[#1A2E45]"

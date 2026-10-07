@@ -93,7 +93,7 @@ export default function VisualStress() {
               How the ChromaGen assessment works
             </h2>
           </div>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
               <p className="text-[#1A2E45]/70 leading-relaxed font-light">
                 During the assessment, you'll view reading samples through a range of tinted lenses. Your optometrist observes which colour combination makes reading clearest, fastest, and most comfortable. The correct colour is personal to you—no two people are the same.

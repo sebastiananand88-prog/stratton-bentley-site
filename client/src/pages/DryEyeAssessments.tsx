@@ -44,7 +44,7 @@ export default function DryEyeAssessments() {
                 Common symptoms
               </h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
                   { icon: Droplets, title: "Grittiness", desc: "A sandy or gritty feeling, as if something is in your eye." },
