@@ -7,9 +7,14 @@ import AskAI from "@/components/AskAI";
 // easy to find), the rest stay grouped under the Services dropdown.
 const SERVICES = [
   { label: "OCT Scans", href: "/oct-scans" },
+  { label: "Glaucoma Assessments", href: "/glaucoma-assessments" },
+  { label: "Myopia Management", href: "/myopia-management" },
+  { label: "Varifocals", href: "/varifocals" },
+  { label: "Dry Eye Assessments", href: "/dry-eye-assessments" },
   { label: "Contact Lenses", href: "/contact-lenses" },
   { label: "Children's Eye Care", href: "/childrens-eye-care" },
   { label: "Visual Stress", href: "/visual-stress-assessments" },
+  { label: "Golf & Sports Vision", href: "/golf-sports-vision" },
 ];
 
 interface LayoutProps {
@@ -343,10 +348,15 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
                   { label: "About", href: "/about" },
                   { label: "Eye Examinations", href: "/eye-examinations" },
                   { label: "OCT Scans", href: "/oct-scans" },
+                  { label: "Glaucoma Assessments", href: "/glaucoma-assessments" },
+                  { label: "Myopia Management", href: "/myopia-management" },
                   { label: "Eyewear", href: "/eyewear" },
+                  { label: "Varifocals", href: "/varifocals" },
                   { label: "Contact Lenses", href: "/contact-lenses" },
+                  { label: "Dry Eye Assessments", href: "/dry-eye-assessments" },
                   { label: "Children's Eye Care", href: "/childrens-eye-care" },
                   { label: "Visual Stress", href: "/visual-stress-assessments" },
+                  { label: "Golf & Sports Vision", href: "/golf-sports-vision" },
                   { label: "FAQ", href: "/faq" },
                   { label: "Book", href: "/book" },
                   { label: "Contact", href: "/contact" },

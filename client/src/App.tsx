@@ -19,6 +19,11 @@ import Book from "./pages/Book";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiePolicy from "./pages/CookiePolicy";
+import GlaucomaAssessments from "./pages/GlaucomaAssessments";
+import MyopiaManagement from "./pages/MyopiaManagement";
+import Varifocals from "./pages/Varifocals";
+import DryEyeAssessments from "./pages/DryEyeAssessments";
+import GolfSportsVision from "./pages/GolfSportsVision";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -32,6 +37,11 @@ function Router() {
       <Route path={"/contact-lenses"} component={ContactLenses} />
       <Route path={"/childrens-eye-care"} component={ChildrensEyeCare} />
       <Route path={"/visual-stress-assessments"} component={VisualStress} />
+      <Route path={"/glaucoma-assessments"} component={GlaucomaAssessments} />
+      <Route path={"/myopia-management"} component={MyopiaManagement} />
+      <Route path={"/varifocals"} component={Varifocals} />
+      <Route path={"/dry-eye-assessments"} component={DryEyeAssessments} />
+      <Route path={"/golf-sports-vision"} component={GolfSportsVision} />
       <Route path={"/faq"} component={Faq} />
       <Route path={"/book"} component={Book} />
       <Route path={"/contact"} component={Contact} />

@@ -256,6 +256,30 @@ const SERVICES = [
       "3D OCT (Optical Coherence Tomography) retinal scans for early detection of glaucoma, macular degeneration and diabetic retinopathy -- the same hospital-quality imaging used in specialist clinics, painless and non-invasive.",
   },
   {
+    name: "Advanced Glaucoma Assessments",
+    path: "/glaucoma-assessments",
+    summary:
+      "OCT-led glaucoma screening and monitoring, combining eye pressure testing with 3D OCT imaging to look for optic nerve changes early.",
+  },
+  {
+    name: "Myopia Management & Stellest",
+    path: "/myopia-management",
+    summary:
+      "Essilor Stellest spectacle lenses to help slow myopia (short-sightedness) progression in children, protecting long-term eye health. Part of Children's Eye Care.",
+  },
+  {
+    name: "Premium Varifocals",
+    path: "/varifocals",
+    summary:
+      "Essilor Varilux varifocals with a personalised fitting, for seamless vision at near, intermediate and far distances with no visible lines.",
+  },
+  {
+    name: "Dry Eye Assessments",
+    path: "/dry-eye-assessments",
+    summary:
+      "Assessment of dry, gritty or watery eyes, looking at tear film and eyelid health to find the actual cause rather than guessing at a generic fix.",
+  },
+  {
     name: "Eyewear & Designer Frames",
     path: "/eyewear",
     summary:
@@ -281,7 +305,7 @@ const SERVICES = [
   },
   {
     name: "Golf & Sports Vision",
-    path: "/contact",
+    path: "/golf-sports-vision",
     summary:
       "Performance visual screening for golf and sport. This is a newer service -- full details aren't published yet, so direct anyone asking to contact the practice directly for more information.",
   },
