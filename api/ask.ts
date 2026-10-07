@@ -240,11 +240,7 @@ const SOCIAL_MEDIA = {
   facebook: "https://www.facebook.com/strattonopticians/",
 };
 
-// Deliberately no fixed rating or review count here -- both are shown live on the homepage
-// (pulled from Google) and would otherwise go stale. If asked, point people there or to
-// Google directly rather than quoting a number that could be out of date.
-const REVIEWS =
-  "Our current Google rating and review count are shown live on the homepage, since both change over time -- check there or search for us on Google for the up-to-date figures.";
+const REVIEWS = "5.0 Google rating from 133 Google reviews.";
 
 const SERVICES = [
   {
