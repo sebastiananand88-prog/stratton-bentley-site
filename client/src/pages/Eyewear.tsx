@@ -10,7 +10,7 @@ const IMAGES = {
 
 export default function Eyewear() {
   useMetaTags({
-    title: "Designer Glasses Billericay — Premium Eyewear | Stratton",
+    title: "Designer Glasses Billericay – Premium Eyewear | Stratton",
     description: "Designer eyewear in Billericay: Tom Ford, Ray-Ban, Silhouette, Ralph Lauren, GANT & more. Premium frames, Essilor lenses, varifocal, prescription sunglasses, expert styling.",
     canonical: "http://localhost:3001/eyewear",
   });
@@ -24,10 +24,10 @@ export default function Eyewear() {
             className="text-5xl md:text-6xl lg:text-7xl font-light text-[#1A2E45]"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            Designer Eyewear Billericay — Premium Frames & Styling
+            Designer Eyewear Billericay – Premium Frames & Styling
           </h1>
           <p className="text-lg text-[#1A2E45]/70 leading-relaxed font-light">
-            Glasses are never just a correction. They're an expression of style, a daily companion, a reflection of how you see the world. At Stratton, we believe eyewear should be chosen with the same care as any meaningful purchase—guided by expert advice, personal styling, and a deep understanding of what suits you.
+            Glasses are never just a correction. They're an expression of style, a daily companion, a reflection of how you see the world. At Stratton, we believe eyewear should be chosen with the same care as any meaningful purchase – guided by expert advice, personal styling, and a deep understanding of what suits you.
           </p>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function Eyewear() {
                   Styling, not selling
                 </h2>
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
-                  We don't view eyewear as a commodity. Our team—particularly Sheila, our dispensing expert—brings a stylist's eye and a genuine passion for finding frames that work for your face, your colouring, your lifestyle, and your personality.
+                  We don't view eyewear as a commodity. Our team – particularly Sheila, our dispensing expert – brings a stylist's eye and a genuine passion for finding frames that work for your face, your colouring, your lifestyle, and your personality.
                 </p>
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
                   We'll discuss proportions, materials, colours that flatter you, and styles that reflect your taste. The goal isn't to sell more; it's to ensure you leave with glasses you'll genuinely love wearing every day.
@@ -126,7 +126,7 @@ export default function Eyewear() {
                   Progressive & Varifocal Lenses
                 </h3>
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
-                  Essilor Varilux progressive lenses offer seamless vision at all distances—no visible lines, no jumps. If you need multiple prescriptions, varifocals offer the smoothest, most natural viewing experience available.
+                  Essilor Varilux progressive lenses offer seamless vision at all distances – no visible lines, no jumps. If you need multiple prescriptions, varifocals offer the smoothest, most natural viewing experience available.
                 </p>
               </div>
               <div className="space-y-4">

@@ -10,7 +10,7 @@ const IMAGES = {
 
 export default function Varifocals() {
   useMetaTags({
-    title: "Premium Varifocals Billericay — Essilor Varilux | Stratton",
+    title: "Premium Varifocals Billericay – Essilor Varilux | Stratton",
     description: "Premium Essilor Varilux varifocals in Billericay with a personalised fitting. Seamless vision at every distance, no visible lines.",
     canonical: "http://localhost:3001/varifocals",
   });

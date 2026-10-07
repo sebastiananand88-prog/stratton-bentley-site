@@ -10,7 +10,7 @@ const IMAGES = {
 
 export default function DryEyeAssessments() {
   useMetaTags({
-    title: "Dry Eye Assessment Billericay — Stratton Opticians",
+    title: "Dry Eye Assessment Billericay – Stratton Opticians",
     description: "Dry eye assessments in Billericay. Thorough assessment of dry, gritty or watery eyes, with advice tailored to what's causing your symptoms.",
     canonical: "http://localhost:3001/dry-eye-assessments",
   });

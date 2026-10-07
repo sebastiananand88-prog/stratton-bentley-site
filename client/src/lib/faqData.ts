@@ -25,7 +25,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "Why do I need a retinal scan (OCT)?",
-        a: "OCT retinal scanning provides detailed images of the back of your eye, allowing us to detect early signs of conditions like glaucoma, macular degeneration, and diabetic retinopathy—often before you notice any symptoms. Early detection can prevent vision loss.",
+        a: "OCT retinal scanning provides detailed images of the back of your eye, allowing us to detect early signs of conditions like glaucoma, macular degeneration, and diabetic retinopathy – often before you notice any symptoms. Early detection can prevent vision loss.",
       },
       {
         q: "How long does an eye examination take at Stratton Opticians?",
@@ -61,7 +61,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
     items: [
       {
         q: "What are varifocals and how do they work?",
-        a: "Varifocals (progressive lenses) offer seamless vision at all distances—near, intermediate, and far—without visible lines. The prescription gradually changes from the top to the bottom of the lens, allowing you to focus at any distance by looking through the appropriate part of the lens.",
+        a: "Varifocals (progressive lenses) offer seamless vision at all distances – near, intermediate, and far – without visible lines. The prescription gradually changes from the top to the bottom of the lens, allowing you to focus at any distance by looking through the appropriate part of the lens.",
       },
       {
         q: "Is there an adjustment period for varifocals?",
@@ -83,7 +83,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "What is the Essilor 50% off second pair offer?",
-        a: "When you purchase a full pair of glasses (or add-on lenses) with us, you'll receive 50% off Essilor premium lenses for a second pair. This is a great opportunity to have multiple pairs for different occasions—sunglasses, workplace glasses, and everyday wear.",
+        a: "When you purchase a full pair of glasses (or add-on lenses) with us, you'll receive 50% off Essilor premium lenses for a second pair. This is a great opportunity to have multiple pairs for different occasions – sunglasses, workplace glasses, and everyday wear.",
       },
       {
         q: "Do Essilor lenses include blue-light filtering?",
@@ -141,7 +141,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
     items: [
       {
         q: "What is visual stress?",
-        a: "Visual stress is discomfort or difficulty processing visual information, often causing symptoms like words appearing to move or shimmer, eye strain, headaches, and fatigue when reading—despite having normal vision and prescription. This can be linked to dyslexia, but a visual stress assessment is not an assessment or diagnosis of dyslexia.",
+        a: "Visual stress is discomfort or difficulty processing visual information, often causing symptoms like words appearing to move or shimmer, eye strain, headaches, and fatigue when reading – despite having normal vision and prescription. This can be linked to dyslexia, but a visual stress assessment is not an assessment or diagnosis of dyslexia.",
       },
       {
         q: "How can ChromaGen lenses help with reading difficulties?",
@@ -149,7 +149,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "Is there evidence that colourimetry works?",
-        a: "While mainstream clinical research on tinted lenses for reading difficulties is limited, many individuals report genuine improvements in comfort and reading fluency when using the right colour. We're transparent about this and recommend trying it to see if it works for you—there's no pressure.",
+        a: "While mainstream clinical research on tinted lenses for reading difficulties is limited, many individuals report genuine improvements in comfort and reading fluency when using the right colour. We're transparent about this and recommend trying it to see if it works for you – there's no pressure.",
       },
     ],
   },

@@ -10,7 +10,7 @@ const IMAGES = {
 
 export default function ChildrensEyeCare() {
   useMetaTags({
-    title: "Children's Eye Test Billericay — Stratton Opticians",
+    title: "Children's Eye Test Billericay – Stratton Opticians",
     description: "Children's eye examinations in Billericay. Myopia management with Essilor Stellest, age-appropriate testing, NHS voucher support, warm & reassuring.",
     canonical: "http://localhost:3001/childrens-eye-care",
   });
@@ -23,10 +23,10 @@ export default function ChildrensEyeCare() {
             className="text-5xl md:text-6xl lg:text-7xl font-light text-[#1A2E45]"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            Children's Eye Examinations Billericay — Myopia Management & Care
+            Children's Eye Examinations Billericay – Myopia Management & Care
           </h1>
           <p className="text-lg text-[#1A2E45]/70 leading-relaxed font-light">
-            A child's vision is still developing. Regular eye tests are crucial—not just to check prescription, but to ensure healthy development and catch any issues early. At Stratton, we specialise in making the experience comfortable, reassuring, and even fun.
+            A child's vision is still developing. Regular eye tests are crucial – not just to check prescription, but to ensure healthy development and catch any issues early. At Stratton, we specialise in making the experience comfortable, reassuring, and even fun.
           </p>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function ChildrensEyeCare() {
                 {
                   icon: Shield,
                   title: "Preventative Focus",
-                  desc: "We screen for conditions that, if left undetected, could affect learning and development—like uncorrected myopia or focusing problems.",
+                  desc: "We screen for conditions that, if left undetected, could affect learning and development – like uncorrected myopia or focusing problems.",
                 },
                 {
                   icon: CheckCircle2,

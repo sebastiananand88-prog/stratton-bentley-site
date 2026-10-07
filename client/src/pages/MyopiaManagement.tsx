@@ -10,7 +10,7 @@ const IMAGES = {
 
 export default function MyopiaManagement() {
   useMetaTags({
-    title: "Myopia Management Billericay — Essilor Stellest | Stratton",
+    title: "Myopia Management Billericay – Essilor Stellest | Stratton",
     description: "Myopia management for children in Billericay using Essilor Stellest lenses, helping slow short-sightedness progression and protect long-term eye health.",
     canonical: "http://localhost:3001/myopia-management",
   });

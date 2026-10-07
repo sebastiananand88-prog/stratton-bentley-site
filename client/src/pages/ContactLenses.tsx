@@ -10,7 +10,7 @@ const IMAGES = {
 
 export default function ContactLenses() {
   useMetaTags({
-    title: "Contact Lens Fitting Billericay — Stratton Opticians",
+    title: "Contact Lens Fitting Billericay – Stratton Opticians",
     description: "Contact lens consultation & fitting in Billericay. All lens types, multifocal options, aftercare support. Expert fitting & advice. Book today.",
     canonical: "http://localhost:3001/contact-lenses",
   });
@@ -26,7 +26,7 @@ export default function ContactLenses() {
             Contact Lens Fitting & Aftercare in Billericay
           </h1>
           <p className="text-lg text-[#1A2E45]/70 leading-relaxed font-light">
-            Whether you're interested in contact lenses for the first time or seeking a change, we take time to find the right option for your eyes and your life. There's no rush, no pressure—only a conversation about what matters to you.
+            Whether you're interested in contact lenses for the first time or seeking a change, we take time to find the right option for your eyes and your life. There's no rush, no pressure – only a conversation about what matters to you.
           </p>
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function ContactLenses() {
               </h2>
             </div>
             <p className="text-[#1A2E45]/70 leading-relaxed font-light max-w-2xl">
-              Daily disposables, weekly, monthly, extended wear—we fit all types and brands of contact lenses, including multifocal lenses for presbyopia. Whether you're seeking maximum comfort, convenience, or specialised lens geometry, our expert team will help you find the right fit.
+              Daily disposables, weekly, monthly, extended wear – we fit all types and brands of contact lenses, including multifocal lenses for presbyopia. Whether you're seeking maximum comfort, convenience, or specialised lens geometry, our expert team will help you find the right fit.
             </p>
           </div>
           <div className="rounded-lg overflow-hidden">
@@ -111,7 +111,7 @@ export default function ContactLenses() {
               Care & comfort, always
             </h2>
             <p className="text-[#1A2E45]/70 leading-relaxed font-light max-w-2xl">
-              Wearing contact lenses should feel effortless and comfortable. We'll teach you proper insertion, removal, and daily care. If you ever experience discomfort or have questions, we're just a call away—no appointment necessary for quick queries.
+              Wearing contact lenses should feel effortless and comfortable. We'll teach you proper insertion, removal, and daily care. If you ever experience discomfort or have questions, we're just a call away – no appointment necessary for quick queries.
             </p>
           </div>
         </div>

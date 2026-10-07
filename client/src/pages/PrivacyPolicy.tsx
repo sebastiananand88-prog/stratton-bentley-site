@@ -6,7 +6,7 @@ const BODY_TEXT = "text-[#1A2E45]/70 leading-relaxed font-light";
 
 export default function PrivacyPolicy() {
   useMetaTags({
-    title: "Privacy Policy — Stratton Opticians",
+    title: "Privacy Policy – Stratton Opticians",
     description: "How Stratton Opticians collects, uses, and protects your personal data.",
     canonical: "http://localhost:3001/privacy-policy",
   });
@@ -56,15 +56,15 @@ export default function PrivacyPolicy() {
           </p>
           <ul className={`${BODY_TEXT} list-disc pl-6 space-y-2`}>
             <li>
-              <strong className="text-[#1A2E45]">Contact form submissions</strong> — your name, email address, and
+              <strong className="text-[#1A2E45]">Contact form submissions</strong> – your name, email address, and
               message, when you use the contact form on our Contact page.
             </li>
             <li>
-              <strong className="text-[#1A2E45]">Appointment enquiries</strong> — your name, email, phone number,
+              <strong className="text-[#1A2E45]">Appointment enquiries</strong> – your name, email, phone number,
               preferred service, location, and appointment preferences, if you use an online booking enquiry form.
             </li>
             <li>
-              <strong className="text-[#1A2E45]">Direct contact</strong> — anything you tell us if you call, email,
+              <strong className="text-[#1A2E45]">Direct contact</strong> – anything you tell us if you call, email,
               or message us directly (for example via phone or WhatsApp), which is handled under this same policy
               even though it doesn't pass through this website.
             </li>

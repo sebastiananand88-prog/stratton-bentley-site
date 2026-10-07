@@ -6,7 +6,7 @@ const BOOKING_URL = "https://patientbookings.co.uk/StrattonOpticians";
 
 export default function Book() {
   useMetaTags({
-    title: "Book Eye Appointment Billericay — Stratton Opticians",
+    title: "Book Eye Appointment Billericay – Stratton Opticians",
     description: "Book your eye appointment in Billericay online, by phone, email or WhatsApp. Same-day or next-day appointments where available.",
     canonical: "http://localhost:3001/book",
   });
@@ -22,7 +22,7 @@ export default function Book() {
             Book Your Eye Appointment in Billericay
           </h1>
           <p className="text-lg text-[#1A2E45]/70 leading-relaxed font-light">
-            Choose whichever works best for you. All options lead to the same exceptional service—we just want to make it easy.
+            Choose whichever works best for you. All options lead to the same exceptional service – we just want to make it easy.
           </p>
         </div>
       </section>

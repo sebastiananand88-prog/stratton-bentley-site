@@ -27,7 +27,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 export default function Faq() {
   useMetaTags({
-    title: "Eye Care FAQ — Questions Answered | Stratton Opticians",
+    title: "Eye Care FAQ – Questions Answered | Stratton Opticians",
     description: "Frequently asked questions about eye examinations, OCT scans, contact lenses, varifocals, Essilor lenses, children's eye care, visual stress, and pricing.",
     canonical: "http://localhost:3001/faq",
   });

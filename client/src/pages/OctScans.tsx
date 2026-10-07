@@ -10,7 +10,7 @@ const IMAGES = {
 
 export default function OctScans() {
   useMetaTags({
-    title: "OCT Eye Scans Billericay — Early Glaucoma Detection | Stratton",
+    title: "OCT Eye Scans Billericay – Early Glaucoma Detection | Stratton",
     description: "3D OCT retinal scans in Billericay for early detection of glaucoma, macular degeneration & diabetic retinopathy. Hospital-quality imaging, gentle assessment.",
     canonical: "http://localhost:3001/oct-scans",
   });
@@ -24,10 +24,10 @@ export default function OctScans() {
             className="text-5xl md:text-6xl lg:text-7xl font-light text-[#1A2E45]"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            OCT Retinal Scans in Billericay — Advanced Eye Disease Detection
+            OCT Retinal Scans in Billericay – Advanced Eye Disease Detection
           </h1>
           <p className="text-lg text-[#1A2E45]/70 leading-relaxed font-light">
-            OCT (Optical Coherence Tomography) is the gold standard in eye imaging. Used in hospitals and specialist clinics worldwide, it reveals the eye's inner structures in extraordinary detail. At Stratton, you have access to the same technology—with the added benefit of time, expertise, and care.
+            OCT (Optical Coherence Tomography) is the gold standard in eye imaging. Used in hospitals and specialist clinics worldwide, it reveals the eye's inner structures in extraordinary detail. At Stratton, you have access to the same technology – with the added benefit of time, expertise, and care.
           </p>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function OctScans() {
                   What is OCT scanning?
                 </h2>
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
-                  OCT works like an ultrasound for your eye. It uses light waves to create cross-sectional images of the retina and optic nerve with incredible precision. In seconds, it reveals structures that would otherwise be invisible—layer by layer, cell by cell.
+                  OCT works like an ultrasound for your eye. It uses light waves to create cross-sectional images of the retina and optic nerve with incredible precision. In seconds, it reveals structures that would otherwise be invisible – layer by layer, cell by cell.
                 </p>
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
                   It's painless, non-invasive, and requires no dilation. You simply look into the scanner, and within moments, we have a detailed, permanent record of your eye's health.
@@ -128,7 +128,7 @@ export default function OctScans() {
               </h2>
             </div>
             <p className="text-[#1A2E45]/70 leading-relaxed font-light max-w-2xl">
-              We never leave you wondering what your OCT scan shows. Every finding is explained in plain, simple language. We discuss what we see, what it means, and what—if anything—needs to happen next. No jargon, no assumptions that you'll understand medical terminology. Just clear, honest conversation about your eye health.
+              We never leave you wondering what your OCT scan shows. Every finding is explained in plain, simple language. We discuss what we see, what it means, and what – if anything – needs to happen next. No jargon, no assumptions that you'll understand medical terminology. Just clear, honest conversation about your eye health.
             </p>
           </div>
         </div>

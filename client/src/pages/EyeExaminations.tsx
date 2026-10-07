@@ -96,7 +96,7 @@ export default function EyeExaminations() {
               Why regular examinations matter
             </h2>
             <p className="text-[#1A2E45]/70 leading-relaxed font-light">
-              Some of the most serious eye conditions—glaucoma, macular degeneration, diabetic retinopathy—develop silently. You may feel no pain, see no symptoms, yet permanent damage can occur. By the time you notice something's wrong, it may be too late.
+              Some of the most serious eye conditions – glaucoma, macular degeneration, diabetic retinopathy – develop silently. You may feel no pain, see no symptoms, yet permanent damage can occur. By the time you notice something's wrong, it may be too late.
             </p>
             <p className="text-[#1A2E45]/70 leading-relaxed font-light">
               Regular eye examinations catch these conditions early, when treatment is most effective. This is especially important if you're over 60, have a family history of eye disease, or manage conditions like diabetes.
@@ -173,7 +173,7 @@ export default function EyeExaminations() {
             </h2>
           </div>
           <p className="text-[#1A2E45]/70 leading-relaxed font-light max-w-2xl">
-            Jas brings over 15 years of clinical expertise to every examination. He stays current with the latest techniques and technologies, and genuinely enjoys spending time with patients to understand their needs. You're not a time slot—you're someone he's invested in helping.
+            Jas brings over 15 years of clinical expertise to every examination. He stays current with the latest techniques and technologies, and genuinely enjoys spending time with patients to understand their needs. You're not a time slot – you're someone he's invested in helping.
           </p>
         </div>
       </section>

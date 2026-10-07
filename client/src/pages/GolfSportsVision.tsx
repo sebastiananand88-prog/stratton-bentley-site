@@ -10,7 +10,7 @@ const IMAGES = {
 
 export default function GolfSportsVision() {
   useMetaTags({
-    title: "Golf & Sports Vision Billericay — Stratton Opticians",
+    title: "Golf & Sports Vision Billericay – Stratton Opticians",
     description: "Performance visual screening for golf and sport at Stratton Opticians in Billericay. Get in touch to find out more.",
     canonical: "http://localhost:3001/golf-sports-vision",
   });

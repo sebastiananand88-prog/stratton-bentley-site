@@ -8,7 +8,7 @@ const IMAGES = {
 
 export default function About() {
   useMetaTags({
-    title: "Independent Opticians Billericay — Stratton Opticians Since 1984",
+    title: "Independent Opticians Billericay – Stratton Opticians Since 1984",
     description: "Independent optician in Billericay, Essex, since 1984. Experienced optometrist Jas Chaggar, curated eyewear, advanced diagnostics.",
     canonical: "http://localhost:3001/about",
   });
@@ -44,7 +44,7 @@ export default function About() {
                 Carefully Scheduled Appointments
               </h3>
               <p className="text-[#1A2E45]/70 leading-relaxed font-light">
-                Carefully scheduled appointments, with time to listen and explain. We respect your time as much as you respect ours—no waiting rooms, no rushing through consultations.
+                Carefully scheduled appointments, with time to listen and explain. We respect your time as much as you respect ours – no waiting rooms, no rushing through consultations.
               </p>
             </div>
             <div className="space-y-4">

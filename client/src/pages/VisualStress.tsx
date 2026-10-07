@@ -10,7 +10,7 @@ const IMAGES = {
 
 export default function VisualStress() {
   useMetaTags({
-    title: "Visual Stress Assessment Essex — Stratton Opticians",
+    title: "Visual Stress Assessment Essex – Stratton Opticians",
     description: "Visual stress & colourimetry assessment in Billericay using ChromaGen lenses. Helps reading difficulties, light sensitivity & visual processing. Expert assessment, both children & adults.",
     canonical: "http://localhost:3001/visual-stress-assessments",
   });
@@ -94,7 +94,7 @@ export default function VisualStress() {
                 How the ChromaGen assessment works
               </h2>
               <p className="text-[#1A2E45]/70 leading-relaxed font-light">
-                During the assessment, you'll view reading samples through a range of tinted lenses. Your optometrist observes which colour combination makes reading clearest, fastest, and most comfortable. The correct colour is personal to you—no two people are the same.
+                During the assessment, you'll view reading samples through a range of tinted lenses. Your optometrist observes which colour combination makes reading clearest, fastest, and most comfortable. The correct colour is personal to you – no two people are the same.
               </p>
               <p className="text-[#1A2E45]/70 leading-relaxed font-light">
                 For some, the difference is immediate and dramatic. For others, it's subtle but meaningful. Once we've identified your optimal colour, ChromaGen filters can be incorporated into prescription lenses.
@@ -127,7 +127,7 @@ export default function VisualStress() {
                   There is currently no strong clinical evidence in mainstream research supporting tinted lenses or colourimetry as a treatment for reading difficulties or visual stress. However, many individuals report genuine, meaningful improvements in comfort and reading fluency when using the right colour.
                 </p>
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
-                  We believe it's important to be transparent about this. Some people find colourimetry transformative; others find minimal benefit. The best way to know is to try it and see how you respond. We won't pressure you—only offer it as an option worth exploring if you're interested.
+                  We believe it's important to be transparent about this. Some people find colourimetry transformative; others find minimal benefit. The best way to know is to try it and see how you respond. We won't pressure you – only offer it as an option worth exploring if you're interested.
                 </p>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function VisualStress() {
             For children and adults
           </h2>
           <p className="text-[#1A2E45]/70 leading-relaxed font-light max-w-2xl">
-            Visual stress assessments are available for both children and adults. If you're curious whether colourimetry might help—or want to support a child who struggles with reading—we'd be happy to discuss it during a consultation.
+            Visual stress assessments are available for both children and adults. If you're curious whether colourimetry might help – or want to support a child who struggles with reading – we'd be happy to discuss it during a consultation.
           </p>
         </div>
       </section>

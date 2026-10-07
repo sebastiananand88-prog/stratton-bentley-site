@@ -8,7 +8,7 @@ const MAP_QUERY = "Stratton+Opticians,14+The+Pantiles,Queens+Park+Avenue,Billeri
 
 export default function Contact() {
   useMetaTags({
-    title: "Contact Stratton Opticians Billericay — Address & Opening Hours",
+    title: "Contact Stratton Opticians Billericay – Address & Opening Hours",
     description: "Contact Stratton Opticians in Billericay: 14 The Pantiles. Phone 01277 650584, email info@strattonopticians.co.uk. Mon–Fri 9am–5:30pm, Sat 9am–1pm.",
     canonical: "http://localhost:3001/contact",
   });
@@ -34,10 +34,10 @@ export default function Contact() {
             className="text-5xl md:text-6xl lg:text-7xl font-light text-[#1A2E45]"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            Contact Stratton Opticians Billericay — Address & Opening Hours
+            Contact Stratton Opticians Billericay – Address & Opening Hours
           </h1>
           <p className="text-lg text-[#1A2E45]/70 leading-relaxed font-light">
-            Questions about our services? Want to book an appointment? Feel free to reach out—we're here to help.
+            Questions about our services? Want to book an appointment? Feel free to reach out – we're here to help.
           </p>
         </div>
       </section>

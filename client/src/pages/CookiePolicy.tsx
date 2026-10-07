@@ -7,7 +7,7 @@ const BODY_TEXT = "text-[#1A2E45]/70 leading-relaxed font-light";
 
 export default function CookiePolicy() {
   useMetaTags({
-    title: "Cookie Policy — Stratton Opticians",
+    title: "Cookie Policy – Stratton Opticians",
     description: "What cookies this website uses and how to manage your preferences.",
     canonical: "http://localhost:3001/cookie-policy",
   });
@@ -61,7 +61,7 @@ export default function CookiePolicy() {
                     Remembers whether you've accepted or declined non-essential cookies, so we don't ask you every
                     visit.
                   </td>
-                  <td className="py-3 align-top">No — strictly necessary</td>
+                  <td className="py-3 align-top">No – strictly necessary</td>
                 </tr>
                 <tr className="border-b border-[#1A2E45]/10">
                   <td className="py-3 pr-4 align-top">Google Maps</td>

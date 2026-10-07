@@ -289,7 +289,7 @@ export default function StrattonHome() {
             </div>
 
             <p className="text-[#1A2E45]/65 text-base lg:text-lg leading-relaxed font-light">
-              At Stratton Opticians, we combine the most advanced clinical diagnostics with a curated selection of the world's finest eyewear. Every patient receives a fully customised examination, honest clinical advice, and dedicated time — you will never feel rushed here.
+              At Stratton Opticians, we combine the most advanced clinical diagnostics with a curated selection of the world's finest eyewear. Every patient receives a fully customised examination, honest clinical advice, and dedicated time – you will never feel rushed here.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 pt-2">
@@ -347,7 +347,7 @@ export default function StrattonHome() {
                 className="text-2xl lg:text-3xl font-light text-[#1A2E45] leading-relaxed"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
-                "Every patient deserves the time to understand their eye health and vision—and to leave feeling informed, reassured and confident in their care."
+                "Every patient deserves the time to understand their eye health and vision – and to leave feeling informed, reassured and confident in their care."
               </p>
               <p className="text-[#1A2E45]/70 font-light">
                 Jas Chaggar, Principal Optometrist &amp; Owner
@@ -355,7 +355,7 @@ export default function StrattonHome() {
               <p className="text-[#1A2E45]/60 text-sm leading-relaxed font-light max-w-xl">
                 It's just as personal beyond the examination room. Sheila, our lead dispenser, takes the time to
                 really understand your face, your lifestyle and your style, so you leave with frames chosen for
-                you—not just fitted to you. And from the moment you arrive, Jen makes sure you feel welcome, looked
+                you – not just fitted to you. And from the moment you arrive, Jen makes sure you feel welcome, looked
                 after, and never rushed.
               </p>
             </div>
@@ -419,7 +419,7 @@ export default function StrattonHome() {
               </h2>
             </div>
             <p className="text-[#F8F4EF]/50 text-sm max-w-sm leading-relaxed lg:text-right font-light">
-              From advanced retinal diagnostics to bespoke eyewear styling — every service is designed around you.
+              From advanced retinal diagnostics to bespoke eyewear styling – every service is designed around you.
             </p>
           </div>
 
@@ -490,7 +490,7 @@ export default function StrattonHome() {
               </h2>
             </div>
             <p className="text-[#1A2E45]/65 text-base lg:text-lg leading-relaxed font-light">
-              We stock only the frames we would wear ourselves. Each collection is handpicked for quality of construction, optical precision, and the kind of design that endures beyond seasonal trends. From the precision engineering of Silhouette to the timeless elegance of Ralph Lauren — these are not ordinary glasses.
+              We stock only the frames we would wear ourselves. Each collection is handpicked for quality of construction, optical precision, and the kind of design that endures beyond seasonal trends. From the precision engineering of Silhouette to the timeless elegance of Ralph Lauren – these are not ordinary glasses.
             </p>
 
             {/* Brand grid */}
@@ -694,7 +694,7 @@ export default function StrattonHome() {
             </div>
 
             <p className="text-[#1A2E45]/70 leading-relaxed font-light max-w-2xl mx-auto">
-              Invest in better vision. Get a premium second pair of Essilor lenses at 50% off when you purchase a first pair of glasses or add-on lenses with us. Varifocals, blue-light filtered, transitions, prescription sunglasses—choose the lenses that suit your lifestyle.
+              Invest in better vision. Get a premium second pair of Essilor lenses at 50% off when you purchase a first pair of glasses or add-on lenses with us. Varifocals, blue-light filtered, transitions, prescription sunglasses – choose the lenses that suit your lifestyle.
             </p>
 
             <button
@@ -725,7 +725,7 @@ export default function StrattonHome() {
             <em className="italic text-[#C9A96E]">extraordinary</em> care.
           </h2>
           <p className="text-[#F8F4EF]/55 text-base lg:text-lg font-light leading-relaxed max-w-xl mx-auto mb-10">
-            Book your comprehensive eye examination today. Advanced diagnostics, honest advice, and a selection of the world's finest eyewear — all under one roof in Essex.
+            Book your comprehensive eye examination today. Advanced diagnostics, honest advice, and a selection of the world's finest eyewear – all under one roof in Essex.
           </p>
           <button
             onClick={() => window.location.href = '/book'}

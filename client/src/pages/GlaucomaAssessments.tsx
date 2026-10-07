@@ -10,7 +10,7 @@ const IMAGES = {
 
 export default function GlaucomaAssessments() {
   useMetaTags({
-    title: "Glaucoma Assessment Billericay — Stratton Opticians",
+    title: "Glaucoma Assessment Billericay – Stratton Opticians",
     description: "Advanced glaucoma assessments in Billericay using OCT imaging and eye pressure testing, for early detection and ongoing monitoring.",
     canonical: "http://localhost:3001/glaucoma-assessments",
   });
