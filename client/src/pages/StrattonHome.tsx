@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
+import GoogleRating from "@/components/GoogleRating";
 import { ArrowRight, MapPin, Star, Eye, Scan, Droplets, Glasses, ChevronDown, Phone, ShieldCheck, Baby, Layers, Flag } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
@@ -208,17 +209,7 @@ export default function StrattonHome() {
           {/* Trust bar */}
           <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-[#F8F4EF]/15 flex flex-wrap gap-6 sm:gap-8 items-center">
             <div className="flex items-center gap-3">
-              <div className="flex -space-x-1">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={i} className="w-7 h-7 rounded-full bg-[#C9A96E]/30 border-2 border-[#F8F4EF]/20 flex items-center justify-center">
-                    <Star className="w-3 h-3 fill-[#C9A96E] text-[#C9A96E]" />
-                  </div>
-                ))}
-              </div>
-              <div>
-                <p className="text-[#F8F4EF] text-sm font-semibold">5.0 Google Rating</p>
-                <p className="text-[#F8F4EF]/50 text-xs">119 Google reviews</p>
-              </div>
+              <GoogleRating />
             </div>
             <div className="h-8 w-px bg-[#F8F4EF]/15 hidden sm:block" />
             <div>
