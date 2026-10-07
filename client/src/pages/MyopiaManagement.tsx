@@ -58,7 +58,7 @@ export default function MyopiaManagement() {
                   change to your child's daily routine -- they simply wear their glasses as normal.
                 </p>
               </div>
-              <div className="aspect-square rounded-lg overflow-hidden">
+              <div className="h-72 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
                 <img
                   src={IMAGES.consultation}
                   alt="Consultation room at Stratton Opticians used for children's eye examinations"

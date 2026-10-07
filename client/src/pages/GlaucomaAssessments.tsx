@@ -61,7 +61,7 @@ export default function GlaucomaAssessments() {
                   on its own page.
                 </p>
               </div>
-              <div className="aspect-square rounded-lg overflow-hidden">
+              <div className="h-72 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
                 <img
                   src={IMAGES.measurement}
                   alt="Diagnostic equipment used for glaucoma assessment at Stratton Opticians"

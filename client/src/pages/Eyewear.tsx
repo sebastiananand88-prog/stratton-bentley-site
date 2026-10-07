@@ -53,7 +53,7 @@ export default function Eyewear() {
                   We'll discuss proportions, materials, colours that flatter you, and styles that reflect your taste. The goal isn't to sell more; it's to ensure you leave with glasses you'll genuinely love wearing every day.
                 </p>
               </div>
-              <div className="aspect-square rounded-lg overflow-hidden">
+              <div className="h-72 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
                 <img
                   src={IMAGES.frameDisplay}
                   alt="Frame display wall at Stratton Opticians showing premium designer eyewear collection"

@@ -53,7 +53,7 @@ export default function OctScans() {
                   It's painless, non-invasive, and requires no dilation. You simply look into the scanner, and within moments, we have a detailed, permanent record of your eye's health.
                 </p>
               </div>
-              <div className="aspect-square rounded-lg overflow-hidden">
+              <div className="h-72 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
                 <img
                   src={IMAGES.equipment}
                   alt="OCT scanning equipment at Stratton Opticians in Billericay"

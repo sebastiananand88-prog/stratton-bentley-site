@@ -95,7 +95,7 @@ export default function ContactLenses() {
             <img
               src={IMAGES.fittingArea}
               alt="Contact lens fitting area and frame displays at Stratton Opticians"
-              className="w-full aspect-square object-cover hover:scale-105 transition-transform duration-700"
+              className="w-full h-72 sm:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
         </div>

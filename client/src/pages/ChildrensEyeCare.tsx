@@ -103,7 +103,7 @@ export default function ChildrensEyeCare() {
             <img
               src={IMAGES.reception}
               alt="Welcoming reception area at Stratton Opticians, child-friendly environment"
-              className="w-full aspect-square object-cover hover:scale-105 transition-transform duration-700"
+              className="w-full h-72 sm:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
         </div>

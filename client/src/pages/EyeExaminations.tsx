@@ -110,7 +110,7 @@ export default function EyeExaminations() {
               </a>
             </div>
           </div>
-          <div className="aspect-square rounded-lg overflow-hidden">
+          <div className="h-72 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
             <img
               src={IMAGES.examRoom}
               alt="Stratton Opticians examination room with advanced diagnostic equipment"

@@ -59,7 +59,7 @@ export default function Varifocals() {
                   if anything needs fine-tuning.
                 </p>
               </div>
-              <div className="aspect-square rounded-lg overflow-hidden">
+              <div className="h-72 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
                 <img
                   src={IMAGES.lenses}
                   alt="Premium lens display at Stratton Opticians"

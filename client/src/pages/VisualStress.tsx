@@ -102,7 +102,7 @@ export default function VisualStress() {
                 For some, the difference is immediate and dramatic. For others, it's subtle but meaningful. Once we've identified your optimal colour, ChromaGen filters can be incorporated into prescription lenses.
               </p>
             </div>
-            <div className="aspect-square rounded-lg overflow-hidden">
+            <div className="h-72 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
               <img
                 src={IMAGES.perspective}
                 alt="Visual perspective - 'sometimes all you need is a new perspective' motivational poster at Stratton Opticians"
