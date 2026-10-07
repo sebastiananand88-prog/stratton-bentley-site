@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import FaqSection from "@/components/FaqSection";
+import { getFaqItems } from "@/lib/faqData";
 import { Target, Zap, Eye } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
@@ -133,6 +135,7 @@ export default function GolfSportsVision() {
           </a>
         </div>
       </section>
+      <FaqSection items={getFaqItems("golf-sports-vision")} />
     </Layout>
   );
 }
