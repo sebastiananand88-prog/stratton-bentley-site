@@ -118,11 +118,11 @@ export default function StrattonHome() {
             src={IMAGES.boutique}
             alt="Stratton Opticians boutique interior in Billericay with luxury eyewear display"
             className="w-full h-full object-cover object-center scale-105"
-            style={{ filter: "brightness(0.35)" }}
+            style={{ filter: "brightness(0.55)" }}
           />
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0F1B2D]/95 via-[#0F1B2D]/40 to-[#0F1B2D]/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0F1B2D]/70 via-[#0F1B2D]/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F1B2D]/90 via-[#0F1B2D]/30 to-[#0F1B2D]/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0F1B2D]/55 via-[#0F1B2D]/20 to-transparent" />
         </div>
 
         {/* Hero content */}
@@ -137,16 +137,23 @@ export default function StrattonHome() {
             </div>
 
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-[#F8F4EF] leading-tight sm:leading-[0.95] mb-6 sm:mb-8"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-[#F8F4EF] leading-tight sm:leading-[0.95] mb-5"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              Independent Opticians in Billericay &amp; Essex
+              Eye tests done properly.
               <br />
-              <em className="italic text-[#C9A96E]">No ordinary optician.</em>
+              <em className="italic text-[#C9A96E]">Eyewear chosen for you.</em>
             </h1>
 
+            <p
+              className="text-[#C9A96E] text-xs font-semibold uppercase tracking-[0.25em] mb-6"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+            >
+              Independent. Personal. Exceptional.
+            </p>
+
             <p className="text-[#F8F4EF]/75 text-lg md:text-xl font-light leading-relaxed max-w-xl mb-10">
-              Four decades of independent eye care in Essex. Advanced clinical technology, curated designer eyewear, and a level of personal attention you will not find on the high street.
+              Four decades of independent eye care in Billericay. Advanced clinical technology, curated designer eyewear, and a level of personal attention you will not find on the high street.
             </p>
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
@@ -276,6 +283,83 @@ export default function StrattonHome() {
               Book Your Appointment
               <ArrowRight className="w-4 h-4" />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ── MEET THE TEAM ── */}
+      <section className="py-24 lg:py-32 bg-[#EDE8E1]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-16">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold mb-4">
+              A Personal Welcome
+            </p>
+            <h2
+              className="text-4xl lg:text-5xl font-light text-[#1A2E45]"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              Meet the team looking after your eyes.
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-14">
+            <div className="lg:col-span-4">
+              <img
+                src="/images/jas.jpeg"
+                alt="Jas Chaggar, Principal Optometrist and Owner at Stratton Opticians"
+                className="w-full aspect-square object-cover rounded-2xl"
+              />
+            </div>
+            <div className="lg:col-span-8 space-y-4">
+              <p
+                className="text-2xl lg:text-3xl font-light text-[#1A2E45] leading-relaxed"
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                "Every patient deserves the time to understand their eye health and vision—and to leave feeling informed, reassured and confident in their care."
+              </p>
+              <p className="text-[#1A2E45]/70 font-light">
+                Jas Chaggar, Principal Optometrist &amp; Owner
+              </p>
+              <p className="text-[#1A2E45]/60 text-sm leading-relaxed font-light max-w-xl">
+                And beyond the examination room, our frame-styling consultations are just as personal. Sheila, our
+                lead dispenser, takes real time to understand your face, your lifestyle and your style—so the frames
+                you leave with are chosen for you, not just fitted to you.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <div className="flex items-center gap-4 bg-[#F8F4EF] rounded-xl p-4">
+              <img
+                src="/images/sheila.jpeg"
+                alt="Sheila, Lead Dispenser at Stratton Opticians"
+                className="w-16 h-16 rounded-full object-cover shrink-0"
+              />
+              <div>
+                <p className="font-medium text-[#1A2E45]">Sheila</p>
+                <p className="text-xs text-[#1A2E45]/60 uppercase tracking-wide">Lead Dispenser</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 bg-[#F8F4EF] rounded-xl p-4">
+              <img
+                src="/images/jen.jpeg"
+                alt="Jen, Receptionist and Frame Advisor at Stratton Opticians"
+                className="w-16 h-16 rounded-full object-cover shrink-0"
+              />
+              <div>
+                <p className="font-medium text-[#1A2E45]">Jen</p>
+                <p className="text-xs text-[#1A2E45]/60 uppercase tracking-wide">Receptionist &amp; Frame Advisor</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-10">
+            <a
+              href="/about"
+              className="inline-flex items-center gap-2 text-[#C9A96E] hover:text-[#C9A96E]/80 transition-colors text-sm font-medium"
+            >
+              Meet the full team <ArrowRight className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
       </section>
@@ -472,14 +556,15 @@ export default function StrattonHome() {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-sm text-[#1A2E45]/50 mb-2">
-              Rated 5.0 from 200+ Google Reviews
-            </p>
-            <div className="flex justify-center gap-1">
-              {[1,2,3,4,5].map(i => (
-                <Star key={i} className="w-5 h-5 fill-[#C9A96E] text-[#C9A96E]" />
-              ))}
-            </div>
+            <a
+              href="https://google.com/search?q=Stratton+Opticians+Billericay"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-[#1A2E45]/30 text-[#1A2E45] font-medium rounded-lg hover:bg-[#1A2E45]/5 transition-colors"
+            >
+              <span className="text-sm">Read more reviews on</span>
+              <span className="font-semibold">Google</span>
+            </a>
           </div>
         </div>
       </section>
@@ -488,60 +573,8 @@ export default function StrattonHome() {
       <section
         id="locations"
         data-animate
-        className={`py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-10 transition-all duration-700 ${isVisible("locations") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        className={`py-24 lg:py-32 bg-[#F8F4EF] transition-all duration-700 ${isVisible("locations") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
-        <div className="text-center mb-16">
-          <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold mb-4">
-            Visit Us
-          </p>
-          <h2
-            className="text-4xl lg:text-5xl font-light text-[#1A2E45]"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
-          >
-            Find us in Billericay.
-          </h2>
-        </div>
-
-        <div className="max-w-xl mx-auto">
-          <div className="group relative rounded-2xl overflow-hidden">
-            <img
-              src={IMAGES.store}
-              alt="Stratton Opticians Billericay"
-              className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
-              style={{ filter: "brightness(0.6)" }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0F1B2D]/80 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[#C9A96E] font-semibold mb-2">
-                Billericay
-              </p>
-              <h3
-                className="text-2xl font-light text-[#F8F4EF] mb-3"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
-              >
-                Stratton Opticians
-              </h3>
-              <p className="text-[#F8F4EF]/70 text-sm mb-1 flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 shrink-0" />
-                14 The Pantiles, Queens Park Avenue, CM12 0UA
-              </p>
-              <p className="text-[#F8F4EF]/70 text-sm mb-4 flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 shrink-0" />
-                01277 650584
-              </p>
-              <button
-                onClick={() => window.location.href = '/book'}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#C9A96E] text-[#1A2E45] text-xs font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 transition-all"
-              >
-                Book Here <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CLINIC SHOWCASE ── */}
-      <section className="py-24 lg:py-32 bg-[#F8F4EF]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-16">
             <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold mb-4">
@@ -551,59 +584,61 @@ export default function StrattonHome() {
               className="text-4xl lg:text-5xl font-light text-[#1A2E45]"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              Your optician awaits.
+              Find us in Billericay.
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
-            <div className="rounded-2xl overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+            <div className="group relative rounded-2xl overflow-hidden">
               <img
-                src={IMAGES.reception}
-                alt="Stratton Opticians reception and welcome area with luxury interiors"
-                className="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700"
+                src={IMAGES.store}
+                alt="Stratton Opticians Billericay"
+                className="w-full h-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
+                style={{ filter: "brightness(0.6)" }}
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F1B2D]/80 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#C9A96E] font-semibold mb-2">
+                  Billericay
+                </p>
+                <h3
+                  className="text-2xl font-light text-[#F8F4EF] mb-3"
+                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                >
+                  Stratton Opticians
+                </h3>
+                <p className="text-[#F8F4EF]/70 text-sm mb-1 flex items-center gap-2">
+                  <MapPin className="w-3.5 h-3.5 shrink-0" />
+                  14 The Pantiles, Queens Park Avenue, CM12 0UA
+                </p>
+                <p className="text-[#F8F4EF]/70 text-sm mb-4 flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 shrink-0" />
+                  01277 650584
+                </p>
+                <button
+                  onClick={() => window.location.href = '/book'}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#C9A96E] text-[#1A2E45] text-xs font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 transition-all"
+                >
+                  Book Here <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
-            <div className="rounded-2xl overflow-hidden">
-              <img
-                src={IMAGES.storefront}
-                alt="Stratton Opticians storefront in Billericay on The Pantiles"
-                className="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ── GOOGLE REVIEWS ── */}
-      <section className="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="text-center space-y-12">
-          <div className="space-y-4">
-            <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold">Trusted by our patients</p>
-            <h2
-              className="text-4xl lg:text-5xl font-light text-[#1A2E45]"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
-            >
-              5.0 Google Rating
-            </h2>
-          </div>
-
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex gap-1 justify-center">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} className="w-8 h-8 fill-[#C9A96E] text-[#C9A96E]" />
-              ))}
-            </div>
-            <p className="text-lg text-[#1A2E45]/70 font-light">119 Google reviews</p>
-            <div className="mt-4 pt-4 border-t border-[#1A2E45]/20">
-              <a
-                href="https://google.com/search?q=Stratton+Opticians+Billericay"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[#1A2E45]/30 text-[#1A2E45] font-medium rounded-lg hover:bg-[#1A2E45]/5 transition-colors"
-              >
-                <span className="text-sm">Read reviews on</span>
-                <span className="font-semibold">Google</span>
-              </a>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src={IMAGES.reception}
+                  alt="Stratton Opticians reception and welcome area with luxury interiors"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src={IMAGES.storefront}
+                  alt="Stratton Opticians storefront in Billericay on The Pantiles"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
             </div>
           </div>
         </div>

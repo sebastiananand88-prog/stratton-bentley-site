@@ -3,10 +3,10 @@ import { Phone, Mail, Instagram, Facebook, Menu, X, ChevronDown } from "lucide-r
 import CookieConsent from "@/components/CookieConsent";
 import AskAI from "@/components/AskAI";
 
+// Eye Examinations and Eyewear get their own top-level nav links (client asked for these to be
+// easy to find), the rest stay grouped under the Services dropdown.
 const SERVICES = [
-  { label: "Eye Examinations", href: "/eye-examinations" },
   { label: "OCT Scans", href: "/oct-scans" },
-  { label: "Eyewear", href: "/eyewear" },
   { label: "Contact Lenses", href: "/contact-lenses" },
   { label: "Children's Eye Care", href: "/childrens-eye-care" },
   { label: "Visual Stress", href: "/visual-stress-assessments" },
@@ -83,6 +83,22 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
               }`}
             >
               About
+            </a>
+            <a
+              href="/eye-examinations"
+              className={`text-xs font-medium transition-colors tracking-wide whitespace-nowrap ${
+                solid ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
+              }`}
+            >
+              Eye Examinations
+            </a>
+            <a
+              href="/eyewear"
+              className={`text-xs font-medium transition-colors tracking-wide whitespace-nowrap ${
+                solid ? "text-[#1A2E45]/70 hover:text-[#1A2E45]" : "text-[#F8F4EF]/80 hover:text-[#F8F4EF]"
+              }`}
+            >
+              Eyewear
             </a>
 
             <div
@@ -191,6 +207,20 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
             >
               About
             </a>
+            <a
+              href="/eye-examinations"
+              className="block text-base font-medium text-[#1A2E45]/80 hover:text-[#1A2E45] py-2"
+              onClick={() => setMenuOpen(false)}
+            >
+              Eye Examinations
+            </a>
+            <a
+              href="/eyewear"
+              className="block text-base font-medium text-[#1A2E45]/80 hover:text-[#1A2E45] py-2"
+              onClick={() => setMenuOpen(false)}
+            >
+              Eyewear
+            </a>
 
             <button
               onClick={() => setMobileServicesOpen((o) => !o)}
@@ -266,6 +296,9 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
               >
                 STRATTON OPTICIANS
               </p>
+              <p className="text-[#C9A96E] text-[10px] font-semibold uppercase tracking-[0.2em]">
+                Independent. Personal. Exceptional.
+              </p>
               <p className="text-[#F8F4EF]/40 text-sm leading-relaxed font-light max-w-xs">
                 Independent opticians serving Billericay since 1984. Advanced clinical care and curated designer eyewear.
               </p>
@@ -289,6 +322,17 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
                   <Facebook className="w-4 h-4" />
                 </a>
               </div>
+              <p className="text-[#F8F4EF]/50 text-sm pt-2">
+                Our sister practice:{" "}
+                <a
+                  href="https://www.bentleyopticians.co.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#C9A96E] hover:text-[#C9A96E]/80 transition-colors font-medium"
+                >
+                  Bentley Opticians, Leigh-on-Sea
+                </a>
+              </p>
             </div>
 
             <div className="space-y-4">
@@ -351,7 +395,6 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
           <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#F8F4EF]/25">
             <div className="space-y-1 text-center sm:text-left">
               <p>© 2026 Stratton Opticians. All rights reserved.</p>
-              <p className="text-[#F8F4EF]/20">Our sister practice: <a href="https://www.bentleyopticians.co.uk/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors text-[#F8F4EF]/40">Bentley Opticians, Leigh-on-Sea</a></p>
             </div>
             <div className="flex gap-6">
               <a href="/privacy-policy" className="hover:text-[#F8F4EF]/50 transition-colors">Privacy Policy</a>
