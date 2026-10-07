@@ -36,16 +36,14 @@ export default function OctScans() {
       <section className="py-20 bg-[#1A2E45]/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="space-y-12">
-            <div>
-              <h2
-                className="text-4xl md:text-5xl font-light text-[#1A2E45]"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
-              >
-                What is OCT scanning?
-              </h2>
-            </div>
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="space-y-6">
+                <h2
+                  className="text-4xl md:text-5xl font-light text-[#1A2E45]"
+                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                >
+                  What is OCT scanning?
+                </h2>
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
                   OCT works like an ultrasound for your eye. It uses light waves to create cross-sectional images of the retina and optic nerve with incredible precision. In seconds, it reveals structures that would otherwise be invisible—layer by layer, cell by cell.
                 </p>

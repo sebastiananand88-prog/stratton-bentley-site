@@ -36,16 +36,14 @@ export default function GlaucomaAssessments() {
       <section className="py-20 bg-[#1A2E45]/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="space-y-12">
-            <div>
-              <h2
-                className="text-4xl md:text-5xl font-light text-[#1A2E45]"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
-              >
-                What a glaucoma assessment involves
-              </h2>
-            </div>
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="space-y-6">
+                <h2
+                  className="text-4xl md:text-5xl font-light text-[#1A2E45]"
+                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                >
+                  What a glaucoma assessment involves
+                </h2>
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
                   A thorough glaucoma assessment looks at several things together: the pressure inside your eye, the
                   health and structure of your optic nerve, and your peripheral vision. No single test tells the

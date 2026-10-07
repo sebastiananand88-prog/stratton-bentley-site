@@ -38,16 +38,14 @@ export default function MyopiaManagement() {
       <section className="py-20 bg-[#1A2E45]/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="space-y-12">
-            <div>
-              <h2
-                className="text-4xl md:text-5xl font-light text-[#1A2E45]"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
-              >
-                Essilor Stellest lenses
-              </h2>
-            </div>
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="space-y-6">
+                <h2
+                  className="text-4xl md:text-5xl font-light text-[#1A2E45]"
+                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                >
+                  Essilor Stellest lenses
+                </h2>
                 <p className="text-[#1A2E45]/70 leading-relaxed font-light">
                   We fit Essilor Stellest lenses, spectacle lenses specifically designed to slow the progression of
                   myopia in children. They correct your child's vision normally, day to day, while a pattern built

@@ -36,28 +36,28 @@ export default function DryEyeAssessments() {
       <section className="py-20 bg-[#1A2E45]/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="space-y-12">
-            <div>
-              <h2
-                className="text-4xl md:text-5xl font-light text-[#1A2E45]"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
-              >
-                Common symptoms
-              </h2>
-            </div>
             <div className="grid md:grid-cols-2 gap-12 items-start">
-              <div className="grid sm:grid-cols-2 gap-6">
-                {[
-                  { icon: Droplets, title: "Grittiness", desc: "A sandy or gritty feeling, as if something is in your eye." },
-                  { icon: Sun, title: "Light Sensitivity", desc: "Discomfort in bright light or when using screens for long periods." },
-                  { icon: Wind, title: "Watering", desc: "Eyes that water excessively, often a response to underlying dryness." },
-                  { icon: Droplets, title: "Fluctuating Vision", desc: "Vision that seems to blur and clear, especially when reading or on screens." },
-                ].map((item, i) => (
-                  <div key={i} className="space-y-3">
-                    <item.icon className="w-7 h-7 text-[#C9A96E]" />
-                    <h3 className="font-semibold text-[#1A2E45]">{item.title}</h3>
-                    <p className="text-[#1A2E45]/70 text-sm leading-relaxed font-light">{item.desc}</p>
-                  </div>
-                ))}
+              <div className="space-y-6">
+                <h2
+                  className="text-4xl md:text-5xl font-light text-[#1A2E45]"
+                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                >
+                  Common symptoms
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {[
+                    { icon: Droplets, title: "Grittiness", desc: "A sandy or gritty feeling, as if something is in your eye." },
+                    { icon: Sun, title: "Light Sensitivity", desc: "Discomfort in bright light or when using screens for long periods." },
+                    { icon: Wind, title: "Watering", desc: "Eyes that water excessively, often a response to underlying dryness." },
+                    { icon: Droplets, title: "Fluctuating Vision", desc: "Vision that seems to blur and clear, especially when reading or on screens." },
+                  ].map((item, i) => (
+                    <div key={i} className="space-y-3">
+                      <item.icon className="w-7 h-7 text-[#C9A96E]" />
+                      <h3 className="font-semibold text-[#1A2E45]">{item.title}</h3>
+                      <p className="text-[#1A2E45]/70 text-sm leading-relaxed font-light">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="h-72 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
                 <img
