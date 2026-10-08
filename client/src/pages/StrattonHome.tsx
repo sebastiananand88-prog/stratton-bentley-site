@@ -15,7 +15,7 @@ const IMAGES = {
   editorial: "/images/welcome-reception-desk.jpeg",
   frames: "/images/display-nose-piece.jpeg",
   store: "/images/interior-clinic-wall.jpeg",
-  reception: "/images/reception-welcome.jpeg",
+  reception: "/images/frame-wall-oakley-cabinet.jpeg",
   storefront: "/images/storefront-exterior.jpeg",
 };
 
@@ -662,7 +662,7 @@ export default function StrattonHome() {
               <div className="rounded-2xl overflow-hidden">
                 <img
                   src={IMAGES.reception}
-                  alt="Stratton Opticians reception and welcome area with luxury interiors"
+                  alt="Frame display wall at Stratton Opticians"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
