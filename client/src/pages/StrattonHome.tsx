@@ -12,7 +12,7 @@ import { useMetaTags } from "@/hooks/useMetaTags";
 
 const IMAGES = {
   boutique: "/images/reception-desk.jpeg",
-  editorial: "/images/frame-display-oakley.jpeg",
+  editorial: "/images/welcome-reception-desk.jpeg",
   frames: "/images/display-nose-piece.jpeg",
   store: "/images/interior-clinic-wall.jpeg",
   reception: "/images/reception-welcome.jpeg",
@@ -256,7 +256,7 @@ export default function StrattonHome() {
             <div className="relative">
               <img
                 src={IMAGES.editorial}
-                alt="Designer frame display at Stratton Opticians"
+                alt="Welcome reception desk at Stratton Opticians"
                 className="w-full aspect-[3/4] object-cover object-top rounded-2xl"
                 style={{ filter: "grayscale(15%)" }}
               />
