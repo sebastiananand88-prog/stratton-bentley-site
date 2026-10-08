@@ -82,21 +82,21 @@ const BRANDS = ["Tom Ford", "Ray-Ban", "Oakley", "Silhouette", "Ralph Lauren", "
 
 const TESTIMONIALS = [
   {
-    name: "Sarah M.",
-    location: "Billericay",
-    text: "Completely different to any optician I've visited before. The OCT scan was fascinating and the frame selection is extraordinary. I felt genuinely looked after.",
+    name: "Linny",
+    source: "Google review",
+    text: "I have been using Stratton for about 10 years. They offer a very thorough and professional service, which includes an optical scan. Everyone I have dealt with are super friendly, helpful and knowledgeable. Wouldn't go anywhere else!",
     stars: 5,
   },
   {
-    name: "James T.",
-    location: "Leigh-on-Sea",
-    text: "The Visual Stress Assessment changed my son's life at school. The team were patient, thorough and genuinely caring. Cannot recommend highly enough.",
+    name: "Ed Scott",
+    source: "Google review",
+    text: "Been to Stratton Opticians for the last 6 years and the service is so professional and thorough, cant fault the service you receive. Fortunately the prescription glasses they supplied 3 years ago are still perfect for my vision despite now being over 65.",
     stars: 5,
   },
   {
-    name: "Caroline B.",
-    location: "Billericay",
-    text: "I've been coming here for 12 years. The level of personal attention and the quality of the eyewear is simply unmatched in Essex.",
+    name: "Brian Phillips",
+    source: "Google review",
+    text: "This is a superb, friendly and very personal opticians. Nothing is too much trouble, and you can be assured of being treated with the utmost care and courtesy. Thoroughly and highly recommended.",
     stars: 5,
   },
 ];
@@ -583,7 +583,7 @@ export default function StrattonHome() {
                 </p>
                 <div className="pt-2 border-t border-[#1A2E45]/10">
                   <p className="text-sm font-semibold text-[#1A2E45]">{t.name}</p>
-                  <p className="text-xs text-[#1A2E45]/50">{t.location}</p>
+                  <p className="text-xs text-[#1A2E45]/50">{t.source}</p>
                 </div>
               </div>
             ))}
