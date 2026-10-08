@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Award, Heart, Eye } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
 const IMAGES = {
-  clinic: "/images/interior-clinic-wall.jpeg",
+  clinic: "/images/storefront-exterior.jpeg",
 };
 
 export default function About() {
@@ -80,7 +80,7 @@ export default function About() {
         <div className="rounded-lg overflow-hidden">
           <img
             src={IMAGES.clinic}
-            alt="Inside Stratton Opticians clinic with professional eye care equipment and welcoming interior"
+            alt="Reception desk at Stratton Opticians with a welcoming interior"
             className="w-full aspect-video object-cover hover:scale-105 transition-transform duration-700"
           />
         </div>

@@ -5,7 +5,7 @@ import { Eye, Zap, Heart, AlertCircle } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
 const IMAGES = {
-  perspective: "/images/perspective-poster.jpeg",
+  perspective: "/images/interior-desk-window.jpeg",
 };
 
 export default function VisualStress() {

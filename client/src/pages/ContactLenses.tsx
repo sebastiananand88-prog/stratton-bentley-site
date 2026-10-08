@@ -5,7 +5,7 @@ import { Eye, Shield, Heart } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
 const IMAGES = {
-  fittingArea: "/images/frame-fitting-area.jpeg",
+  fittingArea: "/images/measurement-tools.jpeg",
 };
 
 export default function ContactLenses() {
@@ -94,7 +94,7 @@ export default function ContactLenses() {
           <div className="rounded-lg overflow-hidden">
             <img
               src={IMAGES.fittingArea}
-              alt="Contact lens fitting area and frame displays at Stratton Opticians"
+              alt="Consultation and dispensing desk at Stratton Opticians"
               className="w-full h-72 sm:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>

@@ -5,7 +5,7 @@ import { Heart, Eye, Shield, CheckCircle2 } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
 const IMAGES = {
-  reception: "/images/reception-desk.jpeg",
+  reception: "/images/frame-fitting-area.jpeg",
 };
 
 export default function ChildrensEyeCare() {

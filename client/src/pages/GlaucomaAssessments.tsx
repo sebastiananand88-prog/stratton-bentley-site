@@ -5,7 +5,7 @@ import { Eye, Activity, Clock } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
 const IMAGES = {
-  measurement: "/images/measurement-tools.jpeg",
+  measurement: "/images/eye-model-display.jpeg",
 };
 
 export default function GlaucomaAssessments() {

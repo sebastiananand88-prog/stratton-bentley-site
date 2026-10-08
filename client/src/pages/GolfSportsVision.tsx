@@ -5,7 +5,7 @@ import { Target, Zap, Eye } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
 const IMAGES = {
-  interior: "/images/interior-desk-window.jpeg",
+  interior: "/images/storefront-entrance.jpeg",
 };
 
 export default function GolfSportsVision() {

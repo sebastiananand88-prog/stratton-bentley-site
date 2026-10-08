@@ -5,7 +5,7 @@ import { Droplets, Sun, Wind } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
 const IMAGES = {
-  display: "/images/display-equipment-eye.jpeg",
+  display: "/images/reception-welcome.jpeg",
 };
 
 export default function DryEyeAssessments() {

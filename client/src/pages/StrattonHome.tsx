@@ -11,10 +11,10 @@ import { useMetaTags } from "@/hooks/useMetaTags";
 // ─────────────────────────────────────────────
 
 const IMAGES = {
-  boutique: "/images/boutique-interior.webp",
-  editorial: "/images/editorial-woman.jpeg",
-  frames: "/images/david-kind-frames.jpg",
-  store: "/images/boutique-store.jpg",
+  boutique: "/images/reception-desk.jpeg",
+  editorial: "/images/frame-display-oakley.jpeg",
+  frames: "/images/display-nose-piece.jpeg",
+  store: "/images/interior-clinic-wall.jpeg",
   reception: "/images/reception-welcome.jpeg",
   storefront: "/images/storefront-exterior.jpeg",
 };
@@ -148,7 +148,7 @@ export default function StrattonHome() {
         <div className="absolute inset-0">
           <img
             src={IMAGES.boutique}
-            alt="Stratton Opticians boutique interior in Billericay with luxury eyewear display"
+            alt="Stratton Opticians practice interior in Billericay with designer eyewear display"
             className="w-full h-full object-cover object-center scale-105"
             style={{ filter: "brightness(0.55)" }}
           />
@@ -256,7 +256,7 @@ export default function StrattonHome() {
             <div className="relative">
               <img
                 src={IMAGES.editorial}
-                alt="Premium eyewear editorial"
+                alt="Designer frame display at Stratton Opticians"
                 className="w-full aspect-[3/4] object-cover object-top rounded-2xl"
                 style={{ filter: "grayscale(15%)" }}
               />
@@ -518,7 +518,7 @@ export default function StrattonHome() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <img
                 src={IMAGES.frames}
-                alt="Designer eyewear collection"
+                alt="Designer eyewear on display at Stratton Opticians"
                 className="w-full aspect-square object-cover rounded-2xl sm:col-span-2"
               />
               <div className="bg-[#1A2E45] rounded-2xl p-6 flex flex-col justify-between gap-6 min-h-[180px] sm:aspect-square">

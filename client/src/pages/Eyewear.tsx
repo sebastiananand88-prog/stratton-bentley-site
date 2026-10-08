@@ -6,7 +6,7 @@ import { useMetaTags } from "@/hooks/useMetaTags";
 
 const IMAGES = {
   frameDisplay: "/images/frame-wall-display.jpeg",
-  measurement: "/images/measurement-tools.jpeg",
+  measurement: "/images/display-equipment-eye.jpeg",
 };
 
 export default function Eyewear() {
@@ -173,7 +173,7 @@ export default function Eyewear() {
           <div className="h-72 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
             <img
               src={IMAGES.measurement}
-              alt="Diagnostic measurement equipment at Stratton Opticians"
+              alt="Frame display wall at Stratton Opticians"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
