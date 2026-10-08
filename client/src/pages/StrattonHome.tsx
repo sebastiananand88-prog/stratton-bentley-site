@@ -13,7 +13,7 @@ import { useMetaTags } from "@/hooks/useMetaTags";
 const IMAGES = {
   boutique: "/images/storefront-hero.jpeg",
   editorial: "/images/welcome-reception-desk.jpeg",
-  frames: "/images/display-nose-piece.jpeg",
+  frames: "/images/frame-wall-rayban-oakley.jpeg",
   store: "/images/interior-clinic-wall.jpeg",
   reception: "/images/frame-wall-oakley-cabinet.jpeg",
   storefront: "/images/storefront-exterior.jpeg",
