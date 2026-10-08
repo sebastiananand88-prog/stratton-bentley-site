@@ -142,6 +142,12 @@ export default function Eyewear() {
                 </p>
               </div>
             </div>
+
+            <div className="bg-[#C9A96E]/10 border border-[#C9A96E]/30 rounded-lg p-6">
+              <p className="text-[#1A2E45] font-medium">
+                Buying a pair of glasses or add-on lenses with us? You'll get 50% off Essilor premium lenses for a second pair – varifocals, blue-light filtered, transitions, prescription sunglasses, whatever suits your lifestyle. It's a year-round offer, not a limited-time promotion.
+              </p>
+            </div>
           </div>
         </div>
       </section>
