@@ -118,6 +118,14 @@ export default function Book() {
               );
             })}
           </div>
+          <p className="mt-8 text-sm text-[#1A2E45]/60">
+            Phone and WhatsApp are answered Monday&ndash;Friday 9:00am&ndash;5:30pm and Saturday 9:00am&ndash;1:00pm.
+            For full address, map and opening hours, visit our{" "}
+            <a href="/contact" className="text-[#C9A96E] hover:text-[#C9A96E]/80 underline underline-offset-2">
+              Contact page
+            </a>
+            .
+          </p>
         </div>
       </section>
 
@@ -150,89 +158,6 @@ export default function Book() {
                 <p className="text-sm text-[#1A2E45]/60 font-light">{service.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#1A2E45]/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="space-y-12">
-            <div>
-              <h2
-                className="text-4xl md:text-5xl font-light text-[#1A2E45]"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
-              >
-                Opening hours
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="space-y-4">
-                <div className="flex justify-between border-b border-[#1A2E45]/10 pb-3">
-                  <span className="font-medium text-[#1A2E45]">Monday – Friday</span>
-                  <span className="text-[#1A2E45]/70 font-light">9:00am – 5:30pm</span>
-                </div>
-                <div className="flex justify-between border-b border-[#1A2E45]/10 pb-3">
-                  <span className="font-medium text-[#1A2E45]">Saturday</span>
-                  <span className="text-[#1A2E45]/70 font-light">9:00am – 1:00pm</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-medium text-[#1A2E45]">Sunday</span>
-                  <span className="text-[#1A2E45]/50 font-light">Closed</span>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <h3
-                  className="text-2xl font-light text-[#1A2E45]"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                >
-                  Location
-                </h3>
-                <div className="space-y-2 text-[#1A2E45]/70 font-light">
-                  <p>14 The Pantiles</p>
-                  <p>Queens Park Avenue</p>
-                  <p>Billericay, Essex</p>
-                  <p>CM12 0UA</p>
-                </div>
-                <p className="text-sm text-[#1A2E45]/60">
-                  Off-street parking available outside the practice. Car park opposite.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="space-y-8">
-          <div>
-            <h2
-              className="text-4xl font-light text-[#1A2E45]"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
-            >
-              Get in touch
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <h3 className="font-semibold text-[#1A2E45]">Phone</h3>
-              <a
-                href="tel:01277650584"
-                className="text-[#C9A96E] hover:text-[#C9A96E]/80 flex items-center gap-2 transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                01277 650584
-              </a>
-            </div>
-            <div className="space-y-4">
-              <h3 className="font-semibold text-[#1A2E45]">Email</h3>
-              <a
-                href="mailto:info@strattonopticians.co.uk"
-                className="text-[#C9A96E] hover:text-[#C9A96E]/80 flex items-center gap-2 transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                info@strattonopticians.co.uk
-              </a>
-            </div>
           </div>
         </div>
       </section>
