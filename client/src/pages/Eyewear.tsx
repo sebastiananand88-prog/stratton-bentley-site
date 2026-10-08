@@ -6,7 +6,7 @@ import { useMetaTags } from "@/hooks/useMetaTags";
 
 const IMAGES = {
   frameDisplay: "/images/frame-wall-display.jpeg",
-  measurement: "/images/display-equipment-eye.jpeg",
+  measurement: "/images/frame-wall-tomford-gant.jpeg",
 };
 
 export default function Eyewear() {
