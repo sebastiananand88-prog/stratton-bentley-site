@@ -683,7 +683,7 @@ export default function StrattonHome() {
         <div className="max-w-4xl mx-auto px-6 lg:px-10">
           <div className="space-y-6 sm:space-y-8 p-8 sm:p-12 lg:p-16 bg-[#F8F4EF] rounded-2xl border border-[#C9A96E]/40 text-center">
             <div className="space-y-2">
-              <p className="text-[#C9A96E] text-sm uppercase tracking-[0.2em] font-semibold">Premium Lens Offer</p>
+              <p className="text-[#C9A96E] text-sm uppercase tracking-[0.2em] font-semibold">Year-Round Offer</p>
               <h2
                 className="text-4xl lg:text-5xl font-light text-[#1A2E45]"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
@@ -694,7 +694,7 @@ export default function StrattonHome() {
             </div>
 
             <p className="text-[#1A2E45]/70 leading-relaxed font-light max-w-2xl mx-auto">
-              Invest in better vision. Get a premium second pair of Essilor lenses at 50% off when you purchase a first pair of glasses or add-on lenses with us. Varifocals, blue-light filtered, transitions, prescription sunglasses – choose the lenses that suit your lifestyle.
+              Invest in better vision. Get a premium second pair of Essilor lenses at 50% off when you purchase a first pair of glasses or add-on lenses with us. Varifocals, blue-light filtered, transitions, prescription sunglasses – choose the lenses that suit your lifestyle. This offer runs all year round, it's simply how we price a second pair.
             </p>
 
             <button

@@ -94,7 +94,7 @@ const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "What is the Essilor 50% off second pair offer?",
-        a: "When you purchase a full pair of glasses (or add-on lenses) with us, you'll receive 50% off Essilor premium lenses for a second pair. This is a great opportunity to have multiple pairs for different occasions – sunglasses, workplace glasses, and everyday wear.",
+        a: "This is a year-round offer, not a limited-time promotion. When you purchase a full pair of glasses (or add-on lenses) with us, you'll receive 50% off Essilor premium lenses for a second pair, such as varifocals. This is a great opportunity to have multiple pairs for different occasions – sunglasses, workplace glasses, and everyday wear.",
       },
       {
         q: "Do Essilor lenses include blue-light filtering?",
@@ -351,7 +351,7 @@ const LENS_TECHNOLOGY = [
   "Essilor premium lenses, including Varilux progressive/varifocal lenses for seamless vision at all distances",
   "Lens coatings: anti-reflective (reduces glare), anti-scratch, and blue-light filtering for screen use",
   "Essilor Stellest lenses for managing myopia progression in children",
-  "A current offer: 50% off Essilor premium lenses for a second pair, when a full pair of glasses or add-on lenses is purchased",
+  "A year-round offer (not a limited-time promotion): 50% off Essilor premium lenses for a second pair, when a full pair of glasses or add-on lenses is purchased",
 ];
 
 const ACCREDITATIONS = [
