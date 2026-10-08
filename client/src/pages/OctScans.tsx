@@ -5,7 +5,7 @@ import { Zap, Eye, Shield, ArrowRight } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
 const IMAGES = {
-  equipment: "/images/exam-room-equipment.jpeg",
+  equipment: "/images/oct-exam-room.jpeg",
 };
 
 export default function OctScans() {
