@@ -1,11 +1,12 @@
 import Layout from "@/components/Layout";
 import FaqSection from "@/components/FaqSection";
 import { getFaqItems } from "@/lib/faqData";
-import { Glasses, Palette, Sun } from "lucide-react";
+import { Glasses, Palette } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
 const IMAGES = {
   frameDisplay: "/images/frame-wall-display.jpeg",
+  measurement: "/images/measurement-tools.jpeg",
 };
 
 export default function Eyewear() {
@@ -169,8 +170,12 @@ export default function Eyewear() {
               We also stock non-prescription sunglasses for those who don't need a vision correction but still want premium eyewear for sun protection and style.
             </p>
           </div>
-          <div className="aspect-square bg-[#1A2E45]/5 rounded-lg flex items-center justify-center">
-            <Sun className="w-16 h-16 text-[#C9A96E]/40" />
+          <div className="h-72 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
+            <img
+              src={IMAGES.measurement}
+              alt="Diagnostic measurement equipment at Stratton Opticians"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            />
           </div>
         </div>
       </section>
