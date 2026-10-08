@@ -11,7 +11,7 @@ import { useMetaTags } from "@/hooks/useMetaTags";
 // ─────────────────────────────────────────────
 
 const IMAGES = {
-  boutique: "/images/reception-desk.jpeg",
+  boutique: "/images/storefront-hero.jpeg",
   editorial: "/images/welcome-reception-desk.jpeg",
   frames: "/images/display-nose-piece.jpeg",
   store: "/images/interior-clinic-wall.jpeg",
@@ -148,7 +148,7 @@ export default function StrattonHome() {
         <div className="absolute inset-0">
           <img
             src={IMAGES.boutique}
-            alt="Stratton Opticians practice interior in Billericay with designer eyewear display"
+            alt="Stratton Opticians storefront on The Pantiles, Billericay"
             className="w-full h-full object-cover object-center scale-105"
             style={{ filter: "brightness(0.55)" }}
           />
