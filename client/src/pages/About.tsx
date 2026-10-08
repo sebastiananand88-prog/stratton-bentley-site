@@ -2,10 +2,6 @@ import Layout from "@/components/Layout";
 import { MapPin, Phone, Mail, Award, Heart, Eye } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
-const IMAGES = {
-  clinic: "/images/storefront-exterior.jpeg",
-};
-
 export default function About() {
   useMetaTags({
     title: "Independent Opticians Billericay – Stratton Opticians Since 1984",
@@ -72,17 +68,6 @@ export default function About() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Clinic Interior Showcase */}
-      <section className="py-20 max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="rounded-lg overflow-hidden">
-          <img
-            src={IMAGES.clinic}
-            alt="Reception desk at Stratton Opticians with a welcoming interior"
-            className="w-full aspect-video object-cover hover:scale-105 transition-transform duration-700"
-          />
         </div>
       </section>
 
