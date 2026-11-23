@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
   useMetaTags({
     title: "Privacy Policy – Stratton Opticians",
     description: "How Stratton Opticians collects, uses, and protects your personal data.",
-    canonical: "http://localhost:3001/privacy-policy",
+    canonical: "https://www.strattonopticians.co.uk/privacy-policy",
   });
 
   return (

@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { BOOKING_URL } from "@/const";
 import FaqSection from "@/components/FaqSection";
 import { getFaqItems } from "@/lib/faqData";
 import { Eye, Zap, Heart, AlertCircle } from "lucide-react";
@@ -12,7 +13,7 @@ export default function VisualStress() {
   useMetaTags({
     title: "Visual Stress Assessment Essex – Stratton Opticians",
     description: "Visual stress & colourimetry assessment in Billericay using ChromaGen lenses. Helps reading difficulties, light sensitivity & visual processing. Expert assessment, both children & adults.",
-    canonical: "http://localhost:3001/visual-stress-assessments",
+    canonical: "https://www.strattonopticians.co.uk/visual-stress-assessments",
   });
   return (
     <Layout>
@@ -158,7 +159,7 @@ export default function VisualStress() {
             Interested in exploring colourimetry?
           </h2>
           <a
-            href="/book"
+            href={BOOKING_URL}
             className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#C9A96E] text-[#1A2E45] text-sm font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 active:scale-[0.97] transition-all duration-150 shadow-lg shadow-[#C9A96E]/20"
           >
             Book Visual Stress & Colourimetry Assessment

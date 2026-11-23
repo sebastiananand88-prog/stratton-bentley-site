@@ -1,5 +1,6 @@
 import { useEffect, useState, ReactNode } from "react";
-import { Phone, Mail, Instagram, Facebook, Menu, X, ChevronDown } from "lucide-react";
+import { BOOKING_URL } from "@/const";
+import { Phone, Mail, Menu, X, ChevronDown } from "lucide-react";
 import CookieConsent from "@/components/CookieConsent";
 import AskAI from "@/components/AskAI";
 
@@ -168,7 +169,7 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
               <span className="hidden xl:inline">01277 650584</span>
             </a>
             <a
-              href="/book"
+              href={BOOKING_URL}
               className="px-5 py-2.5 bg-[#1A2E45] text-[#F8F4EF] text-xs font-medium tracking-wide rounded-full hover:bg-[#1A2E45]/90 active:scale-[0.97] transition-all duration-150 shrink-0"
             >
               Book
@@ -187,7 +188,7 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
               <Phone className="w-5 h-5" />
             </a>
             <a
-              href="/book"
+              href={BOOKING_URL}
               className="px-4 py-2 bg-[#1A2E45] text-[#F8F4EF] text-xs font-medium tracking-wide rounded-full hover:bg-[#1A2E45]/90 active:scale-[0.97] transition-all duration-150"
             >
               Book
@@ -274,7 +275,7 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
                 01277 650584
               </a>
               <a
-                href="/book"
+                href={BOOKING_URL}
                 onClick={() => setMenuOpen(false)}
                 className="block w-full mt-4 px-5 py-3 bg-[#1A2E45] text-[#F8F4EF] text-sm font-medium tracking-wide rounded-full text-center"
               >
@@ -307,24 +308,22 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
               <p className="text-[#F8F4EF]/40 text-sm leading-relaxed font-light max-w-xs">
                 Independent opticians serving Billericay since 1984. Advanced clinical care and curated designer eyewear.
               </p>
-              <div className="flex gap-4 pt-2">
-                <a
-                  href="https://www.instagram.com/strattonopticians.billericay/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Stratton Opticians on Instagram"
-                  className="w-9 h-9 rounded-full border border-[#F8F4EF]/15 flex items-center justify-center text-[#F8F4EF]/50 hover:text-[#C9A96E] hover:border-[#C9A96E]/40 transition-all"
-                >
-                  <Instagram className="w-4 h-4" />
-                </a>
+              <div className="flex gap-5 pt-2 text-sm">
                 <a
                   href="https://www.facebook.com/strattonopticians/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Stratton Opticians on Facebook"
-                  className="w-9 h-9 rounded-full border border-[#F8F4EF]/15 flex items-center justify-center text-[#F8F4EF]/50 hover:text-[#C9A96E] hover:border-[#C9A96E]/40 transition-all"
+                  className="text-[#F8F4EF]/60 hover:text-[#C9A96E] underline underline-offset-4 decoration-[#F8F4EF]/20 hover:decoration-[#C9A96E]/60 transition-colors"
                 >
-                  <Facebook className="w-4 h-4" />
+                  Facebook
+                </a>
+                <a
+                  href="https://www.instagram.com/strattonopticians.billericay/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#F8F4EF]/60 hover:text-[#C9A96E] underline underline-offset-4 decoration-[#F8F4EF]/20 hover:decoration-[#C9A96E]/60 transition-colors"
+                >
+                  Instagram
                 </a>
               </div>
               <p className="text-[#F8F4EF]/50 text-sm pt-2">
@@ -358,7 +357,7 @@ export default function Layout({ children, transparentHero = false }: LayoutProp
                   { label: "Visual Stress", href: "/visual-stress-assessments" },
                   { label: "Golf & Sports Vision", href: "/golf-sports-vision" },
                   { label: "FAQ", href: "/faq" },
-                  { label: "Book", href: "/book" },
+                  { label: "Book", href: BOOKING_URL },
                   { label: "Contact", href: "/contact" },
                 ].map((item) => (
                   <a key={item.href} href={item.href} className="hover:text-[#C9A96E] transition-colors">

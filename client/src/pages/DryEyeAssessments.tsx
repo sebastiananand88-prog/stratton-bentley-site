@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { BOOKING_URL } from "@/const";
 import FaqSection from "@/components/FaqSection";
 import { getFaqItems } from "@/lib/faqData";
 import { Droplets, Sun, Wind } from "lucide-react";
@@ -12,7 +13,7 @@ export default function DryEyeAssessments() {
   useMetaTags({
     title: "Dry Eye Assessment Billericay – Stratton Opticians",
     description: "Dry eye assessments in Billericay. Thorough assessment of dry, gritty or watery eyes, with advice tailored to what's causing your symptoms.",
-    canonical: "http://localhost:3001/dry-eye-assessments",
+    canonical: "https://www.strattonopticians.co.uk/dry-eye-assessments",
   });
   return (
     <Layout>
@@ -108,7 +109,7 @@ export default function DryEyeAssessments() {
             Living with uncomfortable eyes?
           </h2>
           <a
-            href="/book"
+            href={BOOKING_URL}
             className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#C9A96E] text-[#1A2E45] text-sm font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 active:scale-[0.97] transition-all duration-150 shadow-lg shadow-[#C9A96E]/20"
           >
             Book an Appointment

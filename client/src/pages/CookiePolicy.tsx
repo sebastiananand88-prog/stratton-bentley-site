@@ -9,7 +9,7 @@ export default function CookiePolicy() {
   useMetaTags({
     title: "Cookie Policy – Stratton Opticians",
     description: "What cookies this website uses and how to manage your preferences.",
-    canonical: "http://localhost:3001/cookie-policy",
+    canonical: "https://www.strattonopticians.co.uk/cookie-policy",
   });
 
   return (

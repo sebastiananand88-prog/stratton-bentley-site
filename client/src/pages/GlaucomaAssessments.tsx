@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { BOOKING_URL } from "@/const";
 import FaqSection from "@/components/FaqSection";
 import { getFaqItems } from "@/lib/faqData";
 import { Eye, Activity, Clock } from "lucide-react";
@@ -12,7 +13,7 @@ export default function GlaucomaAssessments() {
   useMetaTags({
     title: "Glaucoma Assessment Billericay – Stratton Opticians",
     description: "Advanced glaucoma assessments in Billericay using OCT imaging and eye pressure testing, for early detection and ongoing monitoring.",
-    canonical: "http://localhost:3001/glaucoma-assessments",
+    canonical: "https://www.strattonopticians.co.uk/glaucoma-assessments",
   });
   return (
     <Layout>
@@ -131,7 +132,7 @@ export default function GlaucomaAssessments() {
             Concerned about glaucoma?
           </h2>
           <a
-            href="/book"
+            href={BOOKING_URL}
             className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#C9A96E] text-[#1A2E45] text-sm font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 active:scale-[0.97] transition-all duration-150 shadow-lg shadow-[#C9A96E]/20"
           >
             Book Adult Eye Examination with OCT Scan

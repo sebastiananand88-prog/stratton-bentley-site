@@ -15,7 +15,6 @@ import ContactLenses from "./pages/ContactLenses";
 import ChildrensEyeCare from "./pages/ChildrensEyeCare";
 import VisualStress from "./pages/VisualStress";
 import Faq from "./pages/Faq";
-import Book from "./pages/Book";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiePolicy from "./pages/CookiePolicy";
@@ -43,7 +42,6 @@ function Router() {
       <Route path={"/dry-eye-assessments"} component={DryEyeAssessments} />
       <Route path={"/golf-sports-vision"} component={GolfSportsVision} />
       <Route path={"/faq"} component={Faq} />
-      <Route path={"/book"} component={Book} />
       <Route path={"/contact"} component={Contact} />
       <Route path={"/privacy-policy"} component={PrivacyPolicy} />
       <Route path={"/cookie-policy"} component={CookiePolicy} />

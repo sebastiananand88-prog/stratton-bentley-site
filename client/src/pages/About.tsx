@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { BOOKING_URL } from "@/const";
 import { MapPin, Phone, Mail, Award, Heart, Eye } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
 
@@ -6,7 +7,7 @@ export default function About() {
   useMetaTags({
     title: "Independent Opticians Billericay – Stratton Opticians Since 1984",
     description: "Independent optician in Billericay, Essex, since 1984. Experienced optometrist Jas Chaggar, curated eyewear, advanced diagnostics.",
-    canonical: "http://localhost:3001/about",
+    canonical: "https://www.strattonopticians.co.uk/about",
   });
 
   return (
@@ -198,7 +199,7 @@ export default function About() {
             Learn more about our services, or book an appointment to experience the Stratton difference.
           </p>
           <a
-            href="/book"
+            href={BOOKING_URL}
             className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#C9A96E] text-[#1A2E45] text-sm font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 active:scale-[0.97] transition-all duration-150 shadow-lg shadow-[#C9A96E]/20"
           >
             Book an Appointment

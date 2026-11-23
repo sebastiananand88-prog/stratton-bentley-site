@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { BOOKING_URL } from "@/const";
 import FaqSection from "@/components/FaqSection";
 import { getFaqItems } from "@/lib/faqData";
 import { TrendingDown, ShieldCheck, Heart } from "lucide-react";
@@ -12,7 +13,7 @@ export default function MyopiaManagement() {
   useMetaTags({
     title: "Myopia Management Billericay – Essilor Stellest | Stratton",
     description: "Myopia management for children in Billericay using Essilor Stellest lenses, helping slow short-sightedness progression and protect long-term eye health.",
-    canonical: "http://localhost:3001/myopia-management",
+    canonical: "https://www.strattonopticians.co.uk/myopia-management",
   });
   return (
     <Layout>
@@ -128,7 +129,7 @@ export default function MyopiaManagement() {
             Wondering if myopia management is right for your child?
           </h2>
           <a
-            href="/book"
+            href={BOOKING_URL}
             className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#C9A96E] text-[#1A2E45] text-sm font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 active:scale-[0.97] transition-all duration-150 shadow-lg shadow-[#C9A96E]/20"
           >
             Book Children's Eye Examination

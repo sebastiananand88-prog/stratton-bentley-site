@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { BOOKING_URL } from "@/const";
 import FaqSection from "@/components/FaqSection";
 import { getFaqItems } from "@/lib/faqData";
 import { Glasses, Palette } from "lucide-react";
@@ -13,7 +14,7 @@ export default function Eyewear() {
   useMetaTags({
     title: "Designer Glasses Billericay – Premium Eyewear | Stratton",
     description: "Designer eyewear in Billericay: Tom Ford, Ray-Ban, Silhouette, Ralph Lauren, GANT & more. Premium frames, Essilor lenses, varifocal, prescription sunglasses, expert styling.",
-    canonical: "http://localhost:3001/eyewear",
+    canonical: "https://www.strattonopticians.co.uk/eyewear",
   });
   return (
     <Layout>
@@ -209,7 +210,7 @@ export default function Eyewear() {
             Ready to find frames that are uniquely you?
           </h2>
           <a
-            href="/book"
+            href={BOOKING_URL}
             className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#C9A96E] text-[#1A2E45] text-sm font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 active:scale-[0.97] transition-all duration-150 shadow-lg shadow-[#C9A96E]/20"
           >
             Book Dispensing Appointment

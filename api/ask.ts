@@ -10,7 +10,8 @@ import Anthropic from "@anthropic-ai/sdk";
  * without a leading underscore on the folder name) -- it worked every time
  * locally and crashed every time in production with "Cannot find module".
  * Inlining everything into the single entry file sidesteps that entirely.
- * Keep this in sync by hand with client/src/lib/faqData.ts if that changes.
+ * Mirrors client/src/lib/faqData.ts by hand, but deliberately leaves out anything
+ * about pricing, fees, offers or payment (client instruction: the bot never discusses price).
  */
 
 const MAX_QUESTION_LENGTH = 400;
@@ -79,10 +80,6 @@ const FAQ_CATEGORIES: FaqCategory[] = [
         q: "Is there an adjustment period for varifocals?",
         a: "Yes, most people need 1-2 weeks to adjust to varifocals. Your brain learns to move your eyes to the correct part of the lens for each distance. We recommend wearing them consistently during this period. If you experience any issues after adjustment, please return for a fitting check.",
       },
-      {
-        q: "Are varifocals more expensive than bifocals?",
-        a: "Varifocals are typically more expensive than bifocals, but they offer superior aesthetics (no visible lines) and better quality of vision at all distances. Many patients find the investment worthwhile for the seamless vision experience.",
-      },
     ],
   },
   {
@@ -91,10 +88,6 @@ const FAQ_CATEGORIES: FaqCategory[] = [
       {
         q: "What makes Essilor lenses premium?",
         a: "Essilor premium lenses offer advanced optical design for sharper vision, specialized coatings (anti-scratch, anti-glare, blue-light filtering), UV protection, and durability. They're engineered using cutting-edge technology to reduce distortions and provide the best possible visual experience.",
-      },
-      {
-        q: "What is the Essilor 50% off second pair offer?",
-        a: "This is a year-round offer, not a limited-time promotion. When you purchase a full pair of glasses (or add-on lenses) with us, you'll receive 50% off Essilor premium lenses for a second pair, such as varifocals. This is a great opportunity to have multiple pairs for different occasions – sunglasses, workplace glasses, and everyday wear.",
       },
       {
         q: "Do Essilor lenses include blue-light filtering?",
@@ -108,10 +101,6 @@ const FAQ_CATEGORIES: FaqCategory[] = [
       {
         q: "What types of contact lenses do you fit?",
         a: "We fit all types of contact lenses: daily disposables, weekly, monthly, extended wear, rigid gas-permeable, and specialized lenses for conditions like astigmatism, presbyopia (multifocals), and keratoconus. We'll recommend the best option based on your lifestyle and eye health.",
-      },
-      {
-        q: "How much does a contact lens fitting cost?",
-        a: "Contact lens fitting fees vary depending on lens type and complexity. We recommend calling us on 01277 650584 or visiting to discuss your needs and receive an accurate quote. Aftercare and lens evaluations are typically included.",
       },
       {
         q: "Can I wear contact lenses if I have astigmatism?",
@@ -162,23 +151,6 @@ const FAQ_CATEGORIES: FaqCategory[] = [
     ],
   },
   {
-    category: "Golf & Sports Vision",
-    items: [
-      {
-        q: "Lorem ipsum dolor sit amet?",
-        a: "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      },
-      {
-        q: "Duis aute irure dolor in reprehenderit?",
-        a: "In voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      },
-      {
-        q: "Sed ut perspiciatis unde omnis iste natus?",
-        a: "Error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-      },
-    ],
-  },
-  {
     category: "Dry Eye",
     items: [
       {
@@ -196,25 +168,12 @@ const FAQ_CATEGORIES: FaqCategory[] = [
     ],
   },
   {
-    category: "Pricing & Payment",
+    category: "General",
     items: [
-      {
-        q: "What does a comprehensive eye examination cost?",
-        a: "Please contact us on 01277 650584 or visit for current pricing. We offer competitive rates and welcome NHS patients. Prices may vary depending on the type of examination and any additional tests required.",
-      },
-      {
-        q: "Do you offer payment plans or financing options?",
-        a: "We offer various options for spectacles and contact lenses to suit different budgets. Please speak with our team about flexible payment arrangements or contact us for details.",
-      },
       {
         q: "Can I claim my eye test on private medical insurance?",
         a: "Many private medical insurance policies include eye examination benefits. We recommend checking your policy or contacting your insurer directly. We can also provide receipts to support any claims.",
       },
-    ],
-  },
-  {
-    category: "General",
-    items: [
       {
         q: "Do you offer home visits or domiciliary care?",
         a: "We primarily operate from our Billericay location, but we recommend contacting us to discuss any special circumstances or accessibility needs. We're always happy to help where we can.",
@@ -351,7 +310,27 @@ const LENS_TECHNOLOGY = [
   "Essilor premium lenses, including Varilux progressive/varifocal lenses for seamless vision at all distances",
   "Lens coatings: anti-reflective (reduces glare), anti-scratch, and blue-light filtering for screen use",
   "Essilor Stellest lenses for managing myopia progression in children",
-  "A year-round offer (not a limited-time promotion): 50% off Essilor premium lenses for a second pair, when a full pair of glasses or add-on lenses is purchased",
+];
+
+// Carried over from the practice's previous website (strattonopticians.co.uk, archived 2025).
+// Deliberately excluded because they conflict with the new site or are out of date: founding year
+// (old site said 1976), Saturday hours (old site said 2pm), former staff, the old brand list,
+// any claim about dyslexia, and anything about cost.
+const PREVIOUS_SITE_INFO = [
+  "Jas Chaggar qualified as an optometrist in 2006 with a BSc (Hons) in Optometry from City University, and is registered with the General Optical Council and a member of the Association of Optometrists.",
+  "The team includes GOC-registered optometrists, dispensing staff and contact lens specialists. The practice is independent and family run.",
+  "What to bring to an eye examination: any glasses and contact lenses you currently wear, a list of medications you take, and any questions or concerns about your eyes.",
+  "Children don't need to be able to read to have an eye test. The practice likes to see children at least once a year, and has a wide range of children's frames, from coloured metals to plastic frames.",
+  "Additional services offered: reglazing patients' existing frames with new lenses, occupational (work-specific) spectacles, prism lenses, visual field testing, eye muscle balance testing, colour blindness testing, a glasses fitting service, bespoke sunglasses, spectacle accessories, and frame recycling with the Lions Club.",
+  "Frames: full-rim metal, acetate (plastic), rimless and supra (half-rim) frames are stocked, and as an independent practice it can source most frames and lenses available on the market from any supplier. Special frame requests and complicated prescriptions are welcome. Non-prescription glasses and sunglasses can also be bought.",
+  "The practice is a Varilux lens specialist. Lens options include Varilux X series and E series varifocals, Varilux Road Pilot (optimised for driving, also available with Transitions lenses that darken in the car), Varilux Digitime (for screen use), Transitions photochromic lenses including Transitions XTRActive (which activate behind a windscreen), Xperio polarised lenses, Eyezen single vision lenses for digital screen use, and Crizal Sapphire UV coating (scratch, smudge, water and dust resistant, E-SPF 35), which comes as standard on the flagship lenses.",
+  "Sunglasses: designer sunglasses including Ray-Ban and Oakley, with tinted, polarised and mirror options, and polarised prescription varifocals can be made in a frame of your choice.",
+  "Essilor Stellest lenses: in Essilor's clinical trial they slowed myopia progression by 67% on average compared with single vision lenses, when worn 12 hours a day.",
+  "Contact lenses: the practice has fitted hard and soft contact lenses for over 40 years and works with every manufacturer. A new fitting has three stages: (1) an initial assessment of the eye surface, lids and tear film, choosing a lens type and trying lenses; (2) a handling lesson of about 20 to 40 minutes covering insertion, removal, cleaning and hygiene, with a trial pack to wear at home; (3) a follow-up appointment, for which lenses should be worn for at least 2 hours beforehand. Contact lenses can also be fitted for children.",
+  "Contact lens golden rules: attend regular check-ups, clean and disinfect lenses exactly as advised, handle lenses with clean hands, replace lenses as directed, never rinse lenses in tap water, don't sleep or swim in lenses (unless wearing watertight goggles), don't wear lenses with a heavy cold or flu, and replace the lens case every month. If eyes become red, sore or light-sensitive, remove the lenses straight away; if still red and sore after a few hours, phone the practice, or NHS 111 outside opening hours.",
+  "Driving and eyesight: UK law requires drivers to read a number plate from 20.5 metres. Some conditions, such as cataracts and double vision, must be reported to the DVLA. Useful options for drivers include prescription sunglasses, polarised lenses, anti-reflective coatings and driving-specific varifocals.",
+  "Screen eye strain tips: look at something more than 6 metres away regularly, take breaks, reduce glare and reflections on the screen, match screen brightness to the room, keep the screen about 20 to 24 inches away and slightly below eye level, and ask about lenses designed for computer work.",
+  "Sun protection: sunglasses that block 100% of UV are recommended outdoors, even on cloudy days, as UV exposure is linked to cataracts, macular degeneration and other eye problems.",
 ];
 
 const ACCREDITATIONS = [
@@ -360,9 +339,6 @@ const ACCREDITATIONS = [
   "College of Optometrists",
   "Association of Optometrists",
 ];
-
-const PRICING_NOTE =
-  "Stratton Opticians does not publish fixed prices online, as costs vary by examination type and any additional tests required. Patients are asked to contact the practice directly (phone or email) for current pricing on eye examinations, contact lens fittings, and dispensing. NHS patients are welcome, and many private medical insurance policies cover eye examinations.";
 
 function buildKnowledgeBase(): string {
   const locations = LOCATIONS.map((l) =>
@@ -402,10 +378,10 @@ function buildKnowledgeBase(): string {
     BRANDS.join(", "),
     "## Lens Technology",
     LENS_TECHNOLOGY.join("\n"),
+    "## More Practice Information",
+    PREVIOUS_SITE_INFO.join("\n\n"),
     "## Accreditations",
     ACCREDITATIONS.join(", "),
-    "## Pricing",
-    PRICING_NOTE,
     "## Social Media",
     social,
     "## Reviews",
@@ -423,6 +399,7 @@ Rules:
 - Plain text only -- no markdown (no **bold**, no headers, no bullet points). This is rendered as plain text, so markdown syntax would show up as literal asterisks and hashes.
 - No em dashes. This is a UK business -- use commas, full stops, or an en dash with spaces around it instead.
 - Friendly, clear, professional tone -- no jargon.
+- Never discuss prices, fees, costs, discounts, offers, or payment options -- not even rough figures, comparisons ("more expensive than"), or whether something is good value. If asked anything about cost, say the team can help with that and give the phone number (01277 650584) or email (info@strattonopticians.co.uk). You may say NHS eye tests are available and that NHS optical vouchers exist for eligible patients, without stating any amounts.
 - Never give a diagnosis, personal clinical advice, or comment on someone's specific prescription or eye condition. For anything specific to the person asking, tell them to book an eye examination or contact the practice directly (phone 01277 650584, or the Contact page).
 - If a question is urgent or sounds like a clinical emergency (sudden vision loss, eye injury, severe pain, flashes/floaters, etc.), don't attempt to triage it yourself -- tell them to call the practice directly on 01277 650584 straight away, or seek urgent medical care if the practice is closed.
 - Never say the practice assesses, diagnoses, or treats dyslexia. Visual stress assessments can be linked to dyslexia, but always make clear they are not an assessment or diagnosis of dyslexia itself.
@@ -504,7 +481,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     res.status(200).json({ answer });
   } catch (error) {
-    console.error("AI ask error:", error);
-    res.status(502).json({ error: "Sorry, something went wrong. Please try again or contact us directly." });
+    // Log enough to diagnose from the Vercel function logs (status + API error type), without the key.
+    if (error instanceof Anthropic.AuthenticationError || error instanceof Anthropic.PermissionDeniedError) {
+      console.error(`AI ask error: API key rejected (${error.status}). Check ANTHROPIC_API_KEY in Vercel.`, error.message);
+    } else if (error instanceof Anthropic.RateLimitError) {
+      console.error("AI ask error: rate limited (429).", error.message);
+    } else if (error instanceof Anthropic.BadRequestError) {
+      // Also what a zero credit balance returns ("credit balance is too low").
+      console.error("AI ask error: bad request (400) -- check model ID and account credit balance.", error.message);
+    } else if (error instanceof Anthropic.NotFoundError) {
+      console.error("AI ask error: not found (404) -- model ID may be retired.", error.message);
+    } else if (error instanceof Anthropic.APIError) {
+      console.error(`AI ask error: API ${error.status}.`, error.message);
+    } else {
+      console.error("AI ask error:", error);
+    }
+    const busy = error instanceof Anthropic.RateLimitError || (error instanceof Anthropic.APIError && error.status === 529);
+    res.status(502).json({
+      error: busy
+        ? "The assistant is busy right now. Please try again in a moment, or call us on 01277 650584."
+        : "Sorry, the assistant isn't available right now. Please call us on 01277 650584 or email info@strattonopticians.co.uk.",
+    });
   }
 }

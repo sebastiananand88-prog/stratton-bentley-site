@@ -8,7 +8,6 @@ interface ChatMessage {
 }
 
 const EXAMPLE_QUESTIONS = [
-  "How much does an eye examination cost?",
   "Do you offer NHS eye tests?",
   "How is OCT different from a standard eye test?",
   "How long does it take to adjust to varifocals?",
@@ -89,7 +88,7 @@ export default function AskAI() {
         aria-label={open ? "Close AI assistant" : "Ask our AI assistant"}
         title={open ? "Close AI assistant" : "Ask our AI assistant"}
         aria-expanded={open}
-        className={`fixed right-5 sm:right-6 z-40 w-14 h-14 rounded-full bg-[#1A2E45] text-[#F8F4EF] shadow-lg flex items-center justify-center hover:bg-[#1A2E45]/90 active:scale-95 transition-all duration-200 ${
+        className={`fixed right-5 sm:right-6 z-40 w-12 h-12 rounded-full bg-[#1A2E45] text-[#F8F4EF] shadow-lg flex items-center justify-center hover:bg-[#1A2E45]/90 active:scale-95 transition-all duration-200 ${
           cookieBannerVisible ? "bottom-24" : "bottom-5 sm:bottom-6"
         }`}
       >
@@ -99,16 +98,16 @@ export default function AskAI() {
       {open && (
         <div
           ref={panelRef}
-          className={`fixed right-5 sm:right-6 z-40 w-[calc(100vw-2.5rem)] sm:w-96 h-[32rem] max-h-[70vh] flex flex-col bg-[#1A2E45] rounded-2xl shadow-2xl overflow-hidden ${
+          className={`fixed right-5 sm:right-6 z-40 w-[calc(100vw-2.5rem)] sm:w-80 h-[26rem] max-h-[65vh] flex flex-col bg-[#1A2E45] rounded-2xl shadow-2xl overflow-hidden ${
             cookieBannerVisible ? "bottom-[10.5rem]" : "bottom-24"
           }`}
         >
           {/* Header */}
-          <div className="flex items-center justify-between gap-2.5 px-6 py-5 border-b border-[#F8F4EF]/10 shrink-0">
+          <div className="flex items-center justify-between gap-2.5 px-5 py-3.5 border-b border-[#F8F4EF]/10 shrink-0">
             <div className="flex items-center gap-2.5">
-              <Sparkles className="w-5 h-5 text-[#C9A96E]" />
+              <Sparkles className="w-4 h-4 text-[#C9A96E]" />
               <h2
-                className="text-xl font-light text-[#F8F4EF]"
+                className="text-lg font-light text-[#F8F4EF]"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
                 Ask our AI assistant
@@ -132,7 +131,7 @@ export default function AskAI() {
           </div>
 
           {/* Message thread */}
-          <div className="flex-1 overflow-y-auto px-6 py-4 space-y-3">
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3">
             {messages.length === 0 && (
               <>
                 <p className="text-[#F8F4EF]/60 text-xs font-light leading-relaxed">
@@ -182,19 +181,18 @@ export default function AskAI() {
           </div>
 
           {/* Persistent disclaimer -- stays visible even once a conversation is underway */}
-          <p className="px-6 pt-3 text-[#F8F4EF]/40 text-[10px] leading-snug shrink-0 border-t border-[#F8F4EF]/10">
+          <p className="px-5 pt-3 text-[#F8F4EF]/40 text-[10px] leading-snug shrink-0 border-t border-[#F8F4EF]/10">
             AI-generated and may make mistakes. For anything about your own eyes or prescription, please contact us
             directly.
           </p>
 
           {/* Input */}
-          <form onSubmit={handleSubmit} className="flex items-center gap-3 px-6 pb-4 pt-2 shrink-0">
+          <form onSubmit={handleSubmit} className="flex items-center gap-3 px-5 pb-4 pt-2 shrink-0">
             <input
               type="text"
-              autoFocus
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder={messages.length === 0 ? "e.g. How much does an eye test cost?" : "Ask a follow-up..."}
+              placeholder={messages.length === 0 ? "Ask a question..." : "Ask a follow-up..."}
               className="flex-1 min-w-0 px-4 py-3 rounded-full bg-[#F8F4EF]/10 text-[#F8F4EF] placeholder:text-[#F8F4EF]/40 border border-[#F8F4EF]/15 focus:outline-none focus:border-[#C9A96E] transition-colors text-sm"
             />
             <button

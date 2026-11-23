@@ -10,7 +10,7 @@ export default function Contact() {
   useMetaTags({
     title: "Contact Stratton Opticians Billericay – Address & Opening Hours",
     description: "Contact Stratton Opticians in Billericay: 14 The Pantiles. Phone 01277 650584, email info@strattonopticians.co.uk. Mon–Fri 9am–5:30pm, Sat 9am–1pm.",
-    canonical: "http://localhost:3001/contact",
+    canonical: "https://www.strattonopticians.co.uk/contact",
   });
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);

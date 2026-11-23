@@ -29,7 +29,7 @@ export default function Faq() {
   useMetaTags({
     title: "Eye Care FAQ – Questions Answered | Stratton Opticians",
     description: "Frequently asked questions about eye examinations, OCT scans, contact lenses, varifocals, Essilor lenses, children's eye care, visual stress, and pricing.",
-    canonical: "http://localhost:3001/faq",
+    canonical: "https://www.strattonopticians.co.uk/faq",
   });
 
   // Full-page FAQPage schema covering every question visible on this page, for Google
@@ -79,7 +79,7 @@ export default function Faq() {
       {/* FAQs */}
       <section className="py-20 max-w-4xl mx-auto px-6 lg:px-10">
         <div className="space-y-16">
-          {FAQ_CATEGORIES.map((category, idx) => (
+          {FAQ_CATEGORIES.filter((c) => c.items.length > 0).map((category, idx) => (
             <div key={idx} id={category.slug}>
               <h2
                 className="text-3xl font-light text-[#1A2E45] mb-8 pb-4 border-b-2 border-[#C9A96E]"

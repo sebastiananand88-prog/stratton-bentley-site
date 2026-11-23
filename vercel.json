@@ -1,5 +1,25 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/book", "destination": "https://patientbookings.co.uk/StrattonOpticians", "statusCode": 302 },
+    { "source": "/book-an-appointment", "destination": "https://patientbookings.co.uk/StrattonOpticians", "statusCode": 302 },
+
+    { "source": "/about-us", "destination": "/about", "statusCode": 301 },
+    { "source": "/testimonials", "destination": "/", "statusCode": 301 },
+    { "source": "/our-services", "destination": "/eye-examinations", "statusCode": 301 },
+    { "source": "/eye-examination", "destination": "/eye-examinations", "statusCode": 301 },
+    { "source": "/common-eye-conditions", "destination": "/eye-examinations", "statusCode": 301 },
+    { "source": "/eyewear/contact-lenses", "destination": "/contact-lenses", "statusCode": 301 },
+    { "source": "/eyewear/lens-options", "destination": "/eyewear", "statusCode": 301 },
+    { "source": "/eyewear/sunglasses", "destination": "/eyewear", "statusCode": 301 },
+    { "source": "/eyewear/kids-teens", "destination": "/childrens-eye-care", "statusCode": 301 },
+    { "source": "/visual-stress-assessment", "destination": "/visual-stress-assessments", "statusCode": 301 },
+    { "source": "/faqs", "destination": "/faq", "statusCode": 301 },
+    { "source": "/:slug([0-9a-f]{12}-htm)", "destination": "/", "statusCode": 301 },
+
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "strattonopticians.co.uk" }], "destination": "https://www.strattonopticians.co.uk/$1", "statusCode": 301 }
+  ],
+  "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }]
 }

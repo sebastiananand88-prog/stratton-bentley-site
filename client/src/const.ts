@@ -15,3 +15,6 @@ export const getLoginUrl = () => {
 
   return url.toString();
 };
+
+// Online booking diary (PatientBookings). Every "Book" button links straight here.
+export const BOOKING_URL = "https://patientbookings.co.uk/StrattonOpticians";

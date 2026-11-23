@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
 import { ArrowRight, MapPin, Star, Eye, Scan, Droplets, Glasses, ChevronDown, Phone, ShieldCheck, Baby, Layers, Flag } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { BOOKING_URL } from "@/const";
 
 // ─────────────────────────────────────────────
 // Design System Notes
@@ -11,7 +13,7 @@ import { useMetaTags } from "@/hooks/useMetaTags";
 // ─────────────────────────────────────────────
 
 const IMAGES = {
-  boutique: "/images/storefront-hero.jpeg",
+  boutique: "/images/storefront-hero-clean.jpeg",
   editorial: "/images/welcome-reception-desk.jpeg",
   frames: "/images/frame-wall-rayban-oakley.jpeg",
   store: "/images/interior-clinic-wall.jpeg",
@@ -101,6 +103,43 @@ const TESTIMONIALS = [
   },
 ];
 
+// Bios mirror the About page -- keep the two in sync if either changes.
+const TEAM = [
+  {
+    name: "Jas Chaggar",
+    role: "Principal Optometrist & Owner",
+    image: "/images/jas.jpeg",
+    alt: "Jas Chaggar, Principal Optometrist and Owner at Stratton Opticians",
+    short: "Combines advanced clinical technology with a genuinely personal approach to every eye examination.",
+    bio: [
+      "Jas is passionate about providing exceptional eye care, combining advanced clinical technology with a genuinely personal approach. He believes every patient deserves the time to understand their eye health and vision, ensuring they leave feeling informed, reassured and confident in their care.",
+      "As Principal Optometrist, Jas has a particular interest in soft contact lenses, post-cataract care, glaucoma refinement, diabetic eye assessments and visual stress assessments for both adults and children. His aim is always to provide the most appropriate solution for each patient, tailoring advice and treatment to their individual needs.",
+    ],
+  },
+  {
+    name: "Sheila",
+    role: "Lead Dispenser",
+    image: "/images/sheila.jpeg",
+    alt: "Sheila, Lead Dispenser at Stratton Opticians",
+    short: "Takes the time to understand your face, lifestyle and style, so your frames are chosen for you.",
+    bio: [
+      "Sheila is our lead dispenser and has a real passion for helping patients find the perfect eyewear. She enjoys taking the time to understand each person's needs, helping them choose frames that suit their style and personality, together with lenses that provide the best possible vision for their lifestyle.",
+      "Known for her friendly, patient and approachable manner, Sheila takes pride in ensuring every patient enjoys a relaxed, personal experience and leaves feeling confident in their new glasses.",
+    ],
+  },
+  {
+    name: "Jen",
+    role: "Receptionist & Frame Advisor",
+    image: "/images/jen.jpeg",
+    alt: "Jen, Receptionist and Frame Advisor at Stratton Opticians",
+    short: "Makes sure you feel welcome, looked after and never rushed from the moment you arrive.",
+    bio: [
+      "Jen is one of the friendly faces you'll meet at Stratton Opticians, where she plays a key role in welcoming patients, managing appointments and ensuring the practice runs smoothly each day. She enjoys helping patients choose frames that complement both their lifestyle and personal style, making the experience of selecting new glasses relaxed and enjoyable.",
+      "Jen takes pride in providing excellent customer service and making every patient feel welcomed, valued and well looked after from the moment they walk through the door. Her warm and approachable manner helps create the personal experience that Stratton Opticians is known for.",
+    ],
+  },
+];
+
 function StarRating({ count = 5 }: { count?: number }) {
   return (
     <div className="flex gap-0.5">
@@ -116,7 +155,7 @@ export default function StrattonHome() {
   useMetaTags({
     title: "Opticians Billericay | Stratton Opticians",
     description: "Independent opticians in Billericay since 1984. Advanced eye exams, OCT scans & designer eyewear. Book your appointment today.",
-    canonical: "http://localhost:3001/",
+    canonical: "https://www.strattonopticians.co.uk/",
   });
 
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
@@ -190,7 +229,7 @@ export default function StrattonHome() {
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <button
-                onClick={() => window.location.href = '/book'}
+                onClick={() => window.location.href = BOOKING_URL}
                 className="inline-flex items-center justify-center sm:justify-start gap-2.5 px-6 sm:px-7 py-3 sm:py-3.5 bg-[#C9A96E] text-[#1A2E45] text-sm font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 active:scale-[0.97] transition-all duration-150 shadow-lg shadow-[#C9A96E]/20"
               >
                 Book Your Eye Examination
@@ -309,7 +348,7 @@ export default function StrattonHome() {
             </div>
 
             <button
-              onClick={() => window.location.href = '/book'}
+              onClick={() => window.location.href = BOOKING_URL}
               className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#1A2E45] text-[#F8F4EF] text-sm font-medium tracking-wide rounded-full hover:bg-[#1A2E45]/90 active:scale-[0.97] transition-all duration-150"
             >
               Book Your Appointment
@@ -334,56 +373,60 @@ export default function StrattonHome() {
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-14">
-            <div className="lg:col-span-4">
-              <img
-                src="/images/jas.jpeg"
-                alt="Jas Chaggar, Principal Optometrist and Owner at Stratton Opticians"
-                className="w-full aspect-square object-cover rounded-2xl"
-              />
-            </div>
-            <div className="lg:col-span-8 space-y-4">
-              <p
-                className="text-2xl lg:text-3xl font-light text-[#1A2E45] leading-relaxed"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
-              >
-                "Every patient deserves the time to understand their eye health and vision – and to leave feeling informed, reassured and confident in their care."
-              </p>
-              <p className="text-[#1A2E45]/70 font-light">
-                Jas Chaggar, Principal Optometrist &amp; Owner
-              </p>
-              <p className="text-[#1A2E45]/60 text-sm leading-relaxed font-light max-w-xl">
-                It's just as personal beyond the examination room. Sheila, our lead dispenser, takes the time to
-                really understand your face, your lifestyle and your style, so you leave with frames chosen for
-                you – not just fitted to you. And from the moment you arrive, Jen makes sure you feel welcome, looked
-                after, and never rushed.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <div className="flex items-center gap-4 bg-[#F8F4EF] rounded-xl p-4">
-              <img
-                src="/images/sheila.jpeg"
-                alt="Sheila, Lead Dispenser at Stratton Opticians"
-                className="w-16 h-16 rounded-full object-cover shrink-0"
-              />
-              <div>
-                <p className="font-medium text-[#1A2E45]">Sheila</p>
-                <p className="text-xs text-[#1A2E45]/60 uppercase tracking-wide">Lead Dispenser</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 bg-[#F8F4EF] rounded-xl p-4">
-              <img
-                src="/images/jen.jpeg"
-                alt="Jen, Receptionist and Frame Advisor at Stratton Opticians"
-                className="w-16 h-16 rounded-full object-cover shrink-0"
-              />
-              <div>
-                <p className="font-medium text-[#1A2E45]">Jen</p>
-                <p className="text-xs text-[#1A2E45]/60 uppercase tracking-wide">Receptionist &amp; Frame Advisor</p>
-              </div>
-            </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {TEAM.map((member) => (
+              <Dialog key={member.name}>
+                <DialogTrigger asChild>
+                  <button
+                    type="button"
+                    className="group flex flex-col justify-start h-full w-full max-w-sm mx-auto sm:max-w-none text-left bg-[#F8F4EF] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A96E]"
+                    aria-label={`Read ${member.name}'s bio`}
+                  >
+                    <img
+                      src={member.image}
+                      alt={member.alt}
+                      className="w-full aspect-[4/5] object-cover object-center"
+                    />
+                    <div className="p-6 space-y-2">
+                      <p
+                        className="text-2xl font-light text-[#1A2E45]"
+                        style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                      >
+                        {member.name}
+                      </p>
+                      <p className="text-[10px] uppercase tracking-[0.2em] text-[#C9A96E] font-semibold">
+                        {member.role}
+                      </p>
+                      <p className="text-sm text-[#1A2E45]/60 font-light leading-relaxed">{member.short}</p>
+                      <span className="inline-flex items-center gap-1.5 pt-2 text-sm font-medium text-[#1A2E45] group-hover:text-[#C9A96E] transition-colors">
+                        Read bio <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="bg-[#F8F4EF] sm:max-w-lg max-h-[85vh] overflow-y-auto">
+                  <div className="flex items-center gap-4">
+                    <img src={member.image} alt="" className="w-16 h-16 rounded-full object-cover object-top shrink-0" />
+                    <div>
+                      <DialogTitle
+                        className="text-2xl font-light text-[#1A2E45]"
+                        style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                      >
+                        {member.name}
+                      </DialogTitle>
+                      <DialogDescription className="text-[10px] uppercase tracking-[0.2em] text-[#C9A96E] font-semibold">
+                        {member.role}
+                      </DialogDescription>
+                    </div>
+                  </div>
+                  <div className="space-y-4 text-sm text-[#1A2E45]/75 font-light leading-relaxed">
+                    {member.bio.map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                  </div>
+                </DialogContent>
+              </Dialog>
+            ))}
           </div>
 
           <div className="text-center mt-10">
@@ -458,7 +501,7 @@ export default function StrattonHome() {
 
           <div className="mt-12 text-center">
             <button
-              onClick={() => window.location.href = '/book'}
+              onClick={() => window.location.href = BOOKING_URL}
               className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#C9A96E] text-[#1A2E45] text-sm font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 active:scale-[0.97] transition-all duration-150 shadow-lg shadow-[#C9A96E]/20"
             >
               Book a Consultation
@@ -506,7 +549,7 @@ export default function StrattonHome() {
             </div>
 
             <button
-              onClick={() => window.location.href = '/book'}
+              onClick={() => window.location.href = BOOKING_URL}
               className="inline-flex items-center gap-2.5 px-7 py-3.5 border-2 border-[#1A2E45] text-[#1A2E45] text-sm font-medium tracking-wide rounded-full hover:bg-[#1A2E45] hover:text-[#F8F4EF] active:scale-[0.97] transition-all duration-200"
             >
               Book an Eyewear Styling Consultation
@@ -650,7 +693,7 @@ export default function StrattonHome() {
                   01277 650584
                 </p>
                 <button
-                  onClick={() => window.location.href = '/book'}
+                  onClick={() => window.location.href = BOOKING_URL}
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#C9A96E] text-[#1A2E45] text-xs font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 transition-all"
                 >
                   Book Here <ArrowRight className="w-3.5 h-3.5" />
@@ -728,7 +771,7 @@ export default function StrattonHome() {
             Book your comprehensive eye examination today. Advanced diagnostics, honest advice, and a selection of the world's finest eyewear – all under one roof in Essex.
           </p>
           <button
-            onClick={() => window.location.href = '/book'}
+            onClick={() => window.location.href = BOOKING_URL}
             className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-3 sm:py-4 bg-[#C9A96E] text-[#1A2E45] text-sm font-semibold tracking-wide rounded-full hover:bg-[#C9A96E]/90 active:scale-[0.97] transition-all duration-150 shadow-xl shadow-[#C9A96E]/20"
           >
             Book Your Eye Examination
